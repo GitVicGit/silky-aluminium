@@ -21,9 +21,9 @@
             overflow: hidden;
         }
         .navigation {
-            padding: 32px;
+            padding: 20px; /* Reduced padding for more left space */
             background-color: transparent;
-            width: 320px; /* Adjusted width */
+            width: 280px; /* Reduced width */
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -33,13 +33,13 @@
             margin: 0;
             color: black;
             text-decoration: none;
-            line-height: 1.6;
+            line-height: 1.4; /* Reduced line height */
         }
         .navigation a:visited {
             color: black;
         }
         .navigation a:hover {
-            text-decoration: none; /* Disable URL preview */
+            text-decoration: none; /* Remove underline on hover */
         }
         .navigation > div:first-child p {
             font-weight: bold;
@@ -50,14 +50,14 @@
         .gallery {
             flex-grow: 1;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start; /* Changed to flex-start for left alignment */
             align-items: center;
             background-color: white;
-            overflow: hidden;
+            padding-left: 20px; /* Added left padding */
         }
         .gallery-slide {
-            width: 100%;
-            height: 100%;
+            width: calc(100% - 280px);
+            height: calc(100vh - 64px);
             display: none;
             justify-content: center;
             align-items: center;
@@ -68,23 +68,20 @@
         .gallery-slide img {
             max-width: 100%;
             max-height: 100%;
-            display: block;
         }
         .artwork-description, .artwork-description a {
             font-size: 16px;
-            padding-left: 32px;
+            padding-left: 20px; /* Adjusted for alignment */
         }
         .artwork-description p {
-            margin: 8px 0;
+            margin: 6px 0; /* Reduced spacing */
         }
         .artwork-description p:first-child {
             font-weight: bold;
         }
-        .icon { /* Adjust icon size */
-            vertical-align: middle;
-            width: 16px; /* Reduced size */
-            height: 16px; /* Reduced size */
-            margin-right: 10px; /* Space between icons */
+        .artwork-description a {
+            display: inline-block;
+            margin: 16px 8px 0;
         }
     </style>
 </head>
@@ -94,10 +91,10 @@
             <div>
                 <p>VICTOR GUERIN</p>
                 <br><br>
-                <a href="artistic_statement.html">Artistic Statement</a><br><br>
-                <a href="mailto:victorguerin.fr+web@pm.me"><img src="email_logo.png" alt="Email" class="icon"></a>
-                <a href="https://www.instagram.com/victorguerin.fr/?hl=fr"><img src="instagram_logo.png" alt="Instagram" class="icon"></a>
-                <a href="https://www.linkedin.com/in/guerinvictor/"><img src="linkedin_logo.png" alt="LinkedIn" class="icon"></a>
+                <a href="about.html">About</a><br>
+                <a href="mailto:victorguerin.fr+web@pm.me">Email</a><br>
+                <a href="https://www.instagram.com/victorguerin.fr/?hl=fr">Instagram</a><br>
+                <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a>
             </div>
             <div class="artwork-description">
                 <p id="artwork-title">Titre de l'œuvre</p>
@@ -119,8 +116,38 @@
             <!-- Add more slides as needed -->
         </div>
     </div>
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.gallery-slide');
+        const artworkTitles = ['Premier Titre', 'Deuxième Titre'];
+        const artworkMaterials = ['Huile sur toile', 'Aquarelle'];
+        const artworkSizes = ['50x70cm', '30x40cm'];
+        const artworkDates = ['2021', '2022'];
+
+        function showSlide(index) {
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            slides[index].classList.add('active');
+            document.getElementById('artwork-title').textContent = artworkTitles[index];
+            document.getElementById('artwork-material').textContent = artworkMaterials[index];
+            document.getElementById('artwork-size').textContent = artworkSizes[index];
+            document.getElementById('artwork-date').textContent = artworkDates[index];
+        }
+
+        document.getElementById('prev').addEventListener('click', () => {
+            currentSlide = (currentSlide + slides.length - 1) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        document.getElementById('next').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        showSlide(currentSlide);
+    </script>
 </body>
 </html>
-
 
 
