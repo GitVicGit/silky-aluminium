@@ -4,92 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art Gallery</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden; /* Prevent scrolling */
-            font-family: sans-serif; /* Sans-serif font */
-            background-color: white; /* Background color */
-            font-size: 16px; /* Base font size for consistency */
-        }
-        .container {
-            display: flex;
-            height: 100vh; /* Full viewport height */
-            overflow: hidden; /* Prevent scrolling inside container */
-        }
-        .navigation {
-            padding: 32px; /* Consistent padding */
-            background-color: transparent; /* Make navigation pane transparent */
-            width: 300px; /* Adjust width if necessary */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-sizing: border-box; /* Include padding in the width */
-        }
-        .navigation a, .navigation p {
-            margin: 0; /* Remove default margin */
-            color: black;
-            text-decoration: none;
-            line-height: 1.5; /* Adjust line height for readability */
-        }
-        .navigation a:visited {
-            color: black;
-        }
-        .navigation a:hover {
-            text-decoration: underline;
-            cursor: pointer;
-        }
-        .navigation > div:first-child {
-            margin-top: 0; /* Adjust if necessary */
-        }
-        .navigation > div:first-child p {
-            font-weight: bold;
-            font-size: 2em; /* Adjust if text still doesn't fit */
-            text-transform: uppercase; /* Uppercase letters */
-            white-space: nowrap; /* Ensure it's on a single line */
-        }
-        .gallery {
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: white;
-            padding-top: 32px; /* Double the top white border */
-            padding-bottom: 32px; /* Double the bottom white border */
-        }
-        .gallery-slide {
-            width: calc(100% - 300px); /* Adjust based on the width of the navigation */
-            height: calc(100vh - 64px); /* Adjust based on the vertical padding */
-            display: none; /* Hide slides by default */
-            justify-content: center;
-            align-items: center;
-        }
-        .gallery-slide.active {
-            display: flex; /* Show the active slide */
-        }
-        .gallery-slide img {
-            max-width: 100%;
-            max-height: 100%;
-            display: block; /* Remove extra space below the image */
-        }
-        .artwork-description, .artwork-description a {
-            font-size: 16px; /* Same font size as About, Contact etc. */
-            padding-left: 32px; /* Align with navigation text */
-        }
-        .artwork-description p {
-            margin: 8px 0; /* Spacing between description lines */
-        }
-        .artwork-description p:first-child {
-            font-weight: bold; /* Only the title in bold */
-        }
-        .artwork-description a {
-            display: inline-block; /* Prev and Next on the same line */
-            margin: 16px 10px 0; /* Space before and between Prev/Next links */
-        }
-    </style>
+    <link rel="stylesheet" href="style.css"> <!-- External CSS file -->
 </head>
 <body>
     <div class="container">
@@ -97,10 +12,10 @@
             <div>
                 <p>VICTOR GUERIN</p>
                 <br><br> <!-- Two blank lines -->
-                <a href="#about">About</a><br>
-                <a href="#contact">Contact</a><br>
-                <a href="https://instagram.com">Instagram</a><br>
-                <a href="https://linkedin.com">LinkedIn</a>
+                <a href="artistic_statement.html">Artistic Statement</a><br>
+                <a href="mailto:victorguerin.fr+web@pm.me"><img src="email_icon.png" alt="Email"></a><br>
+                <a href="https://www.instagram.com/victorguerin.fr/?hl=fr"><img src="instagram_icon.png" alt="Instagram"></a><br>
+                <a href="https://www.linkedin.com/in/guerinvictor/"><img src="linkedin_icon.png" alt="LinkedIn"></a>
             </div>
             <div class="artwork-description">
                 <p id="artwork-title">Titre de l'œuvre</p>
@@ -114,47 +29,15 @@
         </div>
         <div class="gallery">
             <div class="gallery-slide active">
-            <img src="Natures_chromatic_symphony.jpg" alt="Artwork 1">
+                <img src="Natures_chromatic_symphony.jpg" alt="Artwork 1">
             </div>
             <div class="gallery-slide">
                 <img src="victor0731.jpg" alt="Artwork 2">
-   		  </div>
-          	  <!-- Add more slides as needed -->
+            </div>
+            <!-- Add more slides as needed -->
         </div>
     </div>
 
-    <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.gallery-slide');
-        const artworkTitles = ['Premier Titre', 'Deuxième Titre'];
-        const artworkMaterials = ['Huile sur toile', 'Aquarelle'];
-        const artworkSizes = ['50x70cm', '30x40cm'];
-        const artworkDates = ['2021', '2022'];
-
-        function showSlide(index) {
-            slides.forEach(slide => {
-                slide.classList.remove('active');
-            });
-            slides[index].classList.add('active');
-            document.getElementById('artwork-title').textContent = artworkTitles[index];
-            document.getElementById('artwork-material').textContent = artworkMaterials[index];
-            document.getElementById('artwork-size').textContent = artworkSizes[index];
-            document.getElementById('artwork-date').textContent = artworkDates[index];
-        }
-
-        document.getElementById('prev').addEventListener('click', () => {
-            currentSlide = (currentSlide + slides.length - 1) % slides.length;
-            showSlide(currentSlide);
-        });
-
-        document.getElementById('next').addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        });
-
-        showSlide(currentSlide);
-    </script>
+    <script src="script.js"></script> <!-- External JavaScript file -->
 </body>
 </html>
-
-
