@@ -20,12 +20,13 @@
             overflow: hidden; /* Prevent scrolling inside container */
         }
         .navigation {
-            padding-left: 16px;
+            padding: 16px;
             background-color: white;
             width: 250px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            box-sizing: border-box; /* Include padding in the width */
         }
         .navigation a, .navigation p {
             margin: 0; /* Remove default margin */
@@ -39,23 +40,30 @@
             text-decoration: underline;
             cursor: pointer;
         }
+        .navigation > div:first-child p:first-child {
+            font-weight: bold;
+            font-size: 2em; /* Double the size */
+            text-transform: uppercase; /* Uppercase letters */
+        }
         .gallery {
             flex-grow: 1;
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: white;
+            margin-top: 16px; /* Top white border */
+            margin-bottom: 16px; /* Bottom white border */
         }
         .gallery-slide {
-            display: none;
+            display: none; /* Hide slides by default */
             width: calc(100% - 250px); /* Adjust based on the width of the navigation */
-            height: 100vh; /* Full viewport height */
+            height: calc(100vh - 32px); /* Adjust based on the margin */
             display: flex; /* Use flex to center the image vertically and horizontally */
             justify-content: center;
             align-items: center;
         }
         .gallery-slide.active {
-            display: flex; /* Changed to keep the image centered */
+            display: flex; /* Show the active slide */
         }
         .gallery-slide img {
             max-width: 100%;
@@ -68,6 +76,11 @@
         }
         .artwork-description p {
             margin: 4px 0; /* Spacing between description lines */
+            font-weight: bold; /* Titles in bold */
+        }
+        .artwork-description a {
+            display: block; /* Separate line for Prev/Next links */
+            margin-top: 16px; /* Add space before Prev/Next links */
         }
         #prev, #next {
             cursor: pointer; /* Change cursor to pointer */
@@ -78,7 +91,7 @@
     <div class="container">
         <div class="navigation">
             <div>
-                <p>Nom d'Artiste</p>
+                <p>VICTOR GUERIN</p>
                 <a href="#about">About</a><br>
                 <a href="#contact">Contact</a><br>
                 <a href="https://instagram.com">Instagram</a><br>
@@ -89,7 +102,7 @@
                 <p id="artwork-material">Matériel</p>
                 <p id="artwork-size">Taille</p>
                 <p id="artwork-date">Date</p>
-                <a href="javascript:void(0);" id="prev">Prev</a> | 
+                <a href="javascript:void(0);" id="prev">Prev</a>
                 <a href="javascript:void(0);" id="next">Next</a>
             </div>
         </div>
@@ -137,5 +150,6 @@
     </script>
 </body>
 </html>
+
 
 
