@@ -1,78 +1,106 @@
-
-**CSS (style.css):**
-```css
-/* Basic Reset */
-* {
+body, html {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
     font-family: 'Arial', sans-serif;
-    color: white;
-    background-color: #333;
+    background-color: #1a1a1a; /* Dark background */
+    color: white; /* Light text */
 }
 
 header {
     background-color: #222;
-    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-header nav ul {
-    list-style-type: none;
-    text-align: center;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
 }
 
-header nav ul li {
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
     display: inline;
-    margin: 0 20px;
+    margin-left: 20px;
 }
 
-header nav ul li a {
-    color: white;
+.nav-links a {
     text-decoration: none;
-    font-size: 18px;
+    color: white;
+    transition: color 0.3s ease-in-out;
 }
 
-main {
+.nav-links a:hover {
+    color: #a8a8a8;
+}
+
+.section {
     padding: 50px 10%;
 }
 
-#home {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-#home img {
-    max-width: 200px;
-    border-radius: 50%;
-}
-
-#home h1 {
-    margin-top: 20px;
-}
-
-.art-piece {
-    margin-bottom: 50px;
-}
-
-.art-piece img {
-    width: 100%; /* Adjust based on your preference */
-    margin-bottom: 20px;
-}
-
 footer {
+    text-align: center;
+    padding: 20px;
     background-color: #222;
     color: white;
-    text-align: center;
-    padding: 20px 0;
 }
 
-@media (max-width: 600px) {
-    header nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
+
+.fullscreen-gallery {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
 }
-```
+
+.gallery-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 1s ease;
+    opacity: 0;
+}
+
+.gallery-slide.active {
+    opacity: 1;
+}
+
+.gallery-info {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.gallery-controls span {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 30px;
+    user-select: none;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0 3px 3px 0; /* Right arrow */
+}
+
+.gallery-controls .prev {
+    left: 0;
+    border-radius: 3px 0 0 3px; /* Left arrow */
+}
+
+.gallery-controls .next {
+    right: 0;
+}
+
+/* Add responsiveness and other styling as needed */
+
