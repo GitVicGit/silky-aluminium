@@ -13,7 +13,7 @@
             overflow: hidden;
             font-family: sans-serif;
             background-color: white;
-            font-size: 18px; /* Adjusted font size */
+            font-size: 17px; /* Adjusted font size */
         }
         .container {
             display: flex;
@@ -23,18 +23,20 @@
         .navigation {
             padding: 20px;
             background-color: transparent;
-            width: 500px; 
+            width: 300px; 
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* Changed to flex-start for vertical alignment */
+            justify-content: space-between;
             box-sizing: border-box;
+            padding-left: 20px;
         }
         .navigation a, .navigation p {
             margin: 0;
             color: black;
             text-decoration: none;
-            font-size: 20px; 
-            line-height: 1.5; /* Improved line spacing */
+            line-height: 1.5;
+            margin-left: 0; /* Align text and links to the left border */
+            text-align: left; /* Align text to the left */
         }
         .navigation a:visited {
             color: black;
@@ -42,16 +44,11 @@
         .navigation a:hover {
             text-decoration: none; /* Remove underline on hover */
         }
-        .navigation > div:first-child {
-            display: flex; /* New - Makes sure items align vertically */
-            flex-direction: column; /* Stack elements vertically */
-            align-items: flex-start; /* Align items to the left */
-        }
-        .navigation > div:first-child a, .navigation > div:first-child p {
+        .navigation > div:first-child p {
             font-weight: bold;
-            font-size: 2.2em; /* Adjusted for visibility */
+            font-size: 2.1em;
             text-transform: uppercase;
-            margin-bottom: 20px; /* Added spacing */
+            white-space: nowrap;
         }
         .content {
             flex-grow: 1;
@@ -78,12 +75,12 @@
     </style>
 </head>
 <body>
-    <div class="container">
+     <div class="container">
         <div class="navigation">
             <div>
-                <a href="index.html">Victor Guerin</a>
-                <br><br> <!-- Added for spacing -->
-                <a href="about.html">About</a><br><br>
+                <p>VICTOR GUERIN</p>
+                <br><br>
+                <a href="about.html">About</a><br><br> <!-- Adjusted spacing -->
                 <a href="mailto:victorguerin.fr+web@pm.me">Email</a><br>
                 <a href="https://www.instagram.com/victorguerin.fr/">Instagram</a><br>
                 <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a>
@@ -91,7 +88,6 @@
         </div>
         <div class="content">
             <div> <!-- Added div for better text alignment -->
-                <h1>About Me</h1>
                 <p>Here you can introduce yourself - your background, your passions, and your art. This is your chance to tell your story to the visitors of your site. Share your journey, what inspires you, and the process of your art creation.</p>
                 <p>Feel free to add more information about your achievements, exhibitions, or any other aspects of your art career that you think are relevant and interesting for your audience.</p>
             </div>
