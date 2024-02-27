@@ -19,7 +19,6 @@
         }
         .navigation {
             padding-left: 16px;
-            padding-bottom: 16px; /* Same space at the bottom as the left */
             background-color: white;
             width: 250px;
             display: flex;
@@ -34,33 +33,37 @@
         .navigation a:visited {
             color: black;
         }
+        .navigation a:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
         .gallery {
             flex-grow: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #f0f0f0;
-            padding: 16px; /* Distance from top and bottom */
+            background-color: white;
+            padding-top: 16px; /* Distance from top */
+            padding-bottom: 16px; /* Distance from bottom */
         }
         .gallery-slide {
             display: none;
             max-width: calc(100% - 250px); /* Adjust based on the width of the navigation */
-            max-height: 100%;
+            max-height: calc(100% - 32px); /* Adjust based on padding */
             margin: auto; /* Center the image */
         }
         .gallery-slide.active {
-            display: flex;
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
+            display: block; /* Changed from flex to block */
         }
         .gallery-slide img {
             max-width: 100%;
             max-height: 100%;
             display: block; /* Remove extra space below the image */
+            margin: auto; /* Center the image */
         }
         .artwork-description {
             font-size: 14px;
-            padding-bottom: 16px; /* Space at the bottom */
+            padding-left: 16px; /* Align with navigation text */
         }
         .artwork-description p {
             margin: 4px 0; /* Spacing between description lines */
@@ -88,8 +91,8 @@
                 <p id="artwork-material">Matériel</p>
                 <p id="artwork-size">Taille</p>
                 <p id="artwork-date">Date</p>
-                <a href="#" id="prev">Prev</a> | 
-                <a href="#" id="next">Next</a>
+                <a href="javascript:void(0);" id="prev">Prev</a> | 
+                <a href="javascript:void(0);" id="next">Next</a>
             </div>
         </div>
         <div class="gallery">
@@ -116,13 +119,11 @@
                 slide.classList.remove('active');
             });
             slides[index].classList.add('active');
-            document.getElementById('artwork-title').innerText = artworkTitles[index];
-            document.getElementById('artwork-material').innerText = artworkMaterials[index];
-            document.getElementById('artwork-size').innerText = artworkSizes[index];
-            document.getElementById('artwork-date').innerText = artworkDates[index];
+            document.getElementById('artwork-title').textContent = artworkTitles[index];
+            document.getElementById('artwork-material').textContent = artworkMaterials[index];
+            document.getElementById('artwork-size').textContent = artworkSizes[index];
+            document.getElementById('artwork-date').textContent = artworkDates[index];
         }
-
-        showSlide(currentSlide);
 
         document.getElementById('prev').addEventListener('click', () => {
             currentSlide = (currentSlide + slides.length - 1) % slides.length;
@@ -133,6 +134,8 @@
             currentSlide = (currentSlide + 1) % slides.length;
             showSlide(currentSlide);
         });
+
+        showSlide(currentSlide);
     </script>
 </body>
 </html>
