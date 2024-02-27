@@ -13,7 +13,7 @@
             overflow: hidden; /* Prevent scrolling */
             font-family: sans-serif; /* Sans-serif font */
             background-color: white; /* Background color */
-            font-size: 16px; /* Increase all text size by 2 */
+            font-size: 16px; /* Base font size for consistency */
         }
         .container {
             display: flex;
@@ -21,9 +21,9 @@
             overflow: hidden; /* Prevent scrolling inside container */
         }
         .navigation {
-            padding: 32px; /* Increased padding */
-            background-color: white;
-            width: 300px; /* Increased width if needed */
+            padding: 32px; /* Consistent padding */
+            background-color: transparent; /* Make navigation pane transparent */
+            width: 300px; /* Adjust width if necessary */
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -43,13 +43,12 @@
             cursor: pointer;
         }
         .navigation > div:first-child {
-            margin-top: 0; /* Adjust space if necessary */
+            margin-top: 0; /* Adjust if necessary */
         }
         .navigation > div:first-child p {
             font-weight: bold;
-            font-size: 4em; /* Double the size for artist name */
+            font-size: 2em; /* Adjust if text still doesn't fit */
             text-transform: uppercase; /* Uppercase letters */
-            margin-bottom: 32px; /* Adjusted space before 'About' */
             white-space: nowrap; /* Ensure it's on a single line */
         }
         .gallery {
@@ -76,8 +75,8 @@
             max-height: 100%;
             display: block; /* Remove extra space below the image */
         }
-        .artwork-description {
-            font-size: 28px; /* Increase font size */
+        .artwork-description, .artwork-description a {
+            font-size: 16px; /* Same font size as About, Contact etc. */
             padding-left: 32px; /* Align with navigation text */
         }
         .artwork-description p {
@@ -88,7 +87,7 @@
         }
         .artwork-description a {
             display: inline-block; /* Prev and Next on the same line */
-            margin: 32px 10px 0; /* Space before and between Prev/Next links */
+            margin: 16px 10px 0; /* Space before and between Prev/Next links */
         }
     </style>
 </head>
@@ -114,49 +113,11 @@
             </div>
         </div>
         <div class="gallery">
-            <div class="gallery-slide active">
-                <img src="Natures_chromatic_symphony.jpg" alt="Artwork 1">
-            </div>
-            <div class="gallery-slide">
-                <img src="victor0731.jpg" alt="Artwork 2">
-            </div>
-            <!-- Add more slides as needed -->
+            <!-- Gallery slides go here -->
         </div>
     </div>
-
-    <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.gallery-slide');
-        const artworkTitles = ['Premier Titre', 'Deuxième Titre'];
-        const artworkMaterials = ['Huile sur toile', 'Aquarelle'];
-        const artworkSizes = ['50x70cm', '30x40cm'];
-        const artworkDates = ['2021', '2022'];
-
-        function showSlide(index) {
-            slides.forEach(slide => {
-                slide.classList.remove('active');
-            });
-            slides[index].classList.add('active');
-            document.getElementById('artwork-title').textContent = artworkTitles[index];
-            document.getElementById('artwork-material').textContent = artworkMaterials[index];
-            document.getElementById('artwork-size').textContent = artworkSizes[index];
-            document.getElementById('artwork-date').textContent = artworkDates[index];
-        }
-
-        document.getElementById('prev').addEventListener('click', () => {
-            currentSlide = (currentSlide + slides.length - 1) % slides.length;
-            showSlide(currentSlide);
-        });
-
-        document.getElementById('next').addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        });
-
-        showSlide(currentSlide);
-    </script>
+    <!-- JavaScript for slide control goes here -->
 </body>
 </html>
-
 
 
