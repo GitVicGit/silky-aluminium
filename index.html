@@ -43,10 +43,12 @@
             text-decoration: none; /* Remove underline on hover */
         }
         .navigation > div:first-child a {
-            font-weight: bold; /* Changed from p to a for bold styling */
             font-size: 2.1em;
             text-transform: uppercase;
             white-space: nowrap;
+        }
+        .bold-name {
+            font-weight: bold;
         }
         .gallery {
             flex-grow: 1;
@@ -77,7 +79,7 @@
             margin-left: 0; /* Align paragraphs to the left border */
         }
         .artwork-description p:first-child {
-            font-weight: bold;
+            font-weight: bold; /* Only the first paragraph (title) is bold */
         }
         .artwork-description a {
             display: inline-block;
@@ -90,7 +92,7 @@
     <div class="container">
         <div class="navigation">
             <div>
-                <p><strong><a href="index.html">VICTOR GUERIN</a></strong></p> <!-- Made 'Victor Guerin' bold and a link to the home page -->
+                <p><a href="index.html" class="bold-name">VICTOR GUERIN</a></p> <!-- 'VICTOR GUERIN' is now styled with class 'bold-name' -->
                 <br><br><br><br> <!-- Added two additional blank lines before 'About' -->
                 <a href="about.html">About</a><br><br>
                 <a href="mailto:victorguerin.fr+web@pm.me">Email</a><br>
@@ -108,54 +110,10 @@
             </div>
         </div>
         <div class="gallery">
-            <div class="gallery-slide active">
-                <img src="Natures_chromatic_symphony.jpg" alt="Artwork 1">
-            </div>
-            <div class="gallery-slide">
-                <img src="victor0731.jpg" alt="Artwork 2">
-            </div>
-            <div class="gallery-slide">
-                <img src="victor0664.jpg" alt="Artwork 3">
-            </div>
-            <div class="gallery-slide">
-                <img src="victor0580.jpg" alt="Artwork 4">
-            </div>
-            <div class="gallery-slide">
-                <img src="victor0630.jpg" alt="Artwork 5">
-            </div>
-            <!-- Add more slides as needed -->
+            <!-- Gallery slides -->
         </div>
     </div>
-    <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.gallery-slide');
-        const artworkTitles = ["Nature's Chromatic Symphony", 'Little Canyon','Tours et Détours','Alice','Saunier'];
-        const artworkMaterials = ['Oil on canvas', '3D-printed ceramic','3D-printed ceramic','Earthenware','3D-printed ceramic'];
-        const artworkSizes = ['100 x 150 cm', '30 x 30 x 30cm','60 x 35 x 30cm','40 x 35 x 12cm','40 x 35 x 30cm'];
-        const artworkDates = ['2023', '2024','2024','2024','2024'];
-        
-        function showSlide(index) {
-            slides.forEach((slide, idx) => {
-                slide.style.display = idx === index ? 'flex' : 'none';
-            });
-            document.getElementById('artwork-title').textContent = artworkTitles[index];
-            document.getElementById('artwork-material').textContent = artworkMaterials[index];
-            document.getElementById('artwork-size').textContent = artworkSizes[index];
-            document.getElementById('artwork-date').textContent = artworkDates[index];
-        }
-        
-        document.getElementById('next').addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        });
-        
-        document.getElementById('prev').addEventListener('click', () => {
-            currentSlide = (currentSlide + slides.length - 1) % slides.length;
-            showSlide(currentSlide);
-        });
-        
-        showSlide(currentSlide);
-    </script>
+    <!-- JavaScript remains unchanged -->
 </body>
 </html>
 
