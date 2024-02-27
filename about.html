@@ -3,38 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artistic Statement</title>
+    <title>About - Victor Guerin</title>
     <style>
-        body {
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
             font-family: sans-serif;
-            margin: 40px;
+            background-color: white;
             font-size: 16px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
         }
-        .statement {
-            text-align: justify;
-            text-justify: inter-word;
-            width: 60%; /* Adjusted for better layout */
-            max-width: 600px; /* Same width as a square image */
+        .container {
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .navigation {
+            padding: 20px;
+            background-color: transparent;
+            width: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+        .navigation a, .navigation p {
+            margin: 0;
+            color: black;
+            text-decoration: none;
+            line-height: 1.4;
+        }
+        .navigation a:visited {
+            color: black;
+        }
+        .navigation a:hover {
+            text-decoration: none;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .content h1 {
+            margin-top: 0;
+        }
+        .content p {
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
-    <div class="statement">
-
-        <p>Born in rural France, Victor Guerin cultivated an early fascination with detail and complexity in the natural world, experiences that profoundly shaped his artistic outlook and thematic focus.</p>
-        
-       <p>Initially embarking on a career as a mechanical and industrial engineer (MEng, MSc), Victor worked for Dior, in fine jewellery on Place Vendôme for Louis Vuitton, and as the director of production for Hervé Van der Straeten at just 25.This phase of his life, marked by a relentless pursuit of perfection and a deep appreciation for craftsmanship, nurtured his burgeoning artistic sensibility and scientific curiosity. The discipline and precision that were hallmarks of his engineering work, while seemingly apart from the fluidity of art, are providing Victor with a unique lens to explore metaphysical questions of form, function, and the essence of  beauty. 
-In 2020 Victor started transitioning to art, painting in his living room. His commitment to limited, yet precisely curated colour palettes, led to successful exhibitions across London, Edinburgh, Jersey, and Guernsey. These works granted him a scholarship and further funding allowing him to pursue Sculpture (MA) at the Royal College of Art in 2023. This period signified a crucial evolution in Victor’s artistic development, marrying engineering precision with an expanding freedom of expression. His sculptures, which merge modernist cues with timeless elegance and utilise materials from recycled bronze to avant-garde 3D printed ceramic, underscore a steadfast commitment to sustainability. </p>
-        
-              <p> Victor’s creative ethos is characterised by the exhilarating and transformative journey of finding the delicate equilibrium between  technical skill, freedom of experimentation, and reflection of his innermost self. The 3D printed porcelain 'Ephemeral Structures' series  showcases the harmony  between technology and nature, where geometric precision fusions with organic spontaneity. Beyond the tangible, his creations  delve into metaphysical themes of existence, challenging viewers to  engage deeply with the art. Victor's philosophy, which sees nature as an  intricate masterpiece, encourages a reevaluation of the boundaries  between the engineered and organic. Through his art, he invites us to  explore a world where the fantastical is woven into our natural  environment, urging a reflection on our interconnectedness with it, reminding us we are a part of nature, not apart from it. 
-Looking forward, Victor envisions creating large-scale installations that prompt interaction and contemplation, addressing global environmental concerns through the lens of sustainability. </p>
-        
-       <p>In 2023 Victor received international  acclaim when he was chosen to represent both the UK and the Island of Jersey at the prestigious Silk Road artist residency in China, amongst  84 artists from 83 countries. His artistic achievements include having  his works collected by the government of China, a recognition that  underscores the significance of his contributions to contemporary art.  Additionally, Victor's works are privately collected across the UK and Chanel Islands, Canada, China and France. 
-</p>
+    <div class="container">
+        <div class="navigation">
+            <div>
+                <p>VICTOR GUERIN</p>
+                <br><br>
+                <a href="/">Home</a><br>
+                <a href="mailto:victorguerin.fr+web@pm.me">Email</a><br>
+                <a href="https://www.instagram.com/victorguerin.fr/?hl=fr">Instagram</a><br>
+                <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a>
+            </div>
+        </div>
+        <div class="content">
+            <h1>About Me</h1>
+            <p>Here you can introduce yourself - your background, your passions, and your art. This is your chance to tell your story to the visitors of your site. Share your journey, what inspires you, and the process of your art creation.</p>
+            <p>Feel free to add more information about your achievements, exhibitions, or any other aspects of your art career that you think are relevant and interesting for your audience.</p>
+        </div>
     </div>
 </body>
 </html>
+
+
