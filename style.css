@@ -1,9 +1,12 @@
+
+
+
 body, html {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #fff; /* White background */
-    color: black; /* Dark text */
+    background-color: #fff;
+    color: black;
 }
 
 .sidebar {
@@ -27,7 +30,7 @@ body, html {
     margin-bottom: 20px;
     text-decoration: none;
     color: black;
-    transition: color 0.3s ease-in-out;
+    transition: color 0.3s;
 }
 
 .navbar a:hover {
@@ -38,15 +41,19 @@ body, html {
     margin-left: 300px; /* Same as sidebar width */
     position: relative;
     width: calc(100% - 300px);
-    height: 100vh;
-    overflow: hidden;
+    height: calc(100vh - (100vh / 20)); /* Adjust for top/bottom spacing */
+    top: 5vh; /* Half of the calculated margin to center vertically */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .gallery-slide {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-size: cover;
+    background-size: contain; /* Change to contain to see full image */
+    background-repeat: no-repeat;
     background-position: center;
     transition: opacity 1s ease;
     opacity: 0;
@@ -58,34 +65,35 @@ body, html {
 
 .gallery-info {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    bottom: 0;
+    left: 350px; /* Adjusted to be under the sidebar area */
+    color: black;
     padding: 15px;
-    border-radius: 5px;
     font-size: 16px;
     line-height: 1.6;
+    background: none; /* Transparent background */
 }
 
-.gallery-controls span {
-    cursor: pointer;
+.gallery-controls {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    color: white;
-    font-size: 30px;
-    user-select: none;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 0 3px 3px 0; /* Right arrow */
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between buttons */
 }
 
-.gallery-controls .prev {
-    left: 300px; /* Same as sidebar width */
-    border-radius: 3px 0 0 3px; /* Left arrow */
+.gallery-controls button {
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-.gallery-controls .next {
-    right: 0;
+.gallery-controls button:hover {
+    background-color: #e1e1e1;
 }
+
