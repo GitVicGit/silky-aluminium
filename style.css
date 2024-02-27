@@ -1,6 +1,3 @@
-
-
-
 body, html {
     margin: 0;
     padding: 0;
@@ -9,25 +6,22 @@ body, html {
     color: black;
 }
 
-.sidebar {
+.floating-nav {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 300px;
-    height: 100%;
-    background-color: #f1f1f1;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+    top: 50px;
+    left: 50px;
+    color: black;
+    background-color: transparent;
 }
 
 .logo {
     font-size: 24px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .navbar a {
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-decoration: none;
     color: black;
     transition: color 0.3s;
@@ -38,21 +32,19 @@ body, html {
 }
 
 .fullscreen-gallery {
-    margin-left: 300px; /* Same as sidebar width */
     position: relative;
-    width: calc(100% - 300px);
-    height: calc(100vh - (100vh / 20)); /* Adjust for top/bottom spacing */
-    top: 5vh; /* Half of the calculated margin to center vertically */
+    width: 100%;
+    height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
 .gallery-slide {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background-size: contain; /* Change to contain to see full image */
+    width: calc(100% - 60px); /* Adjust based on navigation visibility */
+    height: calc(100% - 120px); /* Adjust based on your needs */
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     transition: opacity 1s ease;
@@ -65,35 +57,5 @@ body, html {
 
 .gallery-info {
     position: absolute;
-    bottom: 0;
-    left: 350px; /* Adjusted to be under the sidebar area */
-    color: black;
-    padding: 15px;
-    font-size: 16px;
-    line-height: 1.6;
-    background: none; /* Transparent background */
-}
-
-.gallery-controls {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Space between buttons */
-}
-
-.gallery-controls button {
-    cursor: pointer;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #f1f1f1;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.gallery-controls button:hover {
-    background-color: #e1e1e1;
-}
+    t
 
