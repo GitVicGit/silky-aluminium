@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Victor Guerin</title>
+    <title>Art Gallery</title>
     <style>
         body, html {
             margin: 0;
@@ -23,7 +23,7 @@
         .navigation {
             padding: 20px;
             background-color: transparent;
-            width: 280px;
+            width: 300px; /* Increased width */
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -33,7 +33,7 @@
             margin: 0;
             color: black;
             text-decoration: none;
-            font-size: 16px; /* Increased font size */
+            line-height: 1.5;
         }
         .navigation a:visited {
             color: black;
@@ -43,23 +43,45 @@
         }
         .navigation > div:first-child p {
             font-weight: bold;
-            font-size: 2.1em; /* Increased font size */
+            font-size: 2.1em;
             text-transform: uppercase;
             white-space: nowrap;
         }
-        .content {
+        .gallery {
             flex-grow: 1;
-            padding: 20px;
-            overflow-y: auto;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: white;
+            padding-left: 20px;
         }
-        .content h1, .content p {
-            font-size: 17px; /* Increased font size */
+        .gallery-slide {
+            width: calc(100% - 300px); /* Adjusted width */
+            height: calc(100vh - 64px);
+            display: none;
+            justify-content: center;
+            align-items: center;
         }
-        .content h1 {
-            margin-top: 0;
+        .gallery-slide.active {
+            display: flex;
         }
-        .content p {
-            line-height: 1.6;
+        .gallery-slide img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .artwork-description, .artwork-description a {
+            font-size: 17px;
+            padding-left: 20px;
+        }
+        .artwork-description p {
+            margin: 6px 0;
+        }
+        .artwork-description p:first-child {
+            font-weight: bold;
+        }
+        .artwork-description a {
+            display: inline-block;
+            margin: 16px 8px 0;
         }
     </style>
 </head>
@@ -67,20 +89,64 @@
     <div class="container">
         <div class="navigation">
             <div>
-                <a href="index.html">VICTOR GUERIN</a> <!-- Changed to a link for the home page -->
+                <p>VICTOR GUERIN</p>
                 <br><br>
-                <a href="/">About</a><br><br> <!-- Added blank line -->
+                <a href="about.html">About</a><br><br> <!-- Added blank line -->
                 <a href="mailto:victorguerin.fr+web@pm.me">Email</a><br>
                 <a href="https://www.instagram.com/victorguerin.fr/?hl=fr">Instagram</a><br>
                 <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a>
             </div>
+            <div class="artwork-description">
+                <p id="artwork-title">Titre de l'œuvre</p>
+                <p id="artwork-material">Matériel</p>
+                <p id="artwork-size">Taille</p>
+                <p id="artwork-date">Date</p>
+                <br>
+                <a href="javascript:void(0);" id="prev">Prev</a>
+                <a href="javascript:void(0);" id="next">Next</a>
+            </div>
         </div>
-        <div class="content">
-            <h1>About Me</h1>
-            <p>Here you can introduce yourself - your background, your passions, and your art. This is your chance to tell your story to the visitors of your site. Share your journey, what inspires you, and the process of your art creation.</p>
-            <p>Feel free to add more information about your achievements, exhibitions, or any other aspects of your art career that you think are relevant and interesting for your audience.</p>
+        <div class="gallery">
+            <div class="gallery-slide active">
+                <img src="Natures_chromatic_symphony.jpg" alt="Artwork 1">
+            </div>
+            <div class="gallery-slide">
+                <img src="victor0731.jpg" alt="Artwork 2">
+            </div>
+            <!-- Add more slides as needed -->
         </div>
     </div>
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.gallery-slide');
+        const artworkTitles = ['Premier Titre', 'Deuxième Titre'];
+        const artworkMaterials = ['Huile sur toile', 'Aquarelle'];
+        const artworkSizes = ['50x70cm', '30x40cm'];
+        const artworkDates = ['2021', '2022'];
+
+        function showSlide(index) {
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            slides[index].classList.add('active');
+            document.getElementById('artwork-title').textContent = artworkTitles[index];
+            document.getElementById('artwork-material').textContent = artworkMaterials[index];
+            document.getElementById('artwork-size').textContent = artworkSizes[index];
+            document.getElementById('artwork-date').textContent = artworkDates[index];
+        }
+
+        document.getElementById('prev').addEventListener('click', () => {
+            currentSlide = (currentSlide + slides.length - 1) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        document.getElementById('next').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        showSlide(currentSlide);
+    </script>
 </body>
 </html>
 
