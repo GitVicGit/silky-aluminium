@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Victor Guerin</title>
+    <title>Art Gallery</title>
     <style>
         body, html {
             margin: 0;
@@ -13,7 +13,7 @@
             overflow: hidden;
             font-family: sans-serif;
             background-color: white;
-            font-size: 18px; /* Adjusted font size */
+            font-size: 17px; /* Increased font size */
         }
         .container {
             display: flex;
@@ -23,18 +23,17 @@
         .navigation {
             padding: 20px;
             background-color: transparent;
-            width: 500px; 
+            width: 300px; /* Increased width */
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* Changed to flex-start for vertical alignment */
+            justify-content: space-between;
             box-sizing: border-box;
         }
         .navigation a, .navigation p {
             margin: 0;
             color: black;
             text-decoration: none;
-            font-size: 20px; 
-            line-height: 1.5; /* Improved line spacing */
+            line-height: 1.5;
         }
         .navigation a:visited {
             color: black;
@@ -42,38 +41,47 @@
         .navigation a:hover {
             text-decoration: none; /* Remove underline on hover */
         }
-        .navigation > div:first-child {
-            display: flex; /* New - Makes sure items align vertically */
-            flex-direction: column; /* Stack elements vertically */
-            align-items: flex-start; /* Align items to the left */
-        }
-        .navigation > div:first-child a, .navigation > div:first-child p {
+        .navigation > div:first-child p {
             font-weight: bold;
-            font-size: 2.2em; /* Adjusted for visibility */
+            font-size: 2.1em;
             text-transform: uppercase;
-            margin-bottom: 20px; /* Added spacing */
+            white-space: nowrap;
         }
-        .content {
+        .gallery {
             flex-grow: 1;
             display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: white;
+            padding-left: 20px;
+        }
+        .gallery-slide {
+            width: calc(100% - 300px); /* Adjusted width */
+            height: calc(100vh - 64px);
+            display: none;
             justify-content: center;
             align-items: center;
-            padding: 20px;
-            overflow-y: auto;
-            text-align: justify; /* Justified text */
         }
-        .content div {
-            max-width: 900px; /* Set a max width for text */
-            margin: auto;
+        .gallery-slide.active {
+            display: flex;
         }
-        .content h1, .content p {
-            font-size: 20px; /* Consistent font size */
+        .gallery-slide img {
+            max-width: 100%;
+            max-height: 100%;
         }
-        .content h1 {
-            margin-top: 0;
+        .artwork-description, .artwork-description a {
+            font-size: 17px;
+            padding-left: 20px;
         }
-        .content p {
-            line-height: 1.6;
+        .artwork-description p {
+            margin: 6px 0;
+        }
+        .artwork-description p:first-child {
+            font-weight: bold;
+        }
+        .artwork-description a {
+            display: inline-block;
+            margin: 16px 8px 0;
         }
     </style>
 </head>
@@ -81,21 +89,66 @@
     <div class="container">
         <div class="navigation">
             <div>
-                <a href="index.html">Victor Guerin</a>
-                <br><br> <!-- Added for spacing -->
-                <a href="about.html">About</a><br><br>
+                <p>VICTOR GUERIN</p>
+                <br><br>
+                <a href="about.html">About</a><br><br> <!-- Added blank line -->
                 <a href="mailto:victorguerin.fr+web@pm.me">Email</a><br>
-                <a href="https://www.instagram.com/victorguerin.fr/">Instagram</a><br>
+                <a href="https://www.instagram.com/victorguerin.fr/?hl=fr">Instagram</a><br>
                 <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a>
             </div>
-        </div>
-        <div class="content">
-            <div> <!-- Added div for better text alignment -->
-                <h1>About Me</h1>
-                <p>Here you can introduce yourself - your background, your passions, and your art. This is your chance to tell your story to the visitors of your site. Share your journey, what inspires you, and the process of your art creation.</p>
-                <p>Feel free to add more information about your achievements, exhibitions, or any other aspects of your art career that you think are relevant and interesting for your audience.</p>
+            <div class="artwork-description">
+                <p id="artwork-title">Titre de l'œuvre</p>
+                <p id="artwork-material">Matériel</p>
+                <p id="artwork-size">Taille</p>
+                <p id="artwork-date">Date</p>
+                <br>
+                <a href="javascript:void(0);" id="prev">Prev</a>
+                <a href="javascript:void(0);" id="next">Next</a>
             </div>
         </div>
+        <div class="gallery">
+            <div class="gallery-slide active">
+                <img src="Natures_chromatic_symphony.jpg" alt="Artwork 1">
+            </div>
+            <div class="gallery-slide">
+                <img src="victor0731.jpg" alt="Artwork 2">
+            </div>
+            <!-- Add more slides as needed -->
+        </div>
     </div>
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.gallery-slide');
+        const artworkTitles = ['Premier Titre', 'Deuxième Titre'];
+        const artworkMaterials = ['Huile sur toile', 'Aquarelle'];
+        const artworkSizes = ['50x70cm', '30x40cm'];
+        const artworkDates = ['2021', '2022'];
+
+        function showSlide(index) {
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            slides[index].classList.add('active');
+            document.getElementById('artwork-title').textContent = artworkTitles[index];
+            document.getElementById('artwork-material').textContent = artworkMaterials[index];
+            document.getElementById('artwork-size').textContent = artworkSizes[index];
+            document.getElementById('artwork-date').textContent = artworkDates[index];
+        }
+
+        document.getElementById('prev').addEventListener('click', () => {
+            currentSlide = (currentSlide + slides.length - 1) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        document.getElementById('next').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        showSlide(currentSlide);
+    </script>
 </body>
 </html>
+
+
+
