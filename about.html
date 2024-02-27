@@ -13,7 +13,7 @@
             overflow: hidden;
             font-family: sans-serif;
             background-color: white;
-            font-size: 17px; /* Adjusted font size */
+            font-size: 17px;
         }
         .container {
             display: flex;
@@ -28,23 +28,20 @@
             flex-direction: column;
             justify-content: space-between;
             box-sizing: border-box;
-            padding-left: 20px;
         }
         .navigation a, .navigation p {
             margin: 0;
             color: black;
             text-decoration: none;
             line-height: 1.5;
-            margin-left: 0; /* Align text and links to the left border */
-            text-align: left; /* Align text to the left */
         }
         .navigation a:visited {
             color: black;
         }
         .navigation a:hover {
-            text-decoration: none; /* Remove underline on hover */
+            text-decoration: none;
         }
-        .navigation > div:first-child p {
+        .navigation > div:first-child a, .navigation > div:first-child p {
             font-weight: bold;
             font-size: 2.1em;
             text-transform: uppercase;
@@ -57,14 +54,14 @@
             align-items: center;
             padding: 20px;
             overflow-y: auto;
-            text-align: justify; /* Justified text */
+            text-align: justify;
         }
         .content div {
-            max-width: 900px; /* Set a max width for text */
+            max-width: 900px;
             margin: auto;
         }
         .content h1, .content p {
-            font-size: 20px; /* Consistent font size */
+            font-size: 20px;
         }
         .content h1 {
             margin-top: 0;
@@ -75,19 +72,28 @@
     </style>
 </head>
 <body>
-     <div class="container">
+    <div class="container">
         <div class="navigation">
             <div>
-                <p>VICTOR GUERIN</p>
+                <a href="index.html">Victor Guerin</a> <!-- Make 'Victor Guerin' a link to the home page -->
                 <br><br>
-                <a href="about.html">About</a><br><br> <!-- Adjusted spacing -->
+                <a href="about.html">About</a><br><br>
                 <a href="mailto:victorguerin.fr+web@pm.me">Email</a><br>
                 <a href="https://www.instagram.com/victorguerin.fr/">Instagram</a><br>
                 <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a>
             </div>
+            <div class="artwork-description">
+                <p id="artwork-title">Titre de l'œuvre</p>
+                <p id="artwork-material">Matériel</p>
+                <p id="artwork-size">Taille</p>
+                <p id="artwork-date">Date</p>
+                <br>
+                <a href="javascript:void(0);" id="prev">Prev</a>
+                <a href="javascript:void(0);" id="next">Next</a>
+            </div>
         </div>
         <div class="content">
-            <div> <!-- Added div for better text alignment -->
+            <div>
                 <p>Here you can introduce yourself - your background, your passions, and your art. This is your chance to tell your story to the visitors of your site. Share your journey, what inspires you, and the process of your art creation.</p>
                 <p>Feel free to add more information about your achievements, exhibitions, or any other aspects of your art career that you think are relevant and interesting for your audience.</p>
             </div>
@@ -95,5 +101,6 @@
     </div>
 </body>
 </html>
+
 
 
