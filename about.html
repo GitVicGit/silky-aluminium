@@ -13,7 +13,7 @@
             overflow: hidden;
             font-family: sans-serif;
             background-color: white;
-            font-size: 20px; /* Increased font size */
+            font-size: 18px; /* Adjusted font size */
         }
         .container {
             display: flex;
@@ -23,7 +23,7 @@
         .navigation {
             padding: 20px;
             background-color: transparent;
-            width: 300px; /* Increased width */
+            width: 600px; /* Doubled the width */
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -33,7 +33,8 @@
             margin: 0;
             color: black;
             text-decoration: none;
-            font-size: 20px; /* Increased font size */
+            font-size: 18px; /* Adjusted for consistency */
+            line-height: 1.5; /* Improved line spacing */
         }
         .navigation a:visited {
             color: black;
@@ -41,19 +42,27 @@
         .navigation a:hover {
             text-decoration: none; /* Remove underline on hover */
         }
-        .navigation > div:first-child a {
+        .navigation > div:first-child a, .navigation > div:first-child p {
             font-weight: bold;
-            font-size: 2.1em; /* Increased font size */
+            font-size: 2.2em; /* Adjusted for visibility */
             text-transform: uppercase;
-            white-space: nowrap;
+            margin-bottom: 20px; /* Added spacing */
         }
         .content {
             flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 20px;
             overflow-y: auto;
+            text-align: justify; /* Justified text */
+        }
+        .content div {
+            max-width: 900px; /* Set a max width for text */
+            margin: auto;
         }
         .content h1, .content p {
-            font-size: 20px; /* Increased font size */
+            font-size: 18px; /* Consistent font size */
         }
         .content h1 {
             margin-top: 0;
@@ -67,17 +76,20 @@
     <div class="container">
         <div class="navigation">
             <div>
-                <a href="index.html">VICTOR GUERIN</a> <!-- Changed to a link for the home page -->
-                <br><br>
-                <a href="about.html">About</a><br><br> <!-- Added blank line -->
+                <a href="index.html">Victor Guerin</a>
+                <br><br> <!-- Added for consistency -->
+                <a href="about.html">About</a><br><br>
                 <a href="mailto:victorguerin.fr+web@pm.me">Email</a><br>
-                <a href="https://www.instagram.com/victorguerin.fr/">Instagram</a><br>
-                <a href="https://www.linkedin.com/in/guerinvictor">LinkedIn</a>
+                <a href="https://www.instagram.com/victorguerin.fr/?hl=fr">Instagram</a><br>
+                <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a>
             </div>
         </div>
         <div class="content">
-            <p>Here you can introduce yourself - your background, your passions, and your art. This is your chance to tell your story to the visitors of your site. Share your journey, what inspires you, and the process of your art creation.</p>
-            <p>Feel free to add more information about your achievements, exhibitions, or any other aspects of your art career that you think are relevant and interesting for your audience.</p>
+            <div> <!-- Added div for better text alignment -->
+                <h1>About Me</h1>
+                <p>Here you can introduce yourself - your background, your passions, and your art. This is your chance to tell your story to the visitors of your site. Share your journey, what inspires you, and the process of your art creation.</p>
+                <p>Feel free to add more information about your achievements, exhibitions, or any other aspects of your art career that you think are relevant and interesting for your audience.</p>
+            </div>
         </div>
     </div>
 </body>
