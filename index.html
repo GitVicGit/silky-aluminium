@@ -7,50 +7,43 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <nav class="navbar">
-                <div class="logo">Victor Guerin</div>
-                <ul class="nav-links">
-                    <li><a href="#collection">Collection</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
+    <div class="sidebar">
+        <div class="logo">Victor Guerin</div>
+        <nav class="navbar">
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <!-- Social media icons -->
+            <a href="https://www.instagram.com" target="_blank">Instagram</a>
+            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+        </nav>
+    </div>
 
-        <div class="main-content">
-            <section id="collection" class="gallery">
-                <!-- Insert gallery items here -->
-                <div class="fullscreen-gallery">
-                    <div class="gallery-slide active" style="background-image: url('Nature's chromatic symphony.png');">
-                        <div class="gallery-info">Artwork 1 Description</div>
-                    </div>
-                    <div class="gallery-slide" style="background-image: url('victor0630.jpg');">
-                        <div class="gallery-info">Artwork 2 Description</div>
-                    </div>
-                    <!-- Add more slides as needed -->
-                </div>
-                <div class="gallery-controls">
-                    <span class="prev" onclick="moveSlide(-1)">&#10094;</span>
-                    <span class="next" onclick="moveSlide(1)">&#10095;</span>
-                </div>
-            </section>
-
-            <section id="about" class="about">
-                <!-- About content here -->
-            </section>
-
-            <section id="contact" class="contact">
-                <!-- Contact form or information -->
-            </section>
+    <div class="fullscreen-gallery">
+        <div class="gallery-slide active" style="background-image: url('Nature's chromatic symphony.png');">
+            <div class="gallery-info">
+                <strong>Artwork 1</strong><br>
+                Oil on canvas<br>
+                60x40 inches<br>
+                2024
+            </div>
         </div>
+        <div class="gallery-slide" style="background-image: url('victor0630.jpg');">
+            <div class="gallery-info">
+                <strong>Artwork 2</strong><br>
+                Acrylic and sand<br>
+                48x36 inches<br>
+                2024
+            </div>
+        </div>
+        <!-- Add more slides as needed -->
+    </div>
 
-        <footer>
-            <p>© 2024 Victor Guerin. All rights reserved.</p>
-        </footer>
+    <div class="gallery-controls">
+        <span class="prev" onclick="moveSlide(-1)">&#10094;</span>
+        <span class="next" onclick="moveSlide(1)">&#10095;</span>
     </div>
 
     <script src="script.js"></script> <!-- If you have JavaScript -->
 </body>
 </html>
+
