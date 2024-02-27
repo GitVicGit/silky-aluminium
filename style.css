@@ -6,12 +6,20 @@ body, html {
     color: black;
 }
 
-.floating-nav {
+.side-nav {
     position: fixed;
-    top: 50px;
-    left: 50px;
-    color: black;
+    top: 0;
+    left: 0;
+    width: 200px; /* Adjust width as needed */
+    height: 100%;
     background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nav-top, .nav-bottom {
+    margin: 20px;
 }
 
 .logo {
@@ -31,31 +39,41 @@ body, html {
     color: #a8a8a8;
 }
 
+.gallery-info {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.gallery-controls a {
+    text-decoration: none;
+    color: black;
+    margin: 5px;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.gallery-controls a:hover {
+    color: #a8a8a8;
+}
+
 .fullscreen-gallery {
-    position: relative;
-    width: 100%;
+    margin-left: 200px; /* Adjust this based on the width of the side-nav */
     height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
 .gallery-slide {
-    position: absolute;
-    width: calc(100% - 60px); /* Adjust based on navigation visibility */
-    height: calc(100% - 120px); /* Adjust based on your needs */
+    display: none;
+    width: 100%;
+    height: 100%;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    transition: opacity 1s ease;
-    opacity: 0;
 }
 
 .gallery-slide.active {
-    opacity: 1;
+    display: block;
 }
-
-.gallery-info {
-    position: absolute;
-    t
 
