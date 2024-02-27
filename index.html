@@ -21,7 +21,6 @@
             overflow: hidden;
         }
         .navigation {
-            padding: 20px;
             background-color: transparent;
             width: 300px; /* Adjust if needed to match visual alignment */
             display: flex;
@@ -54,7 +53,6 @@
             justify-content: flex-start;
             align-items: center;
             background-color: white;
-            padding-left: 20px; /* Align with the navigation text */
         }
         .gallery-slide {
             width: calc(100% - 300px); /* Adjusted width */
@@ -71,8 +69,7 @@
             max-height: 100%;
         }
         .artwork-description {
-            font-size: 17px;
-            padding-left: 20px; 
+            font-size: 17px; 
         }
         .artwork-description p {
             margin: 6px 0;
@@ -122,10 +119,10 @@
     <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.gallery-slide');
-        const artworkTitles = ['Premier Titre', 'Deuxième Titre'];
-        const artworkMaterials = ['Huile sur toile', 'Aquarelle'];
-        const artworkSizes = ['100x150cm', '50x70cm'];
-        const artworkDates = ['2021', '2022'];
+        const artworkTitles = ['Nature's Chromatic Symphony', 'Little Canyon'];
+        const artworkMaterials = ['Oil on canvas', '3D-printed ceramic'];
+        const artworkSizes = ['100 x 150 cm', '30 x 30 x 30cm'];
+        const artworkDates = ['2023', '2024'];
         
         function showSlide(index) {
             slides.forEach((slide, idx) => {
