@@ -12,7 +12,8 @@
             height: 100%;
             overflow: hidden; /* Prevent scrolling */
             font-family: sans-serif; /* Sans-serif font */
-            background-color: white;
+            background-color: white; /* Background color */
+            font-size: 16px; /* Increase all text size by 2 */
         }
         .container {
             display: flex;
@@ -20,9 +21,9 @@
             overflow: hidden; /* Prevent scrolling inside container */
         }
         .navigation {
-            padding: 16px;
+            padding: 32px; /* Increased padding */
             background-color: white;
-            width: 250px;
+            width: 300px; /* Increased width if needed */
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -32,6 +33,7 @@
             margin: 0; /* Remove default margin */
             color: black;
             text-decoration: none;
+            line-height: 1.5; /* Adjust line height for readability */
         }
         .navigation a:visited {
             color: black;
@@ -41,13 +43,13 @@
             cursor: pointer;
         }
         .navigation > div:first-child {
-            margin-top: 64px; /* Two lines space before 'About' */
+            margin-top: 0; /* Adjust space if necessary */
         }
         .navigation > div:first-child p {
             font-weight: bold;
-            font-size: 2em; /* Double the size */
+            font-size: 4em; /* Double the size for artist name */
             text-transform: uppercase; /* Uppercase letters */
-            margin-bottom: 0; /* Remove default bottom margin */
+            margin-bottom: 32px; /* Adjusted space before 'About' */
             white-space: nowrap; /* Ensure it's on a single line */
         }
         .gallery {
@@ -56,12 +58,12 @@
             justify-content: center;
             align-items: center;
             background-color: white;
-            padding-top: 16px; /* Top white border */
-            padding-bottom: 16px; /* Bottom white border */
+            padding-top: 32px; /* Double the top white border */
+            padding-bottom: 32px; /* Double the bottom white border */
         }
         .gallery-slide {
-            width: calc(100% - 250px); /* Adjust based on the width of the navigation */
-            height: calc(100vh - 32px); /* Adjust based on the vertical padding */
+            width: calc(100% - 300px); /* Adjust based on the width of the navigation */
+            height: calc(100vh - 64px); /* Adjust based on the vertical padding */
             display: none; /* Hide slides by default */
             justify-content: center;
             align-items: center;
@@ -75,18 +77,18 @@
             display: block; /* Remove extra space below the image */
         }
         .artwork-description {
-            font-size: 14px;
-            padding-left: 16px; /* Align with navigation text */
+            font-size: 28px; /* Increase font size */
+            padding-left: 32px; /* Align with navigation text */
         }
         .artwork-description p {
-            margin: 4px 0; /* Spacing between description lines */
+            margin: 8px 0; /* Spacing between description lines */
         }
         .artwork-description p:first-child {
             font-weight: bold; /* Only the title in bold */
         }
         .artwork-description a {
             display: inline-block; /* Prev and Next on the same line */
-            margin: 16px 5px 0; /* Space before and between Prev/Next links */
+            margin: 32px 10px 0; /* Space before and between Prev/Next links */
         }
     </style>
 </head>
@@ -95,7 +97,8 @@
         <div class="navigation">
             <div>
                 <p>VICTOR GUERIN</p>
-                <a href="#about">About</a><br><br><br>
+                <br><br> <!-- Two blank lines -->
+                <a href="#about">About</a><br>
                 <a href="#contact">Contact</a><br>
                 <a href="https://instagram.com">Instagram</a><br>
                 <a href="https://linkedin.com">LinkedIn</a>
