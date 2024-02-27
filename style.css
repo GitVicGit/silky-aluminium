@@ -1,0 +1,80 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: sans-serif;
+    background-color: white;
+    font-size: 16px;
+}
+.container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+.navigation {
+    padding: 32px;
+    background-color: transparent;
+    width: 280px; /* Smaller width for more left alignment */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    align-items: flex-start; /* Align items to the left */
+}
+.navigation a, .navigation p {
+    margin: 0;
+    color: black;
+    text-decoration: none;
+    line-height: 1.4; /* Less space between lines */
+}
+.navigation a:visited {
+    color: black;
+}
+.navigation a:hover {
+    text-decoration: none; /* Remove underline on hover */
+}
+.navigation > div:first-child {
+    margin-top: 0;
+}
+.navigation > div:first-child p {
+    font-weight: bold;
+    font-size: 2em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.gallery {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 32px;
+}
+.gallery-slide {
+    width: calc(100% - 280px); /* Adjust for new navigation width */
+    height: calc(100vh - 64px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.gallery-slide.active {
+    display: flex;
+}
+.gallery-slide img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.artwork-description, .artwork-description a {
+    font-size: 16px;
+    padding-left: 32px;
+}
+.artwork-description p {
+    margin: 6px 0; /* Less space between description lines */
+}
+.artwork-description a {
+    display: inline-block;
+    margin: 16px 10px 0;
+}
+
