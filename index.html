@@ -35,7 +35,6 @@
     </footer>
 
     <script src="script.js"></script> <!-- If you have JavaScript -->
-</body>
 <div class="fullscreen-gallery">
     <div class="gallery-slide active" style="background-image: url('artwork1.jpg');">
         <div class="gallery-info">Artwork 1 Description</div>
@@ -49,8 +48,26 @@
     <span class="prev" onclick="moveSlide(-1)">&#10094;</span>
     <span class="next" onclick="moveSlide(1)">&#10095;</span>
 </div>
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.gallery-slide');
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.style.opacity = '0';
+            slide.classList.remove('active');
+        });
+        slides[index].classList.add('active');
+    }
+
+    function moveSlide(step) {
+        currentSlide = (currentSlide + step + slides.length) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    showSlide(currentSlide); // Initial call to display the first slide
+</script>
+
+</body>
 
 </html>
-
-
-
