@@ -1,170 +1,123 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    color: black; /* Dark text */
-    background-color: #fff; /* White background */
-}
-
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 300px;
-    height: 100%;
-    padding: 20px 24px; /* Adjusted padding for spacing */
-    box-sizing: border-box; /* Ensures padding does not add to the width */
-}
-
-.logo {
-    font-size: 24px;
-    margin-bottom: 40px;
-}
-
-.navbar a, .navigation-links a {
-    display: block;
-    margin-bottom: 20px;
-    text-decoration: none;
-    color: black; /* Black text */
-    transition: color 0.3s ease-in-out;
-}
-
-.navbar a:hover, .navigation-links a:hover {
-    color: black; /* Maintains black color on hover */
-}
-
-.gallery-container {
-    margin-left: 300px; /* Same as sidebar width */
-    position: relative;
-    width: calc(100% - 300px);
-    height: 100vh;
-    overflow: hidden;
-}
-
-.gallery-slide {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    transform: translate(-50%, -50%);
-    transition: opacity 1s ease;
-    opacity: 0;
-}
-
-.gallery-slide.active {
-    opacity: 1;
-}
-
-.artwork-description {
-    position: fixed;
-    bottom: 20px;
-    left: 24px; /* Aligns with the rest of the sidebar content */
-}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Victor Guerin - Artist</title>
+    <title>Art Gallery</title>
     <style>
         body, html {
             margin: 0;
             padding: 0;
-            font-family: 'Arial', sans-serif;
-            color: black; /* Dark text */
-            background-color: #fff; /* White background */
-        }
-
-        .sidebar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 300px;
-            height: 100%;
-            padding: 20px 24px; /* Adjusted padding for spacing */
-            box-sizing: border-box; /* Ensures padding does not add to the width */
-            background-color: white; /* Background color changed to white */
-        }
-
-        .logo {
-            font-size: 24px;
-            margin-bottom: 40px;
-        }
-
-        .navbar a, .navigation-links a {
-            display: block;
-            margin-bottom: 20px;
-            text-decoration: none;
-            color: black; /* Black text for links */
-        }
-
-        .gallery-container {
-            margin-left: 300px; /* Same as sidebar width */
-            position: relative;
-            width: calc(100% - 300px);
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        .gallery-slide {
-            position: absolute;
-            top: 50%;
-            left: 50%;
             width: 100%;
             height: 100%;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            transform: translate(-50%, -50%);
-            transition: opacity 1s ease;
-            opacity: 0;
+            background-color: white;
         }
-
+        .container {
+            display: flex;
+            height: 100%;
+        }
+        .navigation {
+            padding-left: 16px; /* 4 spaces from the left */
+            background-color: white;
+            width: 250px; /* Adjust based on your preference */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .navigation a {
+            color: black;
+            text-decoration: none;
+        }
+        .navigation a:visited {
+            color: black;
+        }
+        .gallery {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        .gallery-slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
         .gallery-slide.active {
-            opacity: 1;
+            display: block;
         }
-
         .artwork-description {
-            position: fixed;
-            bottom: 20px;
-            left: 24px; /* Aligns with the rest of the sidebar content */
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-    <div class="sidebar">
-        <div class="logo">Victor Guerin</div>
-        <nav class="navbar">
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-            <a href="https://www.instagram.com" target="_blank">Instagram</a>
-            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-        </nav>
-        <div class="artwork-description">
-            <strong id="artwork-title">Artwork Title</strong><br>
-            <span id="artwork-material">Material</span><br>
-            <span id="artwork-size">Size</span><br>
-            <span id="artwork-date">Year</span>
+    <div class="container">
+        <div class="navigation">
+            <div>
+                <p>Nom d'Artiste</p>
+                <a href="#about">About</a><br>
+                <a href="#contact">Contact</a><br>
+                <a href="https://instagram.com">Instagram</a><br>
+                <a href="https://linkedin.com">LinkedIn</a>
+            </div>
+            <div class="artwork-description">
+                <p id="artwork-title">Titre de l'œuvre</p>
+                <p id="artwork-material">Matériel</p>
+                <p id="artwork-size">Taille</p>
+                <p id="artwork-date">Date</p>
+                <a href="javascript:void(0);" id="prev">Prev</a> | 
+                <a href="javascript:void(0);" id="next">Next</a>
+            </div>
         </div>
-        <div class="navigation-links">
-            <a href="javascript:void(0);" id="prev">Prev</a> /
-            <a href="javascript:void(0);" id="next">Next</a>
+        <div class="gallery">
+            <div class="gallery-slide active">
+                <img src="Natures_chromatic_symphony.jpg" alt="Artwork 1">
+            </div>
+            <div class="gallery-slide">
+                <img src="victor0731.jpg" alt="Artwork 2">
+            </div>
+            <!-- Add more slides as needed -->
         </div>
-    </div>
-
-    <div class="gallery-container">
-        <div class="gallery-slide" style="background-image: url('Natures_chromatic_symphony.jpg');"></div>
-        <div class="gallery-slide" style="background-image: url('victor0731.jpg');"></div>
-        <!-- Add more slides as needed -->
     </div>
 
     <script>
-        // Your JavaScript code for image navigation and updating artwork descriptions
+        let currentSlide = 0; // Index of the current slide
+        const slides = document.querySelectorAll('.gallery-slide');
+        const artworkTitles = ['Premier Titre', 'Deuxième Titre']; // Add more titles as per your artworks
+        const artworkMaterials = ['Huile sur toile', 'Aquarelle']; // Corresponding materials
+        const artworkSizes = ['50x70cm', '30x40cm']; // Corresponding sizes
+        const artworkDates = ['2021', '2022']; // Corresponding years
+
+        function showSlide(index) {
+            // Hide all slides
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+
+            // Show the slide with the given index
+            slides[index].classList.add('active');
+
+            // Update artwork description
+            document.getElementById('artwork-title').innerText = artworkTitles[index];
+            document.getElementById('artwork-material').innerText = artworkMaterials[index];
+            document.getElementById('artwork-size').innerText = artworkSizes[index];
+            document.getElementById('artwork-date').innerText = artworkDates[index];
+        }
+
+        // Initial display
+        showSlide(currentSlide);
+
+        // Event listeners for navigation
+        document.getElementById('prev').addEventListener('click', () => {
+            currentSlide = (currentSlide + slides.length - 1) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        document.getElementById('next').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
     </script>
 </body>
 </html>
