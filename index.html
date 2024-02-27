@@ -7,67 +7,50 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">Victor Guerin</div>
-            <ul class="nav-links">
-                <li><a href="#collection">Collection</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="container">
+        <header>
+            <nav class="navbar">
+                <div class="logo">Victor Guerin</div>
+                <ul class="nav-links">
+                    <li><a href="#collection">Collection</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <section id="collection" class="gallery">
-        <!-- Insert gallery items here -->
-    </section>
+        <div class="main-content">
+            <section id="collection" class="gallery">
+                <!-- Insert gallery items here -->
+                <div class="fullscreen-gallery">
+                    <div class="gallery-slide active" style="background-image: url('Nature's chromatic symphony.png');">
+                        <div class="gallery-info">Artwork 1 Description</div>
+                    </div>
+                    <div class="gallery-slide" style="background-image: url('victor0630.jpg');">
+                        <div class="gallery-info">Artwork 2 Description</div>
+                    </div>
+                    <!-- Add more slides as needed -->
+                </div>
+                <div class="gallery-controls">
+                    <span class="prev" onclick="moveSlide(-1)">&#10094;</span>
+                    <span class="next" onclick="moveSlide(1)">&#10095;</span>
+                </div>
+            </section>
 
-    <section id="about" class="about">
-        <!-- About content here -->
-    </section>
+            <section id="about" class="about">
+                <!-- About content here -->
+            </section>
 
-    <section id="contact" class="contact">
-        <!-- Contact form or information -->
-    </section>
+            <section id="contact" class="contact">
+                <!-- Contact form or information -->
+            </section>
+        </div>
 
-    <footer>
-        <p>© 2024 Victor Guerin. All rights reserved.</p>
-    </footer>
+        <footer>
+            <p>© 2024 Victor Guerin. All rights reserved.</p>
+        </footer>
+    </div>
 
     <script src="script.js"></script> <!-- If you have JavaScript -->
-<div class="fullscreen-gallery">
-    <div class="gallery-slide active" style="background-image: url('Nature's chromatic symphony.png');">
-        <div class="gallery-info">Artwork 1 Description</div>
-    </div>
-    <div class="gallery-slide" style="background-image: url('victor0630.jpg');">
-        <div class="gallery-info">Artwork 2 Description</div>
-    </div>
-    <!-- Add more slides as needed -->
-</div>
-<div class="gallery-controls">
-    <span class="prev" onclick="moveSlide(-1)">&#10094;</span>
-    <span class="next" onclick="moveSlide(1)">&#10095;</span>
-</div>
-<script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.gallery-slide');
-
-    function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.style.opacity = '0';
-            slide.classList.remove('active');
-        });
-        slides[index].classList.add('active');
-    }
-
-    function moveSlide(step) {
-        currentSlide = (currentSlide + step + slides.length) % slides.length;
-        showSlide(currentSlide);
-    }
-
-    showSlide(currentSlide); // Initial call to display the first slide
-</script>
-
 </body>
-
 </html>
