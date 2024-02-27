@@ -29,3 +29,4 @@ document.getElementById('next').addEventListener('click', () => {
 showSlide(currentSlide);
 
 
+
