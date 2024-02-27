@@ -40,10 +40,15 @@
             text-decoration: underline;
             cursor: pointer;
         }
-        .navigation > div:first-child p:first-child {
+        .navigation > div:first-child {
+            margin-top: 32px; /* Two lines space before 'About' */
+        }
+        .navigation > div:first-child p {
             font-weight: bold;
             font-size: 2em; /* Double the size */
             text-transform: uppercase; /* Uppercase letters */
+            margin-bottom: 0; /* Remove default bottom margin */
+            white-space: nowrap; /* Ensure it's on a single line */
         }
         .gallery {
             flex-grow: 1;
@@ -76,14 +81,13 @@
         }
         .artwork-description p {
             margin: 4px 0; /* Spacing between description lines */
-            font-weight: bold; /* Titles in bold */
+        }
+        .artwork-description p:first-child {
+            font-weight: bold; /* Only the title in bold */
         }
         .artwork-description a {
-            display: block; /* Separate line for Prev/Next links */
-            margin-top: 16px; /* Add space before Prev/Next links */
-        }
-        #prev, #next {
-            cursor: pointer; /* Change cursor to pointer */
+            display: inline-block; /* Prev and Next on the same line */
+            margin: 16px 5px 0; /* Space before and between Prev/Next links */
         }
     </style>
 </head>
