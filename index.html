@@ -4,18 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art Gallery</title>
-    <link rel="stylesheet" href="style.css"> <!-- External CSS file -->
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: sans-serif;
+            background-color: white;
+            font-size: 16px;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .navigation {
+            padding: 32px;
+            background-color: transparent;
+            width: 280px; /* Adjusted for more left alignment */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+        .navigation a, .navigation p {
+            margin: 0;
+            color: black;
+            text-decoration: none;
+            line-height: 1.4; /* Reduced line space */
+        }
+        .navigation a:visited {
+            color: black;
+        }
+        .navigation a:hover {
+            text-decoration: none; /* Removed underline on hover */
+            cursor: pointer;
+        }
+        .navigation > div:first-child {
+            margin-top: 0;
+        }
+        .navigation > div:first-child p {
+            font-weight: bold;
+            font-size: 2em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+        .gallery {
+            flex-grow: 1;
+            display: flex;
+            justify-content: flex-start; /* Adjusted for more left alignment */
+            align-items: center;
+            background-color: white;
+            padding-top: 32px;
+            padding-bottom: 32px;
+        }
+        .gallery-slide {
+            width: calc(100% - 280px); /* Adjusted based on navigation width */
+            height: calc(100vh - 64px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .gallery-slide.active {
+            display: flex;
+        }
+        .gallery-slide img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+        }
+        .artwork-description, .artwork-description a {
+            font-size: 16px;
+            padding-left: 32px;
+        }
+        .artwork-description p {
+            margin: 8px 0;
+        }
+        .artwork-description p:first-child {
+            font-weight: bold; /* Bold title */
+        }
+        .artwork-description a {
+            display: inline-block;
+            margin: 16px 10px 0;
+        }
+        .icon { /* New style for icons */
+            vertical-align: middle;
+            width: 1em; /* Same height as capital 'A' in 'Artistic Statement' */
+            height: 1em; /* Same height as capital 'A' in 'Artistic Statement' */
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="navigation">
             <div>
                 <p>VICTOR GUERIN</p>
-                <br><br> <!-- Two blank lines -->
+                <br><br>
                 <a href="artistic_statement.html">Artistic Statement</a><br>
-                <a href="mailto:victorguerin.fr+web@pm.me"><img src="email_icon.png" alt="Email"></a><br>
-                <a href="https://www.instagram.com/victorguerin.fr/?hl=fr"><img src="instagram_icon.png" alt="Instagram"></a><br>
-                <a href="https://www.linkedin.com/in/guerinvictor/"><img src="linkedin_icon.png" alt="LinkedIn"></a>
+                <a href="mailto:victorguerin.fr+web@pm.me"><img src="email_logo.png" alt="Email" class="icon"></a><br>
+                <a href="https://www.instagram.com/victorguerin.fr/?hl=fr"><img src="instagram_logo.png" alt="Instagram" class="icon"></a><br>
+                <a href="https://www.linkedin.com/in/guerinvictor/"><img src="linkedin_logo.png" alt="LinkedIn" class="icon"></a>
             </div>
             <div class="artwork-description">
                 <p id="artwork-title">Titre de l'œuvre</p>
@@ -37,7 +127,9 @@
             <!-- Add more slides as needed -->
         </div>
     </div>
-
-    <script src="script.js"></script> <!-- External JavaScript file -->
 </body>
 </html>
+`
+
+
+
