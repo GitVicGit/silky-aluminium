@@ -7,40 +7,33 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="floating-nav">
-        <div class="logo">Victor Guerin</div>
-        <nav class="navbar">
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-            <a href="https://www.instagram.com" target="_blank">Instagram</a>
-            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-        </nav>
+    <div class="side-nav">
+        <div class="nav-top">
+            <div class="logo">Victor Guerin</div>
+            <nav class="navbar">
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="https://www.instagram.com" target="_blank">Instagram</a>
+                <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+            </nav>
+        </div>
+        <div class="nav-bottom">
+            <div class="gallery-info">
+                <!-- This will be filled with JavaScript -->
+            </div>
+            <div class="gallery-controls">
+                <a href="javascript:void(0);" class="prev" onclick="moveSlide(-1)">Prev</a> /
+                <a href="javascript:void(0);" class="next" onclick="moveSlide(1)">Next</a>
+            </div>
+        </div>
     </div>
 
     <div class="fullscreen-gallery">
-        <div class="gallery-slide active" style="background-image: url('Natures_chromatic_symphony.jpg');">
-            <div class="gallery-info">
-                <strong>Artwork 1</strong><br>
-                Oil on canvas<br>
-                60x40 inches<br>
-                2024
-            </div>
-        </div>
-        <div class="gallery-slide" style="background-image: url('victor0731.jpg');">
-            <div class="gallery-info">
-                <strong>Artwork 2</strong><br>
-                Acrylic and sand<br>
-                48x36 inches<br>
-                2024
-            </div>
-        </div>
-    </div>
-
-    <div class="gallery-controls">
-        <button class="prev" onclick="moveSlide(-1)">Prev</button>
-        <button class="next" onclick="moveSlide(1)">Next</button>
+        <!-- Gallery slides will be here -->
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
+
+
