@@ -28,7 +28,6 @@
             flex-direction: column;
             justify-content: space-between;
             box-sizing: border-box;
-            
         }
         .navigation a, .navigation p {
             margin: 0;
@@ -42,7 +41,7 @@
         .navigation a:hover {
             text-decoration: none; /* Remove underline on hover */
         }
-        .navigation > div:first-child p {
+        .navigation > div:first-child a {
             font-weight: bold;
             font-size: 2.1em;
             text-transform: uppercase;
@@ -84,15 +83,23 @@
             margin: 16px 8px 0;
             margin-left: 0; /* Align links to the left border */
         }
+        .links {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            text-align: right;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="navigation">
             <div>
-                <a href="index.html">VICTOR GUERIN</a> <!-- Make 'Victor Guerin' a link  to the home page -->
-                <br><br>
-                <a href="about.html">About</a><br><br> <!-- Adjusted spacing -->
+                <strong><a href="index.html">VICTOR GUERIN</a></strong> <!-- Make 'Victor Guerin' bold and a link  to the home page -->
+                <br><br><br><br> <!-- Additional blank lines -->
+                <a href="about.html">About</a>
+            </div>
+            <div class="links">
                 <a href="mailto:victorguerin.fr+web@pm.me">Email</a><br>
                 <a href="https://www.instagram.com/victorguerin.fr/">Instagram</a><br>
                 <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a>
@@ -149,5 +156,4 @@
     </script>
 </body>
 </html>
-
 
