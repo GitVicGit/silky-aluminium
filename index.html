@@ -8,73 +8,36 @@
 </head>
 <body>
     <div class="sidebar">
-        <div class="logo">Victor Guerin</div>
-        <nav class="navbar">
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-            <a href="https://www.instagram.com" target="_blank">Instagram</a>
-            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-        </nav>
+        <div class="nav-top">
+            <div class="logo">Victor Guerin</div>
+            <nav class="navbar">
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="https://www.instagram.com" target="_blank">Instagram</a>
+                <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+            </nav>
+        </div>
+        <div class="nav-bottom">
+            <div class="gallery-info">
+                <!-- Les informations sur l'œuvre d'art apparaîtront ici -->
+            </div>
+            <div class="gallery-navigation">
+                <a href="javascript:void(0);" class="prev">Prev</a> / 
+                <a href="javascript:void(0);" class="next">Next</a>
+            </div>
+        </div>
     </div>
 
-    <div class="fullscreen-gallery" id="gallery-background">
-        <!-- The background image will be set using JavaScript -->
+    <div class="fullscreen-gallery">
+        <div class="gallery-slide active" style="background-image: url('Natures_chromatic_symphony.jpg');">
+            <!-- Les informations sur l'œuvre d'art peuvent être ajoutées ici si nécessaire -->
+        </div>
+        <div class="gallery-slide" style="background-image: url('victor0731.jpg');">
+            <!-- Les informations sur l'œuvre d'art peuvent être ajoutées ici si nécessaire -->
+        </div>
+        <!-- Ajoutez plus de diapositives selon les besoins -->
     </div>
-    <div class="gallery-info">
-        <!-- Artwork details will be inserted here using JavaScript -->
-    </div>
-    <div class="gallery-navigation">
-        <a href="javascript:void(0);" class="prev">Prev</a> / 
-        <a href="javascript:void(0);" class="next">Next</a>
-    </div>
 
-    <script>
-        let currentSlide = 0;
-        const slides = [
-            {
-                img: 'Natures_chromatic_symphony.jpg',
-                title: 'Artwork 1',
-                material: 'Oil on canvas',
-                size: '60x40 inches',
-                year: '2024'
-            },
-            {
-                img: 'victor0731.jpg',
-                title: 'Artwork 2',
-                material: 'Acrylic and sand',
-                size: '48x36 inches',
-                year: '2024'
-            }
-            // Add more objects for more images
-        ];
-
-        function updateSlide() {
-            const slide = slides[currentSlide];
-            const gallery = document.querySelector('.fullscreen-gallery');
-            gallery.style.backgroundImage = `url('${slide.img}')`;
-
-            const info = document.querySelector('.gallery-info');
-            info.innerHTML = `<strong>${slide.title}</strong><br>${slide.material}<br>${slide.size}<br>${slide.year}`;
-        }
-
-        function moveSlide(direction) {
-            currentSlide += direction;
-            if (currentSlide >= slides.length) {
-                currentSlide = 0;
-            } else if (currentSlide < 0) {
-                currentSlide = slides.length - 1;
-            }
-            updateSlide();
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            updateSlide(); // Initialize the first slide
-            document.querySelector('.prev').addEventListener('click', () => moveSlide(-1));
-            document.querySelector('.next').addEventListener('click', () => moveSlide(1));
-        });
-    </script>
+    <script src="script.js"></script> <!-- Si vous avez un fichier JavaScript -->
 </body>
 </html>
-
-
-
