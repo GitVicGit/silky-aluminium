@@ -41,7 +41,7 @@
             cursor: pointer;
         }
         .navigation > div:first-child {
-            margin-top: 32px; /* Two lines space before 'About' */
+            margin-top: 64px; /* Two lines space before 'About' */
         }
         .navigation > div:first-child p {
             font-weight: bold;
@@ -56,14 +56,13 @@
             justify-content: center;
             align-items: center;
             background-color: white;
-            margin-top: 16px; /* Top white border */
-            margin-bottom: 16px; /* Bottom white border */
+            padding-top: 16px; /* Top white border */
+            padding-bottom: 16px; /* Bottom white border */
         }
         .gallery-slide {
-            display: none; /* Hide slides by default */
             width: calc(100% - 250px); /* Adjust based on the width of the navigation */
-            height: calc(100vh - 32px); /* Adjust based on the margin */
-            display: flex; /* Use flex to center the image vertically and horizontally */
+            height: calc(100vh - 32px); /* Adjust based on the vertical padding */
+            display: none; /* Hide slides by default */
             justify-content: center;
             align-items: center;
         }
@@ -96,7 +95,7 @@
         <div class="navigation">
             <div>
                 <p>VICTOR GUERIN</p>
-                <a href="#about">About</a><br>
+                <a href="#about">About</a><br><br><br>
                 <a href="#contact">Contact</a><br>
                 <a href="https://instagram.com">Instagram</a><br>
                 <a href="https://linkedin.com">LinkedIn</a>
@@ -106,6 +105,7 @@
                 <p id="artwork-material">Matériel</p>
                 <p id="artwork-size">Taille</p>
                 <p id="artwork-date">Date</p>
+                <br>
                 <a href="javascript:void(0);" id="prev">Prev</a>
                 <a href="javascript:void(0);" id="next">Next</a>
             </div>
