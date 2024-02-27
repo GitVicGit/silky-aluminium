@@ -23,17 +23,20 @@
         .navigation {
             padding: 20px;
             background-color: transparent;
-            width: 300px; /* Adjusted width */
+            width: 300px; /* Adjust if needed to match visual alignment */
             display: flex;
-            flex-direction: column; /* Ensures vertical alignment */
+            flex-direction: column;
             justify-content: space-between;
             box-sizing: border-box;
+            padding-left: 20px; /* Added consistent left padding */
         }
         .navigation a, .navigation p {
-            margin: 2px 0; /* Adjust for consistent spacing */
+            margin: 0;
             color: black;
             text-decoration: none;
             line-height: 1.5;
+            margin-left: 0; /* Align text and links to the left border */
+            text-align: left; /* Align text to the left */
         }
         .navigation a:visited {
             color: black;
@@ -53,7 +56,7 @@
             justify-content: flex-start;
             align-items: center;
             background-color: white;
-            padding-left: 20px;
+            padding-left: 20px; /* Align with the navigation text */
         }
         .gallery-slide {
             width: calc(100% - 300px); /* Adjusted width */
@@ -69,20 +72,21 @@
             max-width: 100%;
             max-height: 100%;
         }
-        .artwork-description, .artwork-description a {
+        .artwork-description {
             font-size: 17px;
-            padding-left: 20px;
-            display: block; /* Ensure line breaks between links */
+            padding-left: 20px; /* Consistent padding with navigation */
         }
         .artwork-description p {
             margin: 6px 0;
+            margin-left: 0; /* Align paragraphs to the left border */
         }
         .artwork-description p:first-child {
             font-weight: bold;
         }
         .artwork-description a {
-            display: block; /* Ensures vertical alignment */
-            margin: 16px 0; /* Adjust spacing around links */
+            display: inline-block;
+            margin: 16px 8px 0;
+            margin-left: 0; /* Align links to the left border */
         }
     </style>
 </head>
@@ -91,16 +95,18 @@
         <div class="navigation">
             <div>
                 <p>VICTOR GUERIN</p>
-                <a href="about.html">About</a>
-                <a href="mailto:victorguerin.fr+web@pm.me">Email</a>
-                <a href="https://www.instagram.com/victorguerin.fr/?hl=fr">Instagram</a>
+                <br><br>
+                <a href="about.html">About</a><br><br> <!-- Adjusted spacing -->
+                <a href="mailto:victorguerin.fr+web@pm.me">Email</a><br>
+                <a href="https://www.instagram.com/victorguerin.fr/?hl=fr">Instagram</a><br>
                 <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a>
             </div>
             <div class="artwork-description">
-                <p id="artwork-title">Premier Titre</p>
-                <p id="artwork-material">Huile sur toile</p>
-                <p id="artwork-size">50x70cm</p>
-                <p id="artwork-date">2021</p>
+                <p id="artwork-title">Titre de l'œuvre</p>
+                <p id="artwork-material">Matériel</p>
+                <p id="artwork-size">Taille</p>
+                <p id="artwork-date">Date</p>
+                <br>
                 <a href="javascript:void(0);" id="prev">Prev</a>
                 <a href="javascript:void(0);" id="next">Next</a>
             </div>
@@ -120,34 +126,32 @@
         const slides = document.querySelectorAll('.gallery-slide');
         const artworkTitles = ['Premier Titre', 'Deuxième Titre'];
         const artworkMaterials = ['Huile sur toile', 'Aquarelle'];
-        const artworkSizes = ['50x70cm', '30x40cm'];
+        const artworkSizes = ['100x150cm', '50x70cm'];
         const artworkDates = ['2021', '2022'];
-
+        
         function showSlide(index) {
-            slides.forEach(slide => {
-                slide.classList.remove('active');
+            slides.forEach((slide, idx) => {
+                slide.style.display = idx === index ? 'flex' : 'none';
             });
-            slides[index].classList.add('active');
             document.getElementById('artwork-title').textContent = artworkTitles[index];
             document.getElementById('artwork-material').textContent = artworkMaterials[index];
             document.getElementById('artwork-size').textContent = artworkSizes[index];
             document.getElementById('artwork-date').textContent = artworkDates[index];
         }
-
-        document.getElementById('prev').addEventListener('click', () => {
-            currentSlide = (currentSlide + slides.length - 1) % slides.length;
-            showSlide(currentSlide);
-        });
-
+        
         document.getElementById('next').addEventListener('click', () => {
             currentSlide = (currentSlide + 1) % slides.length;
             showSlide(currentSlide);
         });
-
+        
+        document.getElementById('prev').addEventListener('click', () => {
+            currentSlide = (currentSlide + slides.length - 1) % slides.length;
+            showSlide(currentSlide);
+        });
+        
         showSlide(currentSlide);
     </script>
 </body>
 </html>
-
 
 
