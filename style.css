@@ -6,74 +6,71 @@ body, html {
     color: black;
 }
 
-.side-nav {
+.sidebar {
     position: fixed;
     top: 0;
     left: 0;
-    width: 200px; /* Adjust width as needed */
+    width: 300px;
     height: 100%;
-    background-color: transparent;
+    background-color: #fff;
+    padding: 20px 20px 20px 24px; /* Ajout d'un espacement à gauche */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.nav-top, .nav-bottom {
-    margin: 20px;
-}
-
 .logo {
     font-size: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
-.navbar a {
+.navbar a, .gallery-navigation a {
     display: block;
-    margin-bottom: 10px;
-    text-decoration: none;
-    color: black;
-    transition: color 0.3s;
-}
-
-.navbar a:hover {
-    color: #a8a8a8;
-}
-
-.gallery-info {
-    font-size: 16px;
     margin-bottom: 20px;
-}
-
-.gallery-controls a {
-    text-decoration: none;
     color: black;
-    margin: 5px;
-    font-size: 16px;
-    transition: color 0.3s;
+    text-decoration: none;
 }
 
-.gallery-controls a:hover {
+.navbar a:hover, .gallery-navigation a:hover {
     color: #a8a8a8;
+}
+
+.navbar a:visited, .gallery-navigation a:visited {
+    color: black;
 }
 
 .fullscreen-gallery {
-    margin-left: 200px; /* Adjust this based on the width of the side-nav */
+    margin-left: 300px;
+    position: relative;
+    width: calc(100% - 300px);
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
 }
 
 .gallery-slide {
-    display: none;
+    position: absolute;
     width: 100%;
     height: 100%;
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-size: cover;
     background-position: center;
+    transition: opacity 1s ease;
+    opacity: 0;
 }
 
 .gallery-slide.active {
-    display: block;
+    opacity: 1;
 }
+
+.gallery-info, .gallery-navigation {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.gallery-navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
 
