@@ -8,36 +8,29 @@
 </head>
 <body>
     <div class="sidebar">
-        <div class="nav-top">
-            <div class="logo">Victor Guerin</div>
-            <nav class="navbar">
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-                <a href="https://www.instagram.com" target="_blank">Instagram</a>
-                <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-            </nav>
-        </div>
-        <div class="nav-bottom">
-            <div class="gallery-info">
-                <!-- Les informations sur l'œuvre d'art apparaîtront ici -->
-            </div>
-            <div class="gallery-navigation">
-                <a href="javascript:void(0);" class="prev">Prev</a> / 
-                <a href="javascript:void(0);" class="next">Next</a>
-            </div>
+        <div class="logo">Victor Guerin</div>
+        <nav class="navbar">
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="https://www.instagram.com" target="_blank">Instagram</a>
+            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+        </nav>
+        <div class="artwork-description">
+            <strong>Artwork Title</strong><br>
+            Material<br>
+            Size<br>
+            Date<br>
+            <a href="javascript:void(0);" class="prev-next" onclick="moveSlide(-1)">Prev</a> /
+            <a href="javascript:void(0);" class="prev-next" onclick="moveSlide(1)">Next</a>
         </div>
     </div>
 
     <div class="fullscreen-gallery">
-        <div class="gallery-slide active" style="background-image: url('Natures_chromatic_symphony.jpg');">
-            <!-- Les informations sur l'œuvre d'art peuvent être ajoutées ici si nécessaire -->
-        </div>
-        <div class="gallery-slide" style="background-image: url('victor0731.jpg');">
-            <!-- Les informations sur l'œuvre d'art peuvent être ajoutées ici si nécessaire -->
-        </div>
-        <!-- Ajoutez plus de diapositives selon les besoins -->
+        <div class="gallery-slide active" style="background-image: url('Natures_chromatic_symphony.jpg');"></div>
+        <div class="gallery-slide" style="background-image: url('victor0731.jpg');"></div>
+        <!-- Add more slides as needed -->
     </div>
 
-    <script src="script.js"></script> <!-- Si vous avez un fichier JavaScript -->
+    <script src="script.js"></script> <!-- If you have JavaScript -->
 </body>
 </html>
