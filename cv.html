@@ -77,10 +77,6 @@
         .entry {
             margin-bottom: 5px;
         }
-.navigation {
-    width: 100%; /* Full width on smaller screens */
-    max-width: 400px; /* Maximum width */
-}
 
 @media (max-width: 768px) {
     .container {
@@ -88,6 +84,7 @@
     }
     .navigation, .gallery {
         width: 100%; /* Full width on smaller screens */
+        max-width: 400px; /* Maximum width */
     }
     .navigation {
         order: 2; /* Navigation goes below content on small screens */
@@ -98,13 +95,7 @@
     .artwork-description, .content div {
         padding: 10px; /* Less padding on smaller screens */
     }
-}
 
-body, html {
-    font-size: 100%; /* Default size */
-}
-
-@media (max-width: 768px) {
     body, html {
         font-size: 90%; /* Smaller text on small screens */
     }
