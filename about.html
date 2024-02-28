@@ -13,7 +13,7 @@
             overflow: hidden;
             font-family: sans-serif;
             background-color: white;
-            font-size: 17px;
+            font-size: 17px; 
         }
         .container {
             display: flex;
@@ -23,11 +23,13 @@
         .navigation {
             padding: 20px;
             background-color: transparent;
-            width: 400px; 
+            width: 400px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             box-sizing: border-box;
+            font-size: 17px;
+            white-space: nowrap;
         }
         .navigation a, .navigation p {
             margin: 0;
@@ -35,17 +37,9 @@
             text-decoration: none;
             line-height: 1.5;
         }
-        .navigation a:visited {
-            color: black;
-        }
-        .navigation a:hover {
-            text-decoration: none;
-        }
-        .navigation > div:first-child p {
-            font-weight: bold;
-            font-size: 2.1em;
-            text-transform: uppercase;
-            white-space: nowrap;
+        .navigation p:first-child {
+            font-weight: bold; /* Only VICTOR GUERIN in bold */
+            font-size: 30px;
         }
         .content {
             flex-grow: 1;
