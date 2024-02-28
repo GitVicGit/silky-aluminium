@@ -89,7 +89,7 @@
                 <div class="section">
                     <br><br>
                     <div class="section-title">Exhibitions</div>
-                    p {margin-bottom: 0.5em; /* Adjust '0.5em' to increase or decrease the space */}
+                    p {margin-bottom: 0.5em; }
                     <style>
                         .exhibition-row {
                             display: flex;
@@ -176,7 +176,7 @@
                 <br><br><br>
                 <div class="section">
                     <div class="section-title">Residency</div>
-                    p {margin-bottom: 0.5em; /* Adjust '0.5em' to increase or decrease the space */}
+                    p {margin-bottom: 0.5em; }
                       <style>
                         .residency-row {
                             display: flex;
@@ -212,7 +212,7 @@
                 <br><br><br>
                 <div class="section">
                     <div class="section-title">Education</div>
-                    p {margin-bottom: 0.5em; /* Adjust '0.5em' to increase or decrease the space */}
+                   p {margin-bottom: 0.5em; }
                     <style>
                         .entry-row {
                             display: flex;
@@ -266,7 +266,7 @@
                 <br><br><br>
                 <div class="section">
                     <div class="section-title">Awards</div>
-                    p {margin-bottom: 0.5em; /* Adjust '0.5em' to increase or decrease the space */}
+                    p {margin-bottom: 0.5em; }
                     <div class="entry">Averil Picot Art award</div>
                     <div class="entry">Academic Excellence scholarship</div>
                     <div class="entry">Regional scholarships</div>
@@ -275,9 +275,33 @@
                 <br><br><br>
                 <div class="section">
                     <div class="section-title">Collections</div>
-                    p {margin-bottom: 0.5em; /* Adjust '0.5em' to increase or decrease the space */}
-                    <div class="entry">Public      Government of China</div>
-                    <div class="entry">Private      UK and Channel Islands, Canada, China, France</div>
+                    p {margin-bottom: 0.5em; }
+                    	<style>
+                        .collection-row {
+                            display: flex;
+                            margin-bottom: 5px; /* Spacing between each row */
+                        }
+                        .collection-type {
+                            width: 70px; /* Space for the year */
+                            text-align: left;
+                        }
+                        .collection-location {
+                            width: 300px; /* Space for the collection name */
+                            text-align: left;
+             flex-grow: 1; /* Ensures it takes the rest of the space */
+                        }
+                    </style>
+
+                    <div class="collection-row">
+                        <div class="collection-type">Public</div>
+                        <div class="collection-location">Government of China</div>
+                    </div>
+                    
+                    <div class="collection-row">
+                        <div class="collection-type">Private</div>
+                        <div class="collection-location">UK and Channel Islands, Canada, China, France</div>
+                    </div>
+
                 </div>
             </div>
         </div>
