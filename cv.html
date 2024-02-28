@@ -87,6 +87,7 @@
        <div class="content">
             <div>
                 <div class="section">
+                    <br><br>
                     <div class="section-title">Exhibitions</div>
                     <br>
                     <div class="entry">2024      Royal College of Art, 'Terrain', London</div>
@@ -111,24 +112,30 @@
                 <div class="section">
                     <div class="section-title">Education</div>
                     <br>
-                        <style>
+                    <style>
                         .entry-row {
                             display: flex;
-                            margin-bottom: 5px; /* Adjust based on your preference */
-                            text-align: left;
+                            align-items: flex-start; /* Align items to the start of the flex container */
+                            margin-bottom: 5px;
+                        }
+                        .entry-year, .entry-degree, .entry-school {
+                            margin-right: 20px; /* Adds space between columns */
                         }
                         .entry-year {
-                            width: 70px; /* Adjust based on your preference */
+                            width: 70px; /* Ensure this is enough space for the year */
                             text-align: left;
                         }
                         .entry-degree {
-                            width: 500px; /* Adjust based on your preference */
+                            width: 500px; /* Adjust based on your content */
                             text-align: left;
                         }
                         .entry-school {
-                            text-align: left;
+                            text-align: left; /* Add more properties if needed */
+                            flex-grow: 1; /* Allows school name to take up remaining space */
                         }
                     </style>
+
+
                     
                     <div class="entry-row">
                         <div class="entry-year">2024</div>
