@@ -86,74 +86,70 @@
     .container {
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
-        padding-top: 20px; /* Space for the first row */
+        justify-content: flex-start; /* Adjust to align items to start */
+        padding: 20px 0; /* Added padding for spacing */
     }
     .navigation {
+        display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        height: auto;
-        padding: 10px 20px; /* Adjusted padding */
-        background-color: #fff; /* Ensure the background matches */
-        order: 1;
+        padding: 0 20px; /* Adjusted padding for sides */
+        order: 1; /* Ensure navigation is at the top */
+        background-color: transparent; /* Adjust if needed */
     }
     .navigation div {
         display: flex;
         justify-content: space-between;
-        width: 100%;
+        align-items: center;
     }
-    .navigation p {
-        order: 1;
-        flex: 0 1 auto; /* Adjust this for proper spacing */
-    }
-    .navigation a {
-        padding: 0 10px; /* Spacing between links */
-        flex: 1 1 auto; /* Adjust this for proper spacing */
-    }
-    /* Adjustments for CV, About on the left and Instagram, LinkedIn, Email on the right */
-    .navigation div:first-child {
-        justify-content: start;
-        flex-grow: 1;
+    .navigation p:first-child, .navigation div:first-child {
+        flex-basis: 50%; /* Adjust based on content size */
     }
     .navigation div:last-child {
-        justify-content: end;
-        flex-grow: 1;
-    }
-    .gallery {
-        order: 4; /* Image is now below the blank row */
-        width: 100%;
-        flex-grow: 1;
-    }
-    .gallery-slide {
-        display: block; /* Make sure slides are visible */
-        width: 100%;
-        height: auto; /* Adjust height to be auto */
-    }
-    .gallery-slide img {
-        max-height: 50vh; /* Adjust based on your needs */
-        width: auto; /* Adjust width automatically */
-        height: auto; /* Adjust height automatically */
-    }
-    .artwork-description {
-        order: 5; /* Moving the description below the image */
-        width: 100%;
-        text-align: left;
-        padding: 10px 20px; /* Adjusted padding */
-        position: static; /* Change if needed from absolute to static */
-        display: flex; /* Enable flex layout for inline elements */
-        justify-content: space-between; /* Space out the prev and next links */
-        background-color: transparent; /* Adjust based on your needs */
-        font-size: 14px; /* Adjust font size as needed */
-    }
-    .artwork-description p, .artwork-description a {
-        margin: 0; /* Remove margin from p and a if needed */
-    }
-    .artwork-description a {
+        flex-basis: 50%; /* Adjust based on content size */
         justify-content: flex-end;
     }
+    .gallery {
+        order: 3; /* Adjusted for image placement */
+        width: 100%;
+        display: flex; /* Ensure gallery is displayed */
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px; /* Space from top elements */
+    }
+    .gallery-slide {
+        width: 100%;
+        display: flex; /* Ensure slides are visible */
+        justify-content: center;
+        align-items: center;
+    }
+    .gallery-slide img {
+        width: 100%; /* Full width for images */
+        max-height: none; /* Remove max-height restriction */
+        object-fit: contain; /* Adjust this to 'contain' for full image without crop */
+    }
+    .artwork-description {
+        order: 4; /* Place description after the image */
+        width: 100%;
+        display: flex; /* Changed to flex for alignment */
+        justify-content: space-between; /* Adjusted for spacing between elements */
+        padding: 10px 20px; /* Padding for description */
+        text-align: left; /* Align text to the left */
+        margin-top: 20px; /* Space from the image */
+    }
+    .artwork-description p {
+        margin: 0; /* Remove margin for alignment */
+    }
+    .artwork-description a {
+        justify-content: flex-end; /* Align links to the right */
+    }
 }
+
+
+
+
 
 
 
