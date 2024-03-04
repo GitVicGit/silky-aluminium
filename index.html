@@ -87,16 +87,17 @@
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
+        padding-top: 20px; /* Space for the first row */
     }
     .navigation {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        order: 1;
         height: auto;
         padding: 10px 20px; /* Adjusted padding */
         background-color: #fff; /* Ensure the background matches */
+        order: 1;
     }
     .navigation div {
         display: flex;
@@ -105,53 +106,56 @@
     }
     .navigation p {
         order: 1;
+        flex: 0 1 auto; /* Adjust this for proper spacing */
     }
     .navigation a {
-        order: 2;
         padding: 0 10px; /* Spacing between links */
+        flex: 1 1 auto; /* Adjust this for proper spacing */
     }
-    .artwork-description {
-        order: 3;
-        width: 100%;
-        text-align: left;
-        padding: 10px 20px; /* Adjusted padding */
-        position: absolute;
-        bottom: 0; /* Position at the bottom */
-        background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    /* Adjustments for CV, About on the left and Instagram, LinkedIn, Email on the right */
+    .navigation div:first-child {
+        justify-content: start;
+        flex-grow: 1;
+    }
+    .navigation div:last-child {
+        justify-content: end;
+        flex-grow: 1;
     }
     .gallery {
-        order: 2;
+        order: 4; /* Image is now below the blank row */
         width: 100%;
         flex-grow: 1;
     }
     .gallery-slide {
-        width: 100%;
-        height: auto; /* Make sure this is auto to adjust to the image size */
         display: block; /* Make sure slides are visible */
-        justify-content: center;
-        align-items: center;
-    }
-    .gallery-slide.active {
-        display: flex; /* Ensure the active slide is displayed correctly */
+        width: 100%;
+        height: auto; /* Adjust height to be auto */
     }
     .gallery-slide img {
-        max-height: 60vh; /* Limit image height on small screens */
+        max-height: 50vh; /* Adjust based on your needs */
         width: auto; /* Adjust width automatically */
         height: auto; /* Adjust height automatically */
     }
-    .artwork-description a {
-        text-align: right;
+    .artwork-description {
+        order: 5; /* Moving the description below the image */
         width: 100%;
-        display: flex;
-        justify-content: space-between;
+        text-align: left;
+        padding: 10px 20px; /* Adjusted padding */
+        position: static; /* Change if needed from absolute to static */
+        display: flex; /* Enable flex layout for inline elements */
+        justify-content: space-between; /* Space out the prev and next links */
+        background-color: transparent; /* Adjust based on your needs */
+        font-size: 14px; /* Adjust font size as needed */
     }
-    .navigation div:first-child, .artwork-description {
-        justify-content: space-between;
+    .artwork-description p, .artwork-description a {
+        margin: 0; /* Remove margin from p and a if needed */
     }
-    .navigation div:last-child, .artwork-description a {
-        justify-content: space-between;
+    .artwork-description a {
+        justify-content: flex-end;
     }
 }
+
+
 
 
     </style>
