@@ -85,75 +85,62 @@
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding: 0; /* Remove additional padding */
+        align-items: flex-start;
+        padding: 10px;
     }
     .navigation {
-        display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        padding: 20px; /* Adjust padding for sides */
-        background-color: transparent; /* Keep background transparent */
-        flex-wrap: wrap; /* Allow items to wrap as needed */
+        padding: 10px 0;
     }
     .navigation p:first-child {
-        flex-basis: 100%; /* Full width to enforce new line */
-        text-align: left; /* Align VICTOR GUERIN to the left */
-        margin-bottom: 10px; /* Spacing below VICTOR GUERIN */
+        margin-right: auto; /* Keeps Victor Guerin at the left */
     }
     .navigation a {
-        padding: 0 10px; /* Adjust padding between links */
+        margin: 0 5px; /* Space between links */
+    }
+    .left-links, .right-links {
+        display: flex;
+        justify-content: center;
     }
     .gallery {
-        order: 2; /* Ensure gallery is displayed after navigation */
+        order: 3;
         width: 100%;
-        margin-top: 10px; /* Space from navigation */
+        margin-top: 20px; /* Space from navigation */
     }
     .gallery-slide {
-        display: block; /* Ensure slides are visible */
+        display: block; /* Show the slides */
         width: 100%;
-        justify-content: center;
-        align-items: center;
+        height: auto; /* Adjust based on content */
     }
     .gallery-slide img {
-        height: auto; /* Adjust height automatically */
-        max-width: 100%; /* Ensure image does not exceed container width */
-        object-fit: contain; /* Adjust fit to contain within the container without cropping */
+        max-width: 100%; /* Ensure image fits within container */
+        max-height: unset; /* Remove max height restriction */
     }
     .artwork-description {
-        order: 3; /* Ensure description is placed after the gallery */
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        order: 4;
         width: 100%;
-        padding: 20px; /* Add padding for text */
-        text-align: left; /* Align text to the left */
-        margin-top: 10px; /* Space from the gallery */
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+        margin-top: 20px; /* Space from the image */
     }
     .artwork-description p {
-        margin: 0; /* Remove margin for alignment */
-        flex-grow: 1; /* Allow text to fill available space */
-        text-align: left; /* Align text to the left */
+        flex-grow: 1;
+        text-align: left;
     }
     .artwork-description a {
-        flex-grow: 0; /* Prevent Prev/Next from growing */
-        text-align: right; /* Align Prev/Next to the right */
-        margin-left: 10px; /* Space between description and Prev/Next */
+        margin-left: 10px;
+        text-align: right;
+    }
+    .prev-next {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
     }
 }
-
-
-
-
-
-
-
-
-
-
 
 
     </style>
