@@ -38,7 +38,7 @@
             line-height: 1.5;
         }
         .navigation p:first-child {
-            font-weight: bold; /* Only VICTOR GUERIN in bold */
+            font-weight: bold;
             font-size: 30px;
         }
         .gallery {
@@ -61,8 +61,8 @@
         .gallery-slide img {
             max-width: 100%;
             max-height: 100%;
-            pointer-events: none; /* Disable pointer events */
-            -webkit-touch-callout: none; /* Disable touch callout on iOS */
+            pointer-events: none;
+            -webkit-touch-callout: none;
         }
         .artwork-description {
             font-size: 17px; 
@@ -72,110 +72,89 @@
             margin-left: 0;
         }
         .artwork-description p:first-child {
-            font-weight: bold; /* Only the artwork title in bold */
+            font-weight: bold;
             font-size: 17px;
         }
         .artwork-description a {
             display: inline-block;
             margin: 16px 8px 0;
             margin-left: 0;
-            text-decoration: underline; /* Make Prev and Next underlined */
+            text-decoration: underline;
         }
-        
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start; /* Align items to the start of the container */
-    }
-    .navigation {
-        width: 100%; /* Full width */
-        padding: 10px; /* Adjusted padding */
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between; /* Align items on opposite ends */
-        align-items: center;
-    }
-    .navigation p:first-child, .navigation div:first-child {
-        flex: 1;
-        text-align: left; /* Align 'VICTOR GUERIN' to the left */
-        margin-bottom: 0; /* Remove bottom margin */
-    }
-    .navigation div:last-child {
-        flex: 1;
-        display: flex;
-        justify-content: flex-end; /* Align social links to the right */
-    }
-    .gallery {
-        width: 100%; /* Full width */
-        order: 2; /* Reorder to display after the navigation */
-        display: block; /* Change display to block for stacking */
-    }
-    .gallery-slide {
-        display: block; /* Ensure the slide is displayed */
-        width: 100%; /* Full width */
-        text-align: center; /* Center-align the images */
-    }
-    .gallery-slide img {
-        width: 100%; /* Full width of the viewport */
-        height: auto; /* Keep the aspect ratio */
-    }
-    .artwork-description {
-        order: 3; /* Ensure this comes after the gallery */
-        width: 100%; /* Full width */
-        display: flex;
-        flex-direction: column; /* Stack information vertically */
-        padding: 10px 0; /* Add some padding */
-        text-align: left; /* Align text to the left */
-    }
-    .artwork-description a {
-        order: 4; /* Place navigation links last */
-        margin-top: 10px; /* Add space between description and navigation links */
-        justify-content: flex-end; /* Align navigation links to the right */
-        width: 100%; /* Full width */
-        display: flex;
-        flex-direction: row-reverse; /* Reverse the order to have 'Next' on the left and 'Prev' on the right */
-    }
-}
 
-
-
-
-
-
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 0;
+            }
+            .navigation {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                padding: 20px;
+                background-color: transparent;
+                flex-wrap: wrap;
+            }
+            .navigation p:first-child {
+                flex-basis: 100%;
+                text-align: left;
+                margin-bottom: 10px;
+            }
+            .navigation a {
+                padding: 0 10px;
+            }
+            .gallery {
+                order: 2;
+                width: 100%;
+                margin-top: 10px;
+            }
+            .gallery-slide {
+                display: block;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+            }
+            .gallery-slide img {
+                height: auto;
+                max-width: 100%;
+                object-fit: contain;
+            }
+            .artwork-description {
+                order: 3;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+                padding: 20px;
+                text-align: left;
+                margin-top: 10px;
+            }
+            .artwork-description p {
+                margin: 0;
+                flex-grow: 1;
+                text-align: left;
+            }
+            .artwork-description a {
+                flex-grow: 0;
+                text-align: right;
+                margin-left: 10px;
+            }
+        }
     </style>
-    
-    <script>
-  // Prevent right-click on images
-  document.addEventListener('contextmenu', function(e) {
-    if (e.target.nodeName === 'IMG') {
-      e.preventDefault();
-    }
-  });
-    </script>
-
 </head>
 <body>
     <div class="container">
         <div class="navigation">
-            <div>
-                <p><strong><a href="index.html">VICTOR GUERIN</a></strong></p>
-                <br><br><br>
-                <a href="cv.html">CV</a><br>
-                <a href="about.html">About</a><br><br>
-                <a href="https://www.instagram.com/victorguerin.fr/">Instagram</a><br>
-                <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a><br>
-                <a href="mailto:victorguerin.fr+web@pm.me">Email</a><br>
-            </div>
-        <div class="artwork-description">
-                <p id="artwork-title">Titre de l'œuvre</p>
-                <p id="artwork-material">Matériel</p>
-                <p id="artwork-size">Taille</p>
-                <p id="artwork-date">Date</p>
-                <br>
-                <a href="javascript:void(0);" id="prev">Prev</a>
-                <a href="javascript:void(0);" id="next">Next</a>
-            </div>
+            <p><strong><a href="index.html">VICTOR GUERIN</a></strong></p>
+            <a href="cv.html">CV</a>
+            <a href="about.html">About</a>
+            <a href="https://www.instagram.com/victorguerin.fr/">Instagram</a>
+            <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a>
+            <a href="mailto:victorguerin.fr+web@pm.me">Email</a>
         </div>
         <div class="gallery">
             <div class="gallery-slide active">
@@ -194,13 +173,21 @@
                 <img src="victor_guerin_artist_0630.jpg" alt="Artwork 5">
             </div>
         </div>
+        <div class="artwork-description">
+            <p id="artwork-title">Titre de l'œuvre</p>
+            <p id="artwork-material">Matériel</p>
+            <p id="artwork-size">Taille</p>
+            <p id="artwork-date">Date</p>
+            <a href="javascript:void(0);" id="prev">Prev</a>
+            <a href="javascript:void(0);" id="next">Next</a>
+        </div>
     </div>
     <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.gallery-slide');
-        const artworkTitles = ["Nature's Chromatic Symphony",'La Grande Bocca', 'Tours et Détours', 'Valse', 'Scottish Fantasy'];
+        const artworkTitles = ["Nature's Chromatic Symphony", 'La Grande Bocca', 'Tours et Détours', 'Valse', 'Scottish Fantasy'];
         const artworkMaterials = ['Oil on canvas', '3D-printed ceramic', '3D-printed ceramic', 'Earthenware', '3D-printed ceramic'];
-        const artworkSizes = ['100 x 150 x 4 cm', '30 x 30 x 30 cm', '60 x 35 x 30 cm', '40 x 35 x 12 cm', '40 x 35 x 30 cm'];
+        const artworkSizes = ['100 x 150 cm', '30 x 30 cm', '60 x 35 cm', '40 x 35 cm', '40 x 35 cm'];
         const artworkDates = ['2023', '2024', '2024', '2024', '2024'];
 
         function showSlide(index) {
@@ -227,5 +214,3 @@
     </script>
 </body>
 </html>
-
-
