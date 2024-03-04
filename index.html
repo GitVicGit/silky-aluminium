@@ -82,28 +82,27 @@
             text-decoration: underline; /* Make Prev and Next underlined */
         }
         
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-    .navigation, .gallery {
-        width: 100%; /* Full width on smaller screens */
-        max-width: 400px; /* Maximum width */
-    }
-    .navigation {
-        order: 2; /* Navigation goes below content on small screens */
-    }
-    .gallery-slide {
-        width: 100%; /* Adjust gallery size for smaller screens */
-    }
-    .artwork-description, .content div {
-        padding: 10px; /* Less padding on smaller screens */
-    }
-
-    body, html {
-        font-size: 90%; /* Smaller text on small screens */
-    }
-}
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+                height: 100vh;
+            }
+            .navigation {
+                width: 300px;
+                flex-shrink: 0;
+            }
+            .gallery {
+                flex-grow: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .gallery-slide {
+                display: flex;
+                width: calc(100% - 300px);
+                justify-content: center;
+                align-items: center;
+            }
 
     </style>
     
