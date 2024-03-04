@@ -82,27 +82,38 @@
             text-decoration: underline; /* Make Prev and Next underlined */
         }
         
-        @media (min-width: 768px) {
-            .container {
-                flex-direction: row;
-                height: 100vh;
-            }
-            .navigation {
-                width: 300px;
-                flex-shrink: 0;
-            }
-            .gallery {
-                flex-grow: 1;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            .gallery-slide {
-                display: flex;
-                width: calc(100% - 300px);
-                justify-content: center;
-                align-items: center;
-            }
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto; /* Adjust from 100vh to auto */
+    }
+    .navigation,
+    .gallery {
+        width: 100%; /* Full width */
+        padding: 0; /* Remove padding if necessary */
+    }
+    .navigation {
+        order: 1; /* Keep navigation on top */
+        padding: 10px; /* Adjust padding */
+    }
+    .gallery-slide {
+        width: 100%; /* Full width */
+        height: auto; /* Adjust height to be auto */
+        display: block; /* Change from none */
+    }
+    .gallery-slide img {
+        width: auto; /* Adjust image width to auto */
+        height: auto; /* Adjust image height to auto */
+        max-height: 400px; /* Set a max-height for images */
+    }
+    .artwork-description, .content div {
+        padding: 10px; /* Adjust padding */
+    }
+    .artwork-description p, .navigation p, .navigation a {
+        font-size: 14px; /* Smaller text */
+    }
+  }
+
 
     </style>
     
