@@ -86,8 +86,8 @@
     .container {
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start; /* Adjust to align items to start */
-        padding: 20px 0; /* Added padding for spacing */
+        justify-content: flex-start;
+        padding: 0; /* Remove additional padding */
     }
     .navigation {
         display: flex;
@@ -95,57 +95,59 @@
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        padding: 0 20px; /* Adjusted padding for sides */
-        order: 1; /* Ensure navigation is at the top */
-        background-color: transparent; /* Adjust if needed */
+        padding: 20px; /* Adjust padding for sides */
+        background-color: transparent; /* Keep background transparent */
+        flex-wrap: wrap; /* Allow items to wrap as needed */
     }
-    .navigation div {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    .navigation p:first-child {
+        flex-basis: 100%; /* Full width to enforce new line */
+        text-align: left; /* Align VICTOR GUERIN to the left */
+        margin-bottom: 10px; /* Spacing below VICTOR GUERIN */
     }
-    .navigation p:first-child, .navigation div:first-child {
-        flex-basis: 50%; /* Adjust based on content size */
-    }
-    .navigation div:last-child {
-        flex-basis: 50%; /* Adjust based on content size */
-        justify-content: flex-end;
+    .navigation a {
+        padding: 0 10px; /* Adjust padding between links */
     }
     .gallery {
-        order: 3; /* Adjusted for image placement */
+        order: 2; /* Ensure gallery is displayed after navigation */
         width: 100%;
-        display: flex; /* Ensure gallery is displayed */
-        justify-content: center;
-        align-items: center;
-        margin-top: 20px; /* Space from top elements */
+        margin-top: 10px; /* Space from navigation */
     }
     .gallery-slide {
+        display: block; /* Ensure slides are visible */
         width: 100%;
-        display: flex; /* Ensure slides are visible */
         justify-content: center;
         align-items: center;
     }
     .gallery-slide img {
-        width: 100%; /* Full width for images */
-        max-height: none; /* Remove max-height restriction */
-        object-fit: contain; /* Adjust this to 'contain' for full image without crop */
+        height: auto; /* Adjust height automatically */
+        max-width: 100%; /* Ensure image does not exceed container width */
+        object-fit: contain; /* Adjust fit to contain within the container without cropping */
     }
     .artwork-description {
-        order: 4; /* Place description after the image */
+        order: 3; /* Ensure description is placed after the gallery */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         width: 100%;
-        display: flex; /* Changed to flex for alignment */
-        justify-content: space-between; /* Adjusted for spacing between elements */
-        padding: 10px 20px; /* Padding for description */
+        padding: 20px; /* Add padding for text */
         text-align: left; /* Align text to the left */
-        margin-top: 20px; /* Space from the image */
+        margin-top: 10px; /* Space from the gallery */
     }
     .artwork-description p {
         margin: 0; /* Remove margin for alignment */
+        flex-grow: 1; /* Allow text to fill available space */
+        text-align: left; /* Align text to the left */
     }
     .artwork-description a {
-        justify-content: flex-end; /* Align links to the right */
+        flex-grow: 0; /* Prevent Prev/Next from growing */
+        text-align: right; /* Align Prev/Next to the right */
+        margin-left: 10px; /* Space between description and Prev/Next */
     }
 }
+
+
+
+
 
 
 
