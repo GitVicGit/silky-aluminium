@@ -83,42 +83,75 @@
         }
         
 @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                align-items: center;
-                justify-content: space-between;
-                padding: 20px 0;
-            }
-            .navigation {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                padding: 0 20px;
-                width: 100%;
-                height: auto;
-                order: 1;
-            }
-            .navigation p:first-child {
-                margin-right: auto;
-            }
-            .gallery-slide, .gallery {
-                width: 100%;
-                height: auto;
-                order: 3;
-            }
-            .gallery-slide img {
-                max-height: 60vh; /* Adjust based on your needs */
-            }
-            .artwork-description, .artwork-description a {
-                position: static;
-                display: block;
-                text-align: left;
-                margin: 10px 20px; /* Adjust based on your needs */
-            }
-            .artwork-description a {
-                text-align: right;
-            }
-        }
+    .container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .navigation {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        order: 1;
+        height: auto;
+        padding: 10px 20px; /* Adjusted padding */
+        background-color: #fff; /* Ensure the background matches */
+    }
+    .navigation div {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .navigation p {
+        order: 1;
+    }
+    .navigation a {
+        order: 2;
+        padding: 0 10px; /* Spacing between links */
+    }
+    .artwork-description {
+        order: 3;
+        width: 100%;
+        text-align: left;
+        padding: 10px 20px; /* Adjusted padding */
+        position: absolute;
+        bottom: 0; /* Position at the bottom */
+        background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    }
+    .gallery {
+        order: 2;
+        width: 100%;
+        flex-grow: 1;
+    }
+    .gallery-slide {
+        width: 100%;
+        height: auto; /* Make sure this is auto to adjust to the image size */
+        display: block; /* Make sure slides are visible */
+        justify-content: center;
+        align-items: center;
+    }
+    .gallery-slide.active {
+        display: flex; /* Ensure the active slide is displayed correctly */
+    }
+    .gallery-slide img {
+        max-height: 60vh; /* Limit image height on small screens */
+        width: auto; /* Adjust width automatically */
+        height: auto; /* Adjust height automatically */
+    }
+    .artwork-description a {
+        text-align: right;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .navigation div:first-child, .artwork-description {
+        justify-content: space-between;
+    }
+    .navigation div:last-child, .artwork-description a {
+        justify-content: space-between;
+    }
+}
 
 
     </style>
