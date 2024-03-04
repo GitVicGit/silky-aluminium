@@ -83,60 +83,38 @@
         }
         
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start; /* Align items to the start of the container */
-    }
-    .navigation {
-        width: 100%; /* Full width */
-        padding: 10px; /* Adjusted padding */
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between; /* Align items on opposite ends */
-        align-items: center;
-    }
-    .navigation p:first-child, .navigation div:first-child {
-        flex: 1;
-        text-align: left; /* Align 'VICTOR GUERIN' to the left */
-        margin-bottom: 0; /* Remove bottom margin */
-    }
-    .navigation div:last-child {
-        flex: 1;
-        display: flex;
-        justify-content: flex-end; /* Align social links to the right */
-    }
-    .gallery {
-        width: 100%; /* Full width */
-        order: 2; /* Reorder to display after the navigation */
-        display: block; /* Change display to block for stacking */
-    }
-    .gallery-slide {
-        display: block; /* Ensure the slide is displayed */
-        width: 100%; /* Full width */
-        text-align: center; /* Center-align the images */
-    }
-    .gallery-slide img {
-        width: 100%; /* Full width of the viewport */
-        height: auto; /* Keep the aspect ratio */
-    }
-    .artwork-description {
-        order: 3; /* Ensure this comes after the gallery */
-        width: 100%; /* Full width */
-        display: flex;
-        flex-direction: column; /* Stack information vertically */
-        padding: 10px 0; /* Add some padding */
-        text-align: left; /* Align text to the left */
-    }
-    .artwork-description a {
-        order: 4; /* Place navigation links last */
-        margin-top: 10px; /* Add space between description and navigation links */
-        justify-content: flex-end; /* Align navigation links to the right */
-        width: 100%; /* Full width */
-        display: flex;
-        flex-direction: row-reverse; /* Reverse the order to have 'Next' on the left and 'Prev' on the right */
-    }
-}
+            .container {
+                flex-direction: column;
+                height: auto;
+            }
+            .navigation {
+                width: 100%;
+                padding: 10px;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .navigation p:first-child, .navigation a {
+                font-size: 14px;
+            }
+            .gallery-slide {
+                width: 100%;
+                height: auto;
+            }
+            .gallery-slide img {
+                max-height: 50vh;
+            }
+            .artwork-description {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .artwork-description p {
+                font-size: 14px;
+            }
+        }
+
+
+
 
 
 
