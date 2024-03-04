@@ -86,61 +86,61 @@
     .container {
         flex-direction: column;
         align-items: flex-start;
-        padding: 10px;
+        justify-content: flex-start; /* Align items to the start of the container */
     }
     .navigation {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        padding: 10px 0;
-    }
-    .navigation p:first-child {
-        margin-right: auto; /* Keeps Victor Guerin at the left */
-    }
-    .navigation a {
-        margin: 0 5px; /* Space between links */
-    }
-    .left-links, .right-links {
+        width: 100%; /* Full width */
+        padding: 10px; /* Adjusted padding */
         display: flex;
-        justify-content: center;
+        flex-direction: row;
+        justify-content: space-between; /* Align items on opposite ends */
+        align-items: center;
+    }
+    .navigation p:first-child, .navigation div:first-child {
+        flex: 1;
+        text-align: left; /* Align 'VICTOR GUERIN' to the left */
+        margin-bottom: 0; /* Remove bottom margin */
+    }
+    .navigation div:last-child {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end; /* Align social links to the right */
     }
     .gallery {
-        order: 3;
-        width: 100%;
-        margin-top: 20px; /* Space from navigation */
+        width: 100%; /* Full width */
+        order: 2; /* Reorder to display after the navigation */
+        display: block; /* Change display to block for stacking */
     }
     .gallery-slide {
-        display: block; /* Show the slides */
-        width: 100%;
-        height: auto; /* Adjust based on content */
+        display: block; /* Ensure the slide is displayed */
+        width: 100%; /* Full width */
+        text-align: center; /* Center-align the images */
     }
     .gallery-slide img {
-        max-width: 100%; /* Ensure image fits within container */
-        max-height: unset; /* Remove max height restriction */
+        width: 100%; /* Full width of the viewport */
+        height: auto; /* Keep the aspect ratio */
     }
     .artwork-description {
-        order: 4;
-        width: 100%;
+        order: 3; /* Ensure this comes after the gallery */
+        width: 100%; /* Full width */
         display: flex;
-        justify-content: space-between;
-        padding: 20px 0;
-        margin-top: 20px; /* Space from the image */
-    }
-    .artwork-description p {
-        flex-grow: 1;
-        text-align: left;
+        flex-direction: column; /* Stack information vertically */
+        padding: 10px 0; /* Add some padding */
+        text-align: left; /* Align text to the left */
     }
     .artwork-description a {
-        margin-left: 10px;
-        text-align: right;
-    }
-    .prev-next {
+        order: 4; /* Place navigation links last */
+        margin-top: 10px; /* Add space between description and navigation links */
+        justify-content: flex-end; /* Align navigation links to the right */
+        width: 100%; /* Full width */
         display: flex;
-        justify-content: flex-end;
-        width: 100%;
+        flex-direction: row-reverse; /* Reverse the order to have 'Next' on the left and 'Prev' on the right */
     }
 }
+
+
+
+
 
 
     </style>
