@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Victor Guerin</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: sans-serif;
+            background-color: white;
+            font-size: 17px; 
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .navigation {
+            padding: 20px;
+            background-color: transparent;
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-sizing: border-box;
+            font-size: 17px;
+            white-space: nowrap;
+        }
+        .navigation a, .navigation p {
+            margin: 0;
+            color: black;
+            text-decoration: none;
+            line-height: 1.5;
+        }
+        .content {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-y: auto;
+            text-align: justify;
+        }
+        .content div {
+            max-width: 900px;
+            margin: auto;
+        }
+        .content h1, .content p {
+            font-size: 17px;
+        }
+        .content h1 {
+            margin-top: 0;
+        }
+        .content p {
+            line-height: 1.6;
+        }
+        .works-link {
+            display: block;
+            margin-top: 20px;
+            text-decoration: underline !important; 
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <div>
+                <a href="index.html" style="font-weight: bold; font-size: 30px;">VICTOR GUERIN</a> <!-- Make 'Victor Guerin' a link to the home page -->
+                <br><br><br><br>
+                <a href="cv.html">CV</a><br>
+                <a href="about.html">About</a><br><br>
+                <a href="statement.html">Statement</a><br><br>
+                <a href="https://www.instagram.com/victorguerin.fr/">Instagram</a><br>
+                <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a><br>
+                <a href="mailto:victorguerin.fr+web@pm.me">Email</a>
+            </div>
+                <a href="index.html" class="works-link">Works</a> 
+            </div>
+        <div class="content">
+            <div>
+                <p>Victor Guerin (b. 1993, France), makes sculptures and paintings that engage with nature to explore humans’ relationship with the environment. Viewed through a lens shaped by his training as a mechanical and industrial engineer and driven by a commitment to sustainability, Guerin uses materials like recycled bronze, aluminium and glass, along with botanical elements. Employing techniques ranging from lost-wax casting to 3D-printed ceramics, Guerin’s work proposes a harmony and respect for nature through this combination of materials and processes that bridge traditional craftsmanship with contemporary innovation.
+                </p>
+                <p>There is a parallel between the complexity of human consciousness and natural ecosystems. Guerin creates ambiguous sculptural forms that evoke varied interpretations, all of which relate directly to nature and promote a personal connection with the environment. The work is a dialogue between art, science and philosophy, focused on the relevance of nature in our lives and our collective responsibility towards its preservation.
+                </p> 
+                <p>_</p>
+                <p>In Guerin’s ‘Ephemeral Structures’ series, he uses 3D-printed ceramic to reflect on the concept of a haven that exists both within us and in the world outside, echoing childhood memories of nature's tranquillity amongst chaos. A conversation between the seen and unseen, ‘Tours et Détours’ suggests that deepest memories and unconscious experiences are intertwined with the natural world. 
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
