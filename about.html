@@ -123,7 +123,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 10px 20px; /* Restored vertical padding */
+    padding: 10px 0; /* Reduced vertical padding */
     position: fixed;
     bottom: 0;
     background-color: #fff;
@@ -132,9 +132,18 @@
 }
 
 .mobile-footer a {
-    font-size: 16px; /* Reduce font size for other links */
+    display: inline-block;
+    margin: 0;
+    padding: 0 10px; /* Added horizontal padding */
+    text-align: justify; /* Justify text */
+    text-justify: distribute-all-lines; /* Justify all lines */
+    font-size: 16px; /* Set font size */
     color: black; /* Set color to black */
     text-decoration: none; /* Remove default underline */
+}
+
+.mobile-footer a.works-link {
+    text-decoration: underline; /* Underline only 'Works' link */
 }
 
 
