@@ -146,6 +146,69 @@
             .mobile-footer a.works-link {
                 text-decoration: underline; /* Underline only 'Works' link */
             }
+            
+    /* Adjusting exhibition-row format */
+    .exhibition-row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .exhibition-row > * {
+        margin-right: 10px; /* Add space between elements */
+    }
+    .exhibition-year, .exhibition-name, .exhibition-title, .exhibition-location {
+        width: auto; /* Reset width */
+        flex-grow: 0; /* Reset flex-grow */
+        text-align: left; /* Align text to the left */
+        white-space: nowrap; /* Prevent line breaks */
+        margin-bottom: 5px; /* Add space between rows */
+    }
+    .exhibition-year::after,
+    .exhibition-name::after,
+    .exhibition-title::after {
+        content: " - "; /* Add separator between elements */
+    }
+
+    /* Adjusting residency-row format */
+    .residency-row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .residency-row > * {
+        margin-right: 10px; /* Add space between elements */
+    }
+    .residency-year, .residency-name, .residency-title, .residency-location {
+        width: auto; /* Reset width */
+        flex-grow: 0; /* Reset flex-grow */
+        text-align: left; /* Align text to the left */
+        white-space: nowrap; /* Prevent line breaks */
+        margin-bottom: 5px; /* Add space between rows */
+    }
+    .residency-year::after,
+    .residency-name::after,
+    .residency-title::after {
+        content: " - "; /* Add separator between elements */
+    }
+
+    /* Adjusting entry-row format */
+    .entry-row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .entry-row > * {
+        margin-right: 10px; /* Add space between elements */
+    }
+    .entry-year, .entry-degree, .entry-school {
+        width: auto; /* Reset width */
+        flex-grow: 0; /* Reset flex-grow */
+        text-align: left; /* Align text to the left */
+        white-space: nowrap; /* Prevent line breaks */
+        margin-bottom: 5px; /* Add space between rows */
+    }
+    .entry-year::after,
+    .entry-degree::after,
+    .entry-school::after {
+        content: " - "; /* Add separator between elements */
+    }
 
 }
 
