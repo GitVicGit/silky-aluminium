@@ -65,58 +65,65 @@
             text-decoration: underline !important; 
         }
 
-@media (max-width: 768px) {
-    /* Mobile Banner */
-    .mobile-banner {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        padding: 10px 20px;
-        position: fixed;
-        top: 0;
-        background-color: #fff;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        z-index: 1001;
-    }
-
-    /* Mobile Footer */
-    .mobile-footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        padding: 10px 20px;
-        position: fixed;
-        bottom: 0;
-        background-color: #fff;
-        box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-        z-index: 1001;
-    }
-
-    /* Adjust links to fit better in mobile layout */
-    .mobile-banner a, .mobile-footer a {
-        font-size: 14px;
-        padding: 0 10px;
-        color: black;
-        text-decoration: none;  /* Ensuring no underline */
-    }
-
-    /* Content adjustments to avoid overlapping with fixed header/footer */
-    .content {
-        padding-top: 60px;  /* Enough space to clear fixed header */
-        padding-bottom: 60px;  /* Enough space to clear fixed footer */
-        overflow-y: auto;
-    }
-}
-
+        @media (max-width: 768px) {
+            .navigation {
+                display: none;
+            }
+            .mobile-banner {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                padding: 10px 20px;
+                position: fixed;
+                top: 0;
+                background-color: #fff;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                z-index: 1001;
+            }
+            .mobile-footer {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                padding: 10px 20px;
+                position: fixed;
+                bottom: 0;
+                background-color: #fff;
+                box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+                z-index: 1001;
+            }
+            .mobile-banner a, .mobile-footer a {
+                font-size: 14px;
+                padding: 0 10px;
+                color: black;
+                text-decoration: none;
+            }
+            .content {
+                padding-top: 60px;
+                padding-bottom: 60px;
+                overflow-y: auto;
+                display: block;
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Mobile-specific Banner -->
+    <div class="mobile-banner">
+        <a href="index.html" style="font-weight: bold;">VICTOR GUERIN</a>
+        <div>
+            <a href="cv.html">CV</a>
+            <a href="about.html">About</a>
+            <a href="statement.html">Statement</a>
+        </div>
+    </div>
+
     <div class="container">
         <div class="navigation">
             <div>
-                <a href="index.html" style="font-weight: bold; font-size: 30px;">VICTOR GUERIN</a> <!-- Make 'Victor Guerin' a link to the home page -->
+                <a href="index.html" style="font-weight: bold; font-size: 30px;">VICTOR GUERIN</a>
                 <br><br><br><br>
                 <a href="cv.html">CV</a><br>
                 <a href="about.html">About</a><br>
@@ -125,8 +132,8 @@
                 <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a><br>
                 <a href="mailto:victorguerin.fr+web@pm.me">Email</a>
             </div>
-                <a href="index.html" class="works-link">Works</a> 
-            </div>
+            <a href="index.html" class="works-link">Works</a>
+        </div>
         <div class="content">
             <div>
                 <p>A native of Poitiers, France, Victor Guerin was raised in a rural setting on the outskirts of the city where he developed a deep love of nature that continues to shape his world view. 
@@ -139,29 +146,7 @@
                 </p>
                 <p>Looking forward, Victor aims to create large-scale outdoor installations that engage and  inspire, leveraging his innovative approach to highlight sustainability  and provoke a reevaluation of our environmental impact.
                 </p>
-                
             </div>
-        </div>
-    </div>
-
-
-    <!-- Mobile-specific Banner -->
-    <div class="mobile-banner">
-        <a href="index.html" style="font-weight: bold;">VICTOR GUERIN</a>
-        <div>
-            <a href="cv.html">CV</a>
-            <a href="about.html">About</a>
-            <a href="statement.html">Statement</a>
-        </div>
-    </div>
-
-    <div class="container">
-        <!-- Existing content and navigation for desktop and larger screens -->
-        <div class="navigation">
-            <!-- Original Content -->
-        </div>
-        <div class="content">
-            <!-- Page Specific Content -->
         </div>
     </div>
 
@@ -174,11 +159,9 @@
             <a href="mailto:victorguerin.fr+web@pm.me">Email</a>
         </div>
     </div>
-
-
-</div>
 </body>
 </html>
+
 
 
 
