@@ -82,75 +82,36 @@
             text-decoration: underline; /* Make Prev and Next underlined */
         }
         
-        @media (max-width: 768px) {
+@media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+            }
             .navigation {
-                display: none;
-            }
-            .content {
-                padding-top: 60px;
-                padding-bottom: 60px;
-                overflow-y: auto;
-                display: block;
                 width: 100%;
-            }
-            
-            .mobile-banner {
-                display: flex;
+                padding: 10px;
+                flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
+            }
+            .navigation p:first-child, .navigation a {
+                font-size: 14px;
+            }
+            .gallery-slide {
                 width: 100%;
-                padding: 10px 0; /* Reduced vertical padding */
-                position: fixed;
-                top: 0;
-                background-color: #fff;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-                z-index: 1001;
+                height: auto;
             }
-            .mobile-banner a {
-                display: inline-block;
-                margin: 0;
-                padding: 0 10px; /* Added horizontal padding */
-                text-align: justify; /* Justify text */
-                text-justify: distribute-all-lines; /* Justify all lines */
-                font-size: 16px; /* Set font size */
-                color: black; /* Set color to black */
-                text-decoration: none; /* Remove default underline */
+            .gallery-slide img {
+                max-height: 50vh;
             }
-            .mobile-banner a.works-link {
-                text-decoration: underline; /* Underline only 'Works' link */
+            .artwork-description {
+                flex-direction: column;
+                align-items: flex-end;
             }
-            .mobile-banner .content {
-                flex-grow: 1;
-                text-align: justify;
-                margin-left: 20px; /* Adjusted margin */
-                margin-right: 20px; /* Adjusted margin */
+            .artwork-description p {
+                font-size: 14px;
             }
-            .mobile-footer {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%;
-                padding: 10px 0; /* Reduced vertical padding */
-                position: fixed;
-                bottom: 0;
-                background-color: #fff;
-                box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-                z-index: 1001;
-            }
-            .mobile-footer a {
-                display: inline-block;
-                margin: 0;
-                padding: 0 10px; /* Added horizontal padding */
-                text-align: justify; /* Justify text */
-                text-justify: distribute-all-lines; /* Justify all lines */
-                font-size: 16px; /* Set font size */
-                color: black; /* Set color to black */
-                text-decoration: none; /* Remove default underline */
-            }
-            .mobile-footer a.works-link {
-                text-decoration: underline; /* Underline only 'Works' link */
-            }
-
+        }
 
   
 
@@ -209,26 +170,6 @@
                 <img src="victor_guerin_artist_0630.jpg" alt="Artwork 5">
             </div>
         </div>
-
-            <!-- Mobile-specific Banner -->
-    <div class="mobile-banner">
-        <a href="index.html" style="font-weight: bold;font-size: 17px">VICTOR GUERIN</a>
-        <div>
-            <a href="cv.html">CV</a>
-            <a href="about.html">About</a>
-            <a href="statement.html">Statement</a>
-        </div>
-    </div>
-    
-    <!-- Mobile-specific Footer -->
-    <div class="mobile-footer">
-            <a href="index.html" class="works-link">Works</a>
-        <div>
-            <a href="https://www.instagram.com/victorguerin.fr/">Instagram</a>
-            <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a>
-            <a href="mailto:victorguerin.fr+web@pm.me">Email</a>
-        </div>
-        
     </div>
     <script>
         let currentSlide = 0;
