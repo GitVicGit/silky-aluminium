@@ -64,7 +64,50 @@
             margin-top: 20px;
             text-decoration: underline !important; 
         }
-
+@media (max-width: 768px) {
+    /* Ensure the navigation bar acts as a header */
+    .navigation {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between; /* Align items in a row */
+        background-color: #fff; /* White background */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow for depth */
+        width: 100%;
+    }
+    /* Footer with links */
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px;
+        box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+        font-size: 14px; /* Smaller font size for footer items */
+    }
+    .content, .gallery {
+        padding-top: 60px; /* Make space for fixed header */
+        padding-bottom: 50px; /* Make space for fixed footer */
+        margin: 0;
+        display: block;
+        width: 100%;
+        overflow-y: auto;
+    }
+    .navigation a, .footer a {
+        font-size: 14px;
+        padding: 10px;
+        display: inline-block;
+        color: black; /* Ensure text is black for visibility */
+    }
+    .navigation p:first-child, .footer p {
+        display: none; /* Hide main title in navigation and any paragraph in footer */
+    }
+}
 
     </style>
 </head>
