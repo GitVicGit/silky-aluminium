@@ -147,46 +147,69 @@
                 text-decoration: underline; /* Underline only 'Works' link */
             }
             
-   /* Adjusting exhibition-row format for mobile */
-    .exhibition-row {
-        display: block; /* Change to block to ensure each item appears on a new line */
-        margin-bottom: 10px; /* Increase margin between items */
-    }
-    .exhibition-row > * {
-        margin-right: 0; /* Remove right margin to prevent extra spacing */
-    }
-    .exhibition-year, .exhibition-name, .exhibition-title, .exhibition-location {
-        width: auto; /* Reset width */
-        display: inline; /* Display inline to ensure items are on the same line */
-        white-space: nowrap; /* Prevent line breaks */
-    }
-    .exhibition-year::after,
-    .exhibition-name::after,
-    .exhibition-title::after {
-        content: "    "; /* Add space as separator */
-    }
-    .exhibition-location::after {
-        content: ""; /* Remove separator after last item */
-    }
+  /* Adjusting exhibition-row format for mobile */
+.exhibition-row {
+    display: block; /* Change to block to ensure each item appears on a new line */
+    margin-bottom: 10px; /* Increase margin between items */
+}
+.exhibition-row > * {
+    margin-right: 0; /* Remove right margin to prevent extra spacing */
+}
+.exhibition-year, .exhibition-name, .exhibition-title, .exhibition-location {
+    width: auto; /* Reset width */
+    display: inline; /* Display inline to ensure items are on the same line */
+    white-space: nowrap; /* Prevent line breaks */
+}
+.exhibition-year::after,
+.exhibition-name::after,
+.exhibition-title::after {
+    content: "    "; /* Add space as separator */
+}
+.exhibition-location::after {
+    content: ""; /* Remove separator after last item */
+}
 
 /* Adjusting entry-row format for mobile */
-    .entry-row {
-        display: block; /* Change to block to ensure each item appears on a new line */
-        margin-bottom: 10px; /* Increase margin between items */
-    }
-    .entry-row > * {
-        margin-right: 0; /* Remove right margin to prevent extra spacing */
-    }
-    .entry-year, .entry-degree, .entry-school {
-        width: auto; /* Reset width */
-        display: inline; /* Display inline to ensure items are on the same line */
-        white-space: nowrap; /* Prevent line breaks */
-    }
-    .entry-year::after,
-    .entry-degree::after,
-    .entry-school::after {
-        content: "    "; /* Add space as separator */
-    }
+.entry-row {
+    display: block; /* Change to block to ensure each item appears on a new line */
+    margin-bottom: 10px; /* Increase margin between items */
+}
+.entry-row > * {
+    margin-right: 0; /* Remove right margin to prevent extra spacing */
+}
+.entry-year, .entry-degree, .entry-school {
+    width: auto; /* Reset width */
+    display: inline; /* Display inline to ensure items are on the same line */
+    white-space: nowrap; /* Prevent line breaks */
+}
+.entry-year::after,
+.entry-degree::after,
+.entry-school::after {
+    content: "    "; /* Add space as separator */
+}
+
+/* Adjusting residency-row format for mobile */
+.residency-row {
+    display: block; /* Change to block to ensure each item appears on a new line */
+    margin-bottom: 10px; /* Increase margin between items */
+}
+.residency-row > * {
+    margin-right: 0; /* Remove right margin to prevent extra spacing */
+}
+.residency-year, .residency-name, .residency-title, .residency-location {
+    width: auto; /* Reset width */
+    display: inline; /* Display inline to ensure items are on the same line */
+    white-space: nowrap; /* Prevent line breaks */
+}
+.residency-year::after,
+.residency-name::after,
+.residency-title::after {
+    content: "    "; /* Add space as separator */
+}
+.residency-location::after {
+    content: ""; /* Remove separator after last item */
+}
+
 }
 
 
