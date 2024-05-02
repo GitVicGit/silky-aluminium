@@ -83,35 +83,49 @@
         }
         
 @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                height: auto;
-            }
-            .navigation {
-                width: 100%;
-                padding: 10px;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-            }
-            .navigation p:first-child, .navigation a {
-                font-size: 14px;
-            }
-            .gallery-slide {
-                width: 100%;
-                height: auto;
-            }
-            .gallery-slide img {
-                max-height: 50vh;
-            }
-            .artwork-description {
-                flex-direction: column;
-                align-items: flex-end;
-            }
-            .artwork-description p {
-                font-size: 14px;
-            }
-        }
+    /* Ensure the navigation bar acts as a header */
+    .navigation {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between; /* Align items in a row */
+        background-color: #fff; /* White background */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow for depth */
+        width: 100%;
+    }
+    /* Footer with links */
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px;
+        box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+        font-size: 14px; /* Smaller font size for footer items */
+    }
+    .content, .gallery {
+        padding-top: 60px; /* Make space for fixed header */
+        padding-bottom: 50px; /* Make space for fixed footer */
+        margin: 0;
+        display: block;
+        width: 100%;
+        overflow-y: auto;
+    }
+    .navigation a, .footer a {
+        font-size: 14px;
+        padding: 10px;
+        display: inline-block;
+        color: black; /* Ensure text is black for visibility */
+    }
+    .navigation p:first-child, .footer p {
+        display: none; /* Hide main title in navigation and any paragraph in footer */
+    }
+}
 
   
 
@@ -201,6 +215,14 @@
 
         showSlide(currentSlide);
     </script>
+    <div class="footer">
+    <a href="index.html">Work</a>
+    <div style="text-align: right;">
+        <a href="https://www.instagram.com/victorguerin.fr/">Instagram</a>
+        <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a>
+        <a href="mailto:victorguerin.fr+web@pm.me">Email</a>
+    </div>
+</div>
 </body>
 </html>
 
