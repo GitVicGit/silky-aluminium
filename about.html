@@ -83,31 +83,32 @@
                 width: 100%;
             }
             
-.mobile-banner {
+.mobile-banner,
+.mobile-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     padding: 10px 0; /* Reduced vertical padding */
     position: fixed;
-    top: 0;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     z-index: 1001;
 }
 
-.mobile-banner a {
+.mobile-banner a,
+.mobile-footer a {
     display: inline-block;
     margin: 0;
     padding: 0 10px; /* Added horizontal padding */
     text-align: justify; /* Justify text */
     text-justify: distribute-all-lines; /* Justify all lines */
-    font-size: 17px; /* Set font size */
     color: black; /* Set color to black */
     text-decoration: none; /* Remove default underline */
 }
 
-.mobile-banner a.works-link {
+.mobile-banner a.works-link,
+.mobile-footer a.works-link {
     text-decoration: underline; /* Underline only 'Works' link */
 }
 
@@ -118,34 +119,14 @@
     margin-right: 20px; /* Adjusted margin */
 }
 
-.mobile-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 10px 0; /* Reduced vertical padding */
-    position: fixed;
-    bottom: 0;
-    background-color: #fff;
-    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-    z-index: 1001;
+.mobile-banner a:not(.works-link),
+.mobile-footer a:not(.works-link) {
+    font-size: 17px; /* Set font size for non-'Works' links */
 }
 
-.mobile-footer a {
-    display: inline-block;
-    margin: 0;
-    padding: 0 10px; /* Added horizontal padding */
-    text-align: justify; /* Justify text */
-    text-justify: distribute-all-lines; /* Justify all lines */
-    font-size: 16px; /* Set font size */
-    color: black; /* Set color to black */
-    text-decoration: none; /* Remove default underline */
+.mobile-footer a:not(.works-link) {
+    font-size: 16px; /* Set font size for non-'Works' links */
 }
-
-.mobile-footer a.works-link {
-    text-decoration: underline; /* Underline only 'Works' link */
-}
-
 
 
         }
