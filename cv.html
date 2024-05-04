@@ -168,7 +168,7 @@
     }
 
         
-        .entry-row {
+       .entry-row {
             display: block; /* Ensures the whole row behaves as a block but contains inline elements */
             text-align: left; /* Aligns text to the left */
             margin-bottom: 10px; /* Provides space between each entry */
@@ -178,10 +178,10 @@
             white-space: nowrap; /* Prevents wrapping within elements */
         }
         .entry-year::after {
-            content: "  "; /* Two spaces after the year */
+            content: "\00A0\00A0"; /* Unicode for non-breaking space, ensures two spaces are visible */
         }
         .entry-degree::after {
-            content: ", "; /* Comma and space after the degree */
+            content: ",\00A0"; /* Comma followed by a non-breaking space for consistency */
         }
         /* No additional content after entry-school as it's the last element */
 
