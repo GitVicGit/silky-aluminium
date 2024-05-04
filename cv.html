@@ -167,17 +167,17 @@
     /* Remove any styling that might conflict with the above */
 
     
-  .entry-row {
+    .entry-row {
         display: block; /* Ensures the row behaves as a block element */
-        text-align: left; /* Forces text to align to the left */
+        text-align: left; /* Explicitly aligns text to the left */
         margin-bottom: 10px; /* Adds space between entries */
         font-size: 16px; /* Adjusts the font size */
         overflow-wrap: break-word; /* Allows words to break and wrap to the next line */
     }
     .entry-content {
-        display: inline-block; /* Ensures the content is treated as a single block that can wrap */
-        white-space: normal; /* Allows the content to wrap naturally as a single block */
+        display: block; /* Changes from inline-block to block for clearer control */
         width: 100%; /* Ensures the content spans the full width of its container */
+        text-align: left; /* Reinforces text alignment to the left */
     }
     .entry-year, .entry-degree, .entry-school {
         display: inline; /* Keeps elements inline within .entry-content */
