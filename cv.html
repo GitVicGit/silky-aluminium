@@ -160,21 +160,24 @@
     .collection-type, .collection-location {
         display: inline; /* Ensures inline display for a continuous text flow */
         white-space: nowrap; /* Keeps the text from wrapping within elements */
+        text-align: left; /* Ensures text is aligned to the left */
     }
     .exhibition-year::after, 
     .residency-year::after,
     .entry-year::after {
         content: "\00A0\00A0"; /* Adds two non-breaking spaces after the year */
+        text-align: left; /* Ensures text is aligned to the left */
     }        
     .exhibition-name::after, .exhibition-title::after,
     .residency-name::after, .residency-title::after,
     .entry-degree::after,
-    .collection-type::after {
         content: ",\00A0"; /* Adds a comma followed by a non-breaking space */
+        text-align: left; /* Ensures text is aligned to the left */
     }
     /* No content after the last element in each row to avoid trailing comma */
     .exhibition-location::after, .residency-location::after, .collection-location::after {
         content: ""; /* Ensures no trailing punctuation */
+        text-align: left; /* Ensures text is aligned to the left */
     }
             
 
@@ -260,9 +263,6 @@
                     <br>
                     <div class="exhibition-row">
                         <div class="exhibition-year">Current</div>
-                        <div class="exhibition-name"></div>
-                        <div class="exhibition-title"></div>
-                        <div class="exhibition-location"></div>
                     </div>
                         <div class="exhibition-row">
                         <div class="exhibition-year">2024</div>
@@ -271,11 +271,8 @@
                         <div class="exhibition-location">London</div>
                     </div>
                     <br>
-                    <div class="exhibition-row">
+
                         <div class="exhibition-year">Past</div>
-                        <div class="exhibition-name"></div>
-                        <div class="exhibition-title"></div>
-                        <div class="exhibition-location"></div>
                     </div>
                     <div class="exhibition-row">
                         <div class="exhibition-year">2024</div>
