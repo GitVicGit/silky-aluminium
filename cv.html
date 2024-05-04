@@ -148,17 +148,24 @@
             }
             
 /* Adjusting exhibition-row format for mobile */
-.exhibition-row {
-    display: flex;
-    flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
-    margin-bottom: 10px; /* Increase margin between items */
+    .exhibition-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        text-align: left; /* Ensures text alignment is left */
+    }
+    .exhibition-year, .exhibition-name, .exhibition-title, .exhibition-location {
+        display: inline-block; /* Allows inline styling and better control */
+        margin-right: 10px; /* Ensures spacing between elements */
+    }
+    .exhibition-name::before, .exhibition-title::before, .exhibition-location::before {
+        content: ", "; /* Adds a comma before each element except the first */
+    }
+    .exhibition-year::after {
+        content: "  "; /* Adds two spaces after the year */
+    }
 }
-.exhibition-row > * {
-    margin-right: 10px; /* Add margin between items */
-}
-.exhibition-year, .exhibition-name, .exhibition-title, .exhibition-location {
-    white-space: nowrap; /* Prevent line breaks */
-}
+
 
 /* Adjusting entry-row format for mobile */
 .entry-row {
