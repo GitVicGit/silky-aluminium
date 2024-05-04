@@ -169,34 +169,23 @@
 
         
        .entry-row {
-            display: block; /* Ensures the whole row behaves as a block but contains inline elements */
-            text-align: left; /* Aligns text to the left */
-            margin-bottom: 10px; /* Provides space between each entry */
-            word-wrap: break-word; /* Allows the text to wrap */
-        }
-        .entry-year, .entry-degree, .entry-school {
-            display: inline; /* Makes each element flow in a line */
-            white-space: normal; /* Allows wrapping */
-        }
-        .entry-year::after {
-            content: "\00A0\00A0"; /* Unicode for non-breaking space, ensures two spaces are visible */
-        }
-        .entry-degree::after {
-            content: ",\00A0"; /* Comma followed by a non-breaking space for consistency */
-        }
-        .entry-row {
-            position: relative; /* Establishes a positioning context for pseudo-elements */
-        }
-        .entry-row::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            white-space: pre-wrap; /* Preserves whitespace */
-            overflow-wrap: break-word; /* Ensures wrapping at any point */
-            padding-left: 6ch; /* Indents text on new lines */
-            text-indent: -6ch; /* Pulls the first line back to align correctly */
-        }
+        display: block; /* Ensures the whole row behaves as a block */
+        text-align: left; /* Aligns text to the left */
+        margin-bottom: 10px; /* Provides space between each entry */
+        overflow-wrap: break-word; /* Allows the text to wrap at any point */
+        padding-left: 6ch; /* Provides initial padding for wrapped lines */
+        text-indent: -6ch; /* Negatively indents the first line to align it with the container */
+    }
+    .entry-year, .entry-degree, .entry-school {
+        display: inline; /* Makes each element flow in a line */
+        white-space: nowrap; /* Prevents these elements from wrapping individually */
+    }
+    .entry-year::after {
+        content: "\00A0\00A0"; /* Unicode for non-breaking space, ensures two spaces are visible */
+    }
+    .entry-degree::after {
+        content: ",\00A0"; /* Comma followed by a non-breaking space for consistency */
+    }
 
 
 
