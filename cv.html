@@ -168,25 +168,37 @@
     }
 
         
-       .entry-row {
-        display: block; /* Ensures the whole row behaves as a block */
-        text-align: left; /* Aligns text to the left */
-        margin-bottom: 10px; /* Provides space between each entry */
-        overflow-wrap: break-word; /* Allows the text to wrap at any point */
-        padding-left: 6ch; /* Provides initial padding for wrapped lines */
-        text-indent: -6ch; /* Negatively indents the first line to align it with the container */
+.entry-row {
+        display: block; /* Sets the layout as block for better control */
+        text-align: left; /* Aligns the text to the left */
+        margin-bottom: 10px; /* Space between rows */
+        overflow-wrap: break-word; /* Allows breaking and wrapping of long words */
     }
     .entry-year, .entry-degree, .entry-school {
-        display: inline; /* Makes each element flow in a line */
-        white-space: nowrap; /* Prevents these elements from wrapping individually */
+        display: inline; /* Continues inline display */
+        white-space: nowrap; /* Prevents these elements from breaking into new lines */
     }
     .entry-year::after {
-        content: "\00A0\00A0"; /* Unicode for non-breaking space, ensures two spaces are visible */
+        content: "\00A0\00A0"; /* Two non-breaking spaces after the year */
     }
     .entry-degree::after {
-        content: ",\00A0"; /* Comma followed by a non-breaking space for consistency */
+        content: ",\00A0"; /* Comma and a non-breaking space after the degree */
     }
-
+    .entry-row {
+        position: relative; /* Establishes a positioning context for pseudo-elements */
+        padding-left: 6ch; /* Adds padding to the left for all content */
+    }
+    .entry-row::before {
+        content: ""; /* Empty content for pseudo-element */
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        pointer-events: none; /* Ensures it doesn't interfere with text selection or clicks */
+        background: linear-gradient(to right, transparent 6ch, white 6ch); /* Creates a gradient that effectively hides overflow text on the first line */
+        white-space: pre; /* Preserves whitespace */
+    }
 
 
     </style>
