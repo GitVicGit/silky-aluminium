@@ -148,24 +148,23 @@
             }
 
 
-        .exhibition-row {
-            display: flex;
-            flex-direction: column; /* Stack elements vertically */
-            align-items: flex-start; /* Align items to the start */
-            text-align: left; /* Align text to the left */
-            margin-bottom: 5px; /* Space between rows */
-        }
-        .exhibition-year, .exhibition-name, .exhibition-title, .exhibition-location {
-            display: block; /* Each element takes the full width of its container */
-            clear: both; /* Avoids elements floating next to each other */
-        }
-        .exhibition-name::before, .exhibition-title::before, .exhibition-location::before {
-            content: ", "; /* Adds comma before each element */
-        }
-        .exhibition-year::after {
-            content: "  "; /* Adds two spaces after the year */
-        }
-
+       .exhibition-row {
+        display: block; /* Change display to block for simplicity */
+        text-align: left; /* Ensure text is aligned to the left */
+        font-size: 16px; /* Adjust font size as needed */
+        margin-bottom: 10px; /* Space between rows */
+    }
+    .exhibition-year, .exhibition-name, .exhibition-title, .exhibition-location {
+        display: inline; /* Inline display for continuous text flow */
+        margin-right: 0; /* Remove any right margin */
+    }
+    .exhibition-year::after {
+        content: "  ,"; /* Two spaces and a comma after the year */
+    }
+    .exhibition-name::after, .exhibition-title::after {
+        content: ", "; /* Comma after name and title */
+    }
+    /* Remove any styling that might conflict with the above */
     }
 
     </style>
