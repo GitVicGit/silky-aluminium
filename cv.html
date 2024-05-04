@@ -167,21 +167,23 @@
     /* Remove any styling that might conflict with the above */
 
     
-    .entry-row {
+  .entry-row {
         display: block; /* Ensures the row behaves as a block element */
-        text-align: left; /* Ensures text is aligned to the left */
-        font-size: 16px; /* Adjust the font size as needed */
-        margin-bottom: 10px; /* Adds space between entries */
-        overflow-wrap: break-word; /* Allows text to wrap within the block */
+        text-align: left; /* Aligns text to the left */
+        margin-bottom: 10px; /* Space between entries */
+        font-size: 16px; /* Suitable font size */
+        white-space: normal; /* Allows content to wrap naturally */
+        overflow-wrap: break-word; /* Ensures long words can wrap at the end of the line */
     }
     .entry-year, .entry-degree, .entry-school {
-        display: inline; /* Ensures elements are in a single line */
+        display: inline; /* Displays elements inline within .entry-row */
+        white-space: nowrap; /* Prevents these individual elements from wrapping */
     }
     .entry-year::after {
-        content: "  "; /* Adds two spaces after the year */
+        content: "  "; /* Two spaces after the year */
     }
     .entry-degree::after {
-        content: ", "; /* Adds a comma and a space after the degree */
+        content: ", "; /* A comma and a space after the degree */
     }
             
 
