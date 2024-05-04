@@ -167,7 +167,7 @@
     /* Remove any styling that might conflict with the above */
 
     
-    .entry-row {
+  .entry-row {
         display: block; /* Ensures the row behaves as a block element */
         text-align: left; /* Forces text to align to the left */
         margin-bottom: 10px; /* Adds space between entries */
@@ -184,12 +184,11 @@
         white-space: nowrap; /* Prevents these elements from wrapping individually */
     }
     .entry-year::after {
-        content: "  "; /* Adds two spaces after the year */
+        content: "\00A0\00A0"; /* Adds two non-breaking spaces after the year */
     }
     .entry-degree::after {
-        content: ", "; /* Adds a comma and a space after the degree */
+        content: ",\00A0"; /* Adds a comma and a non-breaking space after the degree */
     }
-            
 
 }
     </style>
