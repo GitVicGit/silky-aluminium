@@ -65,7 +65,6 @@
             margin-top: 20px;
             text-decoration: underline !important; 
         }
-        }
         .section {
             margin-bottom: 20px;
         }
@@ -147,51 +146,49 @@
                 text-decoration: underline; /* Underline only 'Works' link */
             }
 
-    .exhibition-row, .residency-row,  .entry-row, .collection-row {
-        display: block; /* Changes display to block for mobile */
-        text-align: left; /* Ensures text is aligned to the left */
-        font-size: 16px; /* Adjust font size as needed */
-        margin-bottom: 10px; /* Space between rows */
-        overflow-wrap: break-word; /* Allows text to wrap to avoid overflow */
-    }
-    .exhibition-year, .exhibition-name, .exhibition-title, .exhibition-location,
-    .residency-year, .residency-name, .residency-title, .residency-location,
-    .entry-year, .entry-degree, .entry-school,
-    .collection-type, .collection-location {
-        display: inline; /* Ensures inline display for a continuous text flow */
-        white-space: nowrap; /* Keeps the text from wrapping within elements */
-        text-align: left; /* Ensures text is aligned to the left */
-    }
-    .exhibition-year::after, 
-    .residency-year::after,
-    .entry-year::after {
-        content: "\00A0\00A0"; /* Adds two non-breaking spaces after the year */
-        text-align: left; /* Ensures text is aligned to the left */
-    }        
-    .exhibition-name::after, .exhibition-title::after,
-    .residency-name::after, .residency-title::after,
-    .entry-degree::after,
-        content: ",\00A0"; /* Adds a comma followed by a non-breaking space */
-        text-align: left; /* Ensures text is aligned to the left */
-    }
-    /* No content after the last element in each row to avoid trailing comma */
-    .exhibition-location::after, .residency-location::after, .collection-location::after {
-        content: ""; /* Ensures no trailing punctuation */
-        text-align: left; /* Ensures text is aligned to the left */
-    }
-            
-
-            
-    .entry-content {
-        display: block; /* Changes from inline-block to block for clearer control */
-        width: 100%; /* Ensures the content spans the full width of its container */
-        text-align: left; /* Reinforces text alignment to the left */
-    }
-   
-
-}
+            .exhibition-row, .residency-row,  .entry-row, .collection-row {
+                display: block; /* Changes display to block for mobile */
+                text-align: left; /* Ensures text is aligned to the left */
+                font-size: 16px; /* Adjust font size as needed */
+                margin-bottom: 10px; /* Space between rows */
+                overflow-wrap: break-word; /* Allows text to wrap to avoid overflow */
+            }
+            .exhibition-year, .exhibition-name, .exhibition-title, .exhibition-location,
+            .residency-year, .residency-name, .residency-title, .residency-location,
+            .entry-year, .entry-degree, .entry-school,
+            .collection-type, .collection-location {
+                display: inline; /* Ensures inline display for a continuous text flow */
+                white-space: nowrap; /* Keeps the text from wrapping within elements */
+                text-align: left; /* Ensures text is aligned to the left */
+            }
+            .exhibition-year::after, 
+            .residency-year::after,
+            .entry-year::after {
+                content: "\00A0\00A0"; /* Adds two non-breaking spaces after the year */
+                text-align: left; /* Ensures text is aligned to the left */
+            }        
+            .exhibition-name::after, .exhibition-title::after,
+            .residency-name::after, .residency-title::after,
+            .entry-degree::after {
+                content: ",\00A0"; /* Adds a comma followed by a non-breaking space */
+                text-align: left; /* Ensures text is aligned to the left */
+            }
+            /* No content after the last element in each row to avoid trailing comma */
+            .exhibition-location::after, .residency-location::after, .collection-location::after {
+                content: ""; /* Ensures no trailing punctuation */
+                text-align: left; /* Ensures text is aligned to the left */
+            }
+                    
+            .entry-content {
+                display: block; /* Changes from inline-block to block for clearer control */
+                width: 100%; /* Ensures the content spans the full width of its container */
+                text-align: left; /* Reinforces text alignment to the left */
+            }
+        }    
+    
     </style>
 </head>
+    
 <body>
     <div class="container">
         <div class="navigation">
