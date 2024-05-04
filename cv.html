@@ -147,24 +147,36 @@
                 text-decoration: underline; /* Underline only 'Works' link */
             }
             
-/* Adjusting exhibition-row format for mobile */
-    .exhibition-row {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        text-align: left; /* Ensures text alignment is left */
+<style>
+    @media (max-width: 768px) {
+        .exhibition-row {
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            align-items: flex-start; /* Align items to the start */
+            text-align: left; /* Align text to the left */
+            margin-bottom: 5px; /* Space between rows */
+        }
+        .exhibition-year, .exhibition-name, .exhibition-title, .exhibition-location {
+            display: block; /* Each element takes the full width of its container */
+            clear: both; /* Avoids elements floating next to each other */
+        }
+        .exhibition-name::before {
+            content: ", "; /* Adds comma before the name */
+        }
+        .exhibition-title::before {
+            content: ", "; /* Adds comma before the title */
+        }
+        .exhibition-location::before {
+            content: ", "; /* Adds comma before the location */
+        }
+        .exhibition-year::after {
+            content: "  "; /* Adds two spaces after the year */
+        }
+        .exhibition-name, .exhibition-title, .exhibition-location {
+            margin-left: 15px; /* Indentation for visual hierarchy */
+        }
     }
-    .exhibition-year, .exhibition-name, .exhibition-title, .exhibition-location {
-        display: inline-block; /* Allows inline styling and better control */
-        margin-right: 10px; /* Ensures spacing between elements */
-    }
-    .exhibition-name::before, .exhibition-title::before, .exhibition-location::before {
-        content: ", "; /* Adds a comma before each element except the first */
-    }
-    .exhibition-year::after {
-        content: "  "; /* Adds two spaces after the year */
-    }
-}
+</style>
 
 
 /* Adjusting entry-row format for mobile */
