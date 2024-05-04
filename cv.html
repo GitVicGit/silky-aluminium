@@ -169,20 +169,19 @@
     
     .entry-row {
         display: block; /* Ensures the row behaves as a block element */
+        text-align: left; /* Ensures text is aligned to the left */
         font-size: 16px; /* Adjust the font size as needed */
         margin-bottom: 10px; /* Adds space between entries */
         overflow-wrap: break-word; /* Allows text to wrap within the block */
-        white-space: nowrap; /* Prevents automatic wrapping */
     }
     .entry-year, .entry-degree, .entry-school {
-        display: inline; /* Keeps elements in a single inline sequence */
-        white-space: nowrap; /* Prevents these elements from wrapping individually */
+        display: inline; /* Ensures elements are in a single line */
     }
     .entry-year::after {
-        content: "\00A0\00A0"; /* Adds two non-breaking spaces after the year */
+        content: "  "; /* Adds two spaces after the year */
     }
     .entry-degree::after {
-        content: ",\00A0"; /* Adds a comma followed by a non-breaking space */
+        content: ", "; /* Adds a comma and a space after the degree */
     }
             
 
