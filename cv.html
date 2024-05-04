@@ -166,16 +166,17 @@
     }
     /* Remove any styling that might conflict with the above */
 
-        
+    
     .entry-row {
-        display: block; /* Treats the row as a block element */
+        display: block; /* Ensures the row behaves as a block element */
         font-size: 16px; /* Adjust the font size as needed */
         margin-bottom: 10px; /* Adds space between entries */
         overflow-wrap: break-word; /* Allows text to wrap within the block */
-        white-space: normal; /* Allows the row to wrap as a whole */
+        white-space: nowrap; /* Prevents automatic wrapping */
     }
     .entry-year, .entry-degree, .entry-school {
-        display: inline; /* Displays elements in a line */
+        display: inline; /* Keeps elements in a single inline sequence */
+        white-space: nowrap; /* Prevents these elements from wrapping individually */
     }
     .entry-year::after {
         content: "\00A0\00A0"; /* Adds two non-breaking spaces after the year */
@@ -183,6 +184,8 @@
     .entry-degree::after {
         content: ",\00A0"; /* Adds a comma followed by a non-breaking space */
     }
+            
+
 }
     </style>
 </head>
