@@ -167,6 +167,25 @@
     /* Remove any styling that might conflict with the above */
     }
 
+        
+        .entry-row {
+            display: block; /* Ensures the whole row behaves as a block but contains inline elements */
+            text-align: left; /* Aligns text to the left */
+            margin-bottom: 10px; /* Provides space between each entry */
+        }
+        .entry-year, .entry-degree, .entry-school {
+            display: inline; /* Makes each element flow in a line */
+            white-space: nowrap; /* Prevents wrapping within elements */
+        }
+        .entry-year::after {
+            content: "  "; /* Two spaces after the year */
+        }
+        .entry-degree::after {
+            content: ", "; /* Comma and space after the degree */
+        }
+        /* No additional content after entry-school as it's the last element */
+
+
     </style>
 </head>
 <body>
