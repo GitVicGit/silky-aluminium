@@ -79,6 +79,7 @@
         }
 
         @media (max-width: 768px) {
+ @media (max-width: 768px) {
             .navigation {
                 display: none;
             }
@@ -146,52 +147,47 @@
             .mobile-footer a.works-link {
                 text-decoration: underline; /* Underline only 'Works' link */
             }
-            
-/* Adjusting exhibition-row format for mobile */
-.exhibition-row {
-    display: flex;
-    flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
-    margin-bottom: 10px; /* Increase margin between items */
-}
-.exhibition-row > * {
-    margin-right: 10px; /* Add margin between items */
-}
-.exhibition-year, .exhibition-name, .exhibition-title, .exhibition-location {
-    flex: 1; /* Allow items to grow and shrink based on available space */
-    white-space: nowrap; /* Prevent line breaks */
-}
 
-/* Adjusting entry-row format for mobile */
-.entry-row {
-    display: flex;
-    flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
-    margin-bottom: 10px; /* Increase margin between items */
-}
-.entry-row > * {
-    margin-right: 10px; /* Add margin between items */
-}
-.entry-year, .entry-degree, .entry-school {
-    flex: 1; /* Allow items to grow and shrink based on available space */
-    white-space: nowrap; /* Prevent line breaks */
-}
+            .exhibition-row, .residency-row,  .entry-row, .collection-row {
+                display: block; /* Changes display to block for mobile */
+                text-align: left; /* Ensures text is aligned to the left */
+                font-size: 16px; /* Adjust font size as needed */
+                margin-bottom: 10px; /* Space between rows */
+                overflow-wrap: break-word; /* Allows text to wrap to avoid overflow */
+            }
+            .exhibition-year, .exhibition-name, .exhibition-title, .exhibition-location,
+            .residency-year, .residency-name, .residency-title, .residency-location,
+            .entry-year, .entry-degree, .entry-school,
+            .collection-type, .collection-location {
+                display: inline; /* Ensures inline display for a continuous text flow */
+                white-space: nowrap; /* Keeps the text from wrapping within elements */
+                text-align: left; /* Ensures text is aligned to the left */
+            }
+            .exhibition-year::after, 
+            .residency-year::after,
+            .entry-year::after {
+                content: "\00A0\00A0"; /* Adds two non-breaking spaces after the year */
+                text-align: left; /* Ensures text is aligned to the left */
+            }        
+            .exhibition-name::after, .exhibition-title::after,
+            .residency-name::after, .residency-title::after,
+            .entry-degree::after {
+                content: ",\00A0"; /* Adds a comma followed by a non-breaking space */
+                text-align: left; /* Ensures text is aligned to the left */
+            }
+            /* No content after the last element in each row to avoid trailing comma */
+            .exhibition-location::after, .residency-location::after, .collection-location::after {
+                content: ""; /* Ensures no trailing punctuation */
+                text-align: left; /* Ensures text is aligned to the left */
+            }
+                    
+            .entry-content {
+                display: block; /* Changes from inline-block to block for clearer control */
+                width: 100%; /* Ensures the content spans the full width of its container */
+                text-align: left; /* Reinforces text alignment to the left */
+            }
 
-/* Adjusting residency-row format for mobile */
-.residency-row {
-    display: flex;
-    flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
-    margin-bottom: 10px; /* Increase margin between items */
-}
-.residency-row > * {
-    margin-right: 10px; /* Add margin between items */
-}
-.residency-year, .residency-name, .residency-title, .residency-location {
-    flex: 1; /* Allow items to grow and shrink based on available space */
-    white-space: nowrap; /* Prevent line breaks */
-}
-
-}
-
-
+   }
         
 
     </style>
@@ -240,11 +236,8 @@
                         }
                     </style>
 
-                    <div class="exhibition-row">
+    
                         <div class="exhibition-year">Upcoming</div>
-                        <div class="exhibition-name"></div>
-                        <div class="exhibition-title"></div>
-                        <div class="exhibition-location"></div>
                     </div>
                     <div class="exhibition-row">
                         <div class="exhibition-year">2024</div>
@@ -265,11 +258,8 @@
                         <div class="exhibition-location">London</div>
                     </div>
                     <br>
-                    <div class="exhibition-row">
+               
                         <div class="exhibition-year">Current</div>
-                        <div class="exhibition-name"></div>
-                        <div class="exhibition-title"></div>
-                        <div class="exhibition-location"></div>
                     </div>
                         <div class="exhibition-row">
                         <div class="exhibition-year">2024</div>
@@ -278,11 +268,8 @@
                         <div class="exhibition-location">London</div>
                     </div>
                     <br>
-                    <div class="exhibition-row">
-                        <div class="exhibition-year">Past</div>
-                        <div class="exhibition-name"></div>
-                        <div class="exhibition-title"></div>
-                        <div class="exhibition-location"></div>
+              
+                    <div class="exhibition-year">Past</div>
                     </div>
                     <div class="exhibition-row">
                         <div class="exhibition-year">2024</div>
