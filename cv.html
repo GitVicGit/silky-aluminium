@@ -159,18 +159,13 @@
             display: block; /* Each element takes the full width of its container */
             clear: both; /* Avoids elements floating next to each other */
         }
-        .exhibition-name::before {
-            content: ", "; /* Adds comma before the name */
-        }
-        .exhibition-title::before {
-            content: ", "; /* Adds comma before the title */
-        }
-        .exhibition-location::before {
-            content: ", "; /* Adds comma before the location */
+        .exhibition-name::before, .exhibition-title::before, .exhibition-location::before {
+            content: ", "; /* Adds comma before each element */
         }
         .exhibition-year::after {
             content: "  "; /* Adds two spaces after the year */
         }
+
     }
 
     </style>
