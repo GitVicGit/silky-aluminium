@@ -239,10 +239,10 @@
         margin-right: 0; /* Remove any right margin */
     }
     .exhibition-year::after {
-        content: "  ,"; /* Two spaces and a comma after the year */
+        content: "  ."; /* Two spaces and a comma after the year */
     }
     .exhibition-name::after, .exhibition-title::after {
-        content: ", "; /* Comma after name and title */
+        content: ". "; /* Comma after name and title */
     }
     /* Remove any styling that might conflict with the above */
 
@@ -254,11 +254,6 @@
         font-size: 16px; /* Adjusts the font size */
         overflow-wrap: break-word; /* Allows words to break and wrap to the next line */
     }
-    .education-content {
-        display: inline-block; /* Ensures the content is treated as a single block that can wrap */
-        white-space: normal; /* Allows the content to wrap naturally as a single block */
-        width: 100%; /* Ensures the content spans the full width of its container */
-    }
     .education-year, .education-degree, .education-school {
         display: inline; /* Keeps elements inline within .education-content */
         white-space: nowrap; /* Prevents these elements from wrapping individually */
@@ -267,7 +262,7 @@
         content: "  "; /* Adds two spaces after the year */
     }
     .education-degree::after {
-        content: ", "; /* Adds a comma and a space after the degree */
+        content: ". "; /* Adds a comma and a space after the degree */
     }
             
 
