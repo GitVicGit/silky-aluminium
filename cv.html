@@ -74,13 +74,14 @@
             margin-bottom: 10px; /* This is the space after your section title */
             padding-bottom: 8px; /* Adjust this value to control the space after the title */
         }
-        .entry {
+        .education {
             margin-bottom: 5px;
         }
-         .exhibition-row {
-            display: flex;
-            margin-bottom: 5px; /* Spacing between each row */
-            }
+        
+        .exhibition-row {
+                            display: flex;
+                            margin-bottom: 5px; /* Spacing between each row */
+                        }
                         .exhibition-year {
                             width: 70px; /* Space for the year */
                             text-align: left;
@@ -118,23 +119,23 @@
                             text-align: left;
                             flex-grow: 1; /* Ensures it takes the rest of the space */
                         }
-                        .entry-row {
+        .education-row {
                             display: flex;
                             align-items: flex-start; /* Align items to the start of the flex container */
                             margin-bottom: 5px;
                         }
-                        .entry-year, .entry-degree, .entry-school {
+                        .education-year, .education-degree, .education-school {
                             margin-right: 20px; /* Adds space between columns */
                         }
-                        .entry-year {
+                        .education-year {
                             width: 70px; /* Ensure this is enough space for the year */
                             text-align: left;
                         }
-                        .entry-degree {
+                        .education-degree {
                             width: 500px; /* Adjust based on your content */
                             text-align: left;
                         }
-                        .entry-school {
+                        .education-school {
                             text-align: left; /* Add more properties if needed */
                             flex-grow: 1; /* Allows school name to take up remaining space */
                         }
@@ -240,26 +241,26 @@
     /* Remove any styling that might conflict with the above */
 
     
-    .entry-row {
+    .education-row {
         display: block; /* Ensures the row behaves as a block element */
         text-align: left; /* Forces text to align to the left */
         margin-bottom: 10px; /* Adds space between entries */
         font-size: 16px; /* Adjusts the font size */
         overflow-wrap: break-word; /* Allows words to break and wrap to the next line */
     }
-    .entry-content {
+    .education-content {
         display: inline-block; /* Ensures the content is treated as a single block that can wrap */
         white-space: normal; /* Allows the content to wrap naturally as a single block */
         width: 100%; /* Ensures the content spans the full width of its container */
     }
-    .entry-year, .entry-degree, .entry-school {
-        display: inline; /* Keeps elements inline within .entry-content */
+    .education-year, .education-degree, .education-school {
+        display: inline; /* Keeps elements inline within .education-content */
         white-space: nowrap; /* Prevents these elements from wrapping individually */
     }
-    .entry-year::after {
+    .education-year::after {
         content: "  "; /* Adds two spaces after the year */
     }
-    .entry-degree::after {
+    .education-degree::after {
         content: ", "; /* Adds a comma and a space after the degree */
     }
             
@@ -267,6 +268,10 @@
 }
     </style>
 </head>
+
+
+
+    
 <body>
     <div class="container">
         <div class="navigation">
@@ -287,8 +292,8 @@
             <div>
                 <div class="section">
                     <br><br>
+                    
                     <div class="section-title">Exhibitions</div>
-
                     <div class="exhibition-row">
                         <div class="exhibition-year">Upcoming</div>
                         <div class="exhibition-name"></div>
@@ -392,65 +397,63 @@
                         <div class="exhibition-name">Boomer Gallery</div>
                         <div class="exhibition-title">'Vogue II'</div>
                         <div class="exhibition-location">London</div>
-                    </div>
-
-
-                    
-
+                    </div>     
                 </div>
                 
                 <br><br>
                 <div class="section">
                     <div class="section-title">Residency</div>
-
+                    
+                    <div class="residency-row">
+                        <div class="residency-year">2024</div>
+                        <div class="residency-name">Sir John Soane's Museum /div>
+                        <div class="residency-title">'Festus'</div>
+                        <div class="residency-location">London</div>
+                    </div>
                     <div class="residency-row">
                         <div class="residency-year">2023</div>
                         <div class="residency-name">Ministry of Culture and Tourism</div>
                         <div class="residency-title">'Silk Road residency'</div>
                         <div class="residency-location">Hangzhou (China)</div>
                     </div>
-
                 </div>
-                
                 <br><br>
+                    
                 <div class="section">
                     <div class="section-title">Education</div>
 
-                    <div class="entry-row">
-                        <div class="entry-year">2024</div>
-                        <div class="entry-degree">MA Sculpture</div>
-                        <div class="entry-school">Royal College of Art (RCA)</div>
+                    <div class="education-row">
+                        <div class="education-year">2024</div>
+                        <div class="education-degree">MA Sculpture</div>
+                        <div class="education-school">Royal College of Art (RCA)</div>
                     </div>
-                    <div class="entry-row">
-                        <div class="entry-year">2016</div>
-                        <div class="entry-degree">MEng Mechanical and Industrial Engineering (Distinction)</div>
-                        <div class="entry-school">Arts & Métiers ParisTech</div>
+                    <div class="education-row">
+                        <div class="education-year">2016</div>
+                        <div class="education-degree">MEng Mechanical and Industrial Engineering (Distinction)</div>
+                        <div class="education-school">Arts & Métiers ParisTech</div>
                     </div>
-                    <div class="entry-row">
-                        <div class="entry-year">2016</div>
-                        <div class="entry-degree">MSc Operational Research and Management Science</div>
-                        <div class="entry-school">Lancaster University</div>
+                    <div class="education-row">
+                        <div class="education-year">2016</div>
+                        <div class="education-degree">MSc Operational Research and Management Science</div>
+                        <div class="education-school">Lancaster University</div>
                     </div>
-                    <div class="entry-row">
-                        <div class="entry-year">2014</div>
-                        <div class="entry-degree">BEng Mechanical and Industrial Engineering (Distinction)</div>
-                        <div class="entry-school">Arts & Métiers ParisTech</div>
+                    <div class="education-row">
+                        <div class="education-year">2014</div>
+                        <div class="education-degree">BEng Mechanical and Industrial Engineering (Distinction)</div>
+                        <div class="education-school">Arts & Métiers ParisTech</div>
                     </div>
-
-
-
                 </div>
-                
                 <br><br>
+                    
                 <div class="section">
                     <div class="section-title">Awards</div>
-                    <style> p {margin-bottom: 0.5em; } </style>
-                    <div class="entry">Averil Picot Art award</div>
-                    <div class="entry">Academic Excellence scholarship</div>
-                    <div class="entry">Regional scholarships</div>
+                    
+                    <div class="education">Averil Picot Art award</div>
+                    <div class="education">Academic Excellence scholarship</div>
+                    <div class="education">Regional scholarships</div>
                 </div>
-                
                 <br><br>
+                    
                 <div class="section">
                     <div class="section-title">Collections</div>
 
@@ -463,8 +466,8 @@
                         <div class="collection-type">Private</div>
                         <div class="collection-location">UK and Channel Islands, Canada, China, France</div>
                     </div>
-
                 </div>
+                    
             </div>
         </div>
     </div>
