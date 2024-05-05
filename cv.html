@@ -238,7 +238,7 @@
                 display: inline; /* Inline display for continuous text flow */
                 margin-right: 0; /* Remove any right margin */
             }
-            .exhibition-year,.exhibition-name,.exhibition-title::after {
+            .exhibition-year::after,.exhibition-name::after,.exhibition-title::after {
                 content: "\00A0\00A0"; /* Adds two non-breaking spaces after the year */
             }
             
@@ -253,8 +253,11 @@
                 display: inline; /* Inline display for continuous text flow */
                 margin-right: 0; /* Remove any right margin */
             }
-            .residency-year::after,.residency-name::after,.residency-title::after{
+            .residency-year::after{
                 content: "\00A0\00A0"; /* Adds two non-breaking spaces after the year */
+            }
+            .residency-name::after,.residency-title::after{
+                content: ",\00A0";
             }
            
         .education-row {
