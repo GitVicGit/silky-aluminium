@@ -228,42 +228,37 @@
             }
 
 
-       .exhibition-row {
-        display: block; /* Change display to block for simplicity */
-        text-align: left; /* Ensure text is aligned to the left */
-        font-size: 16px; /* Adjust font size as needed */
-        margin-bottom: 10px; /* Space between rows */
-    }
-    .exhibition-year, .exhibition-name, .exhibition-title, .exhibition-location {
-        display: inline; /* Inline display for continuous text flow */
-        margin-right: 0; /* Remove any right margin */
-    }
-    .exhibition-year::after {
-        content: "  ."; /* Two spaces and a comma after the year */
-    }
-    .exhibition-name::after, .exhibition-title::after {
-        content: ". "; /* Comma after name and title */
-    }
-    /* Remove any styling that might conflict with the above */
-
+        .exhibition-row {
+            display: block; /* Change display to block for simplicity */
+            text-align: left; /* Ensure text is aligned to the left */
+            font-size: 16px; /* Adjust font size as needed */
+            margin-bottom: 10px; /* Space between rows */
+            }
+            .exhibition-year, .exhibition-name, .exhibition-title, .exhibition-location {
+                display: inline; /* Inline display for continuous text flow */
+                margin-right: 0; /* Remove any right margin */
+            }
+            .exhibition-year,.exhibition-name,.exhibition-title::after {
+                content: "  "; /* Two spaces after */
+            }
+            
     
     .education-row {
-        display: block; /* Ensures the row behaves as a block element */
-        text-align: left; /* Forces text to align to the left */
-        margin-bottom: 10px; /* Adds space between entries */
-        font-size: 16px; /* Adjusts the font size */
-        overflow-wrap: break-word; /* Allows words to break and wrap to the next line */
-    }
-    .education-year, .education-degree, .education-school {
-        display: inline; /* Keeps elements inline within .education-content */
-        white-space: nowrap; /* Prevents these elements from wrapping individually */
-    }
-    .education-year::after {
-        content: "  "; /* Adds two spaces after the year */
-    }
-    .education-degree::after {
-        content: ". "; /* Adds a comma and a space after the degree */
-    }
+            display: block; /* Ensures the row behaves as a block element */
+            text-align: left; /* Forces text to align to the left */
+            margin-bottom: 10px; /* Adds space between entries */
+            font-size: 16px; /* Adjusts the font size */
+            }
+            .education-year, .education-degree, .education-school {
+                display: inline; /* Inline display for continuous text flow */
+                margin-right: 0; /* Remove any right margin */
+            }
+            .education-year::after {
+                content: "  "; /* Adds two spaces after the year */
+            }
+            .education-degree::after {
+                content: ", "; /* Adds a comma and a space after the degree */
+            }
             
 
 }
