@@ -243,6 +243,20 @@
             }
             
     
+        .residency-row {
+            display: block; /* Ensures the row behaves as a block element */
+            text-align: left; /* Forces text to align to the left */
+            margin-bottom: 10px; /* Adds space between entries */
+            font-size: 16px; /* Adjusts the font size */
+            }
+            .residency-year, .residency-name, .residency-title,.residency-lcoation {
+                display: inline; /* Inline display for continuous text flow */
+                margin-right: 0; /* Remove any right margin */
+            }
+            .residency-year::after,.residency-name::after,.residency-title::after{
+                content: "\00A0\00A0"; /* Adds two non-breaking spaces after the year */
+            }
+           
         .education-row {
             display: block; /* Ensures the row behaves as a block element */
             text-align: left; /* Forces text to align to the left */
@@ -257,24 +271,7 @@
                 content: "\00A0\00A0"; /* Adds two non-breaking spaces after the year */
             }
             .education-degree::after {
-                content: ",\00A0"; /* Adds a comma and a space after the degree */
-            }
-
-        .residency-row {
-            display: block; /* Ensures the row behaves as a block element */
-            text-align: left; /* Forces text to align to the left */
-            margin-bottom: 10px; /* Adds space between entries */
-            font-size: 16px; /* Adjusts the font size */
-            }
-            .residency-year, .residency-name, .residency-title,.residency-lcoation {
-                display: inline; /* Inline display for continuous text flow */
-                margin-right: 0; /* Remove any right margin */
-            }
-            .residency-year::after {
-                content: "\00A0\00A0"; /* Adds two non-breaking spaces after the year */
-            }
-            .residency-name, .residency-title, .residency-location::after {
-                content: ",\00A0"; /* Adds a comma and a non-breaking space after each item */
+                content: ","; /* Adds a comma and a space after the degree */
             }
 
             
@@ -289,7 +286,7 @@
                 margin-right: 0; /* Remove any right margin to ensure elements are aligned without space */
             }
             .collection-type::after {
-                content: "\00A0\00A0"; /* Adds two non-breaking spaces after the type */
+                content: ":"; 
             }
 
             
