@@ -54,7 +54,6 @@
             display: none;
             justify-content: center;
             align-items: center;
-            position: relative; /* Needed for absolute positioning of description */
         }
         .gallery-slide.active {
             display: flex;
@@ -67,12 +66,6 @@
         }
         .artwork-description {
             font-size: 17px; 
-            position: absolute; /* Absolute positioning at the bottom of the slide */
-            width: 100%; /* Full width */
-            bottom: 10px; /* Positioned at the bottom inside the slide */
-            background: rgba(255,255,255,0.9); /* Semi-transparent background */
-            padding: 10px; /* Padding around text */
-            text-align: center; /* Centered text */
         }
         .artwork-description p {
             margin: 6px 0;
@@ -89,13 +82,13 @@
             text-decoration: underline; /* Make Prev and Next underlined */
         }
         .mobile-banner {
-            display: none;
+                display: none;
         }
         .mobile-footer {
-            display: none;
+                display: none;
         }
-
-        @media (max-width: 768px) {
+        
+@media (max-width: 768px) {
             .navigation {
                 display: none;
             }
@@ -155,65 +148,64 @@
             .mobile-footer a.works-link {
                 text-decoration: underline; /* Underline only 'Works' link */
             }
-            .gallery-slide {
-                width: 100%; /* Full width of the viewport */
-                display: block; /* Block display to stack elements */
-                height: auto; /* Auto height to adjust based on content */
-            }
-            .gallery-slide img {
-                width: 90%; /* Image takes full width of its container */
-                height: auto; /* Maintain aspect ratio */
-            }
-        }
+
+        /* Gallery Slide */
+    .gallery-slide {
+        width: 100%; /* Full width of the viewport */
+        display: block; /* Always display */
+        padding-bottom: 70px; /* Space for description */
+        position: relative; /* For absolute positioning inside */
+    }
+
+    .gallery-slide img {
+        width: 90%; /* Image takes full width of its container */
+        height: auto; /* Maintain aspect ratio */
+        display: block; /* Ensure block display */
+        margin: 0 auto; /* Center align */
+    }
+
+    .artwork-description {
+        position: absolute; /* Positioning it at the bottom */
+        bottom: 0; /* At the bottom of the gallery slide */
+        left: 0; /* Align to left */
+        width: 100%; /* Full width */
+        background: rgba(255,255,255,0.8); /* Semi-transparent background */
+        padding: 10px 5%; /* Padding */
+        box-sizing: border-box; /* Handling box model */
+        text-align: center; /* Center text alignment */
+    }
+
+    .artwork-description p {
+        margin: 4px 0; /* Adjust margin for paragraphs */
+    }
+
+    .nav-links {
+        position: fixed; /* Fixed positioning at the bottom */
+        bottom: 40px; /* Positioned 10px from the bottom */
+        width: 90%; /* Full width */
+        display: flex; /* Use flexbox for alignment */
+        justify-content: space-around; /* Space around items */
+    }
+
+    .nav-links a {
+        margin: 0 5px; /* Spacing between Prev and Next links */
+        text-decoration: underline; /* Underline the text */
+    }
+}
+
+
+
     </style>
     
     <script>
-        // Prevent right-click on images
-        document.addEventListener('contextmenu', function(e) {
-            if (e.target.nodeName === 'IMG') {
-                e.preventDefault();
-            }
-        });
-
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.gallery-slide');
-        const artworkTitles = ["Nature's Chromatic Symphony",'La Grande Bocca', 'Tours et Détours', 'Valse', 'Scottish Fantasy'];
-        const artworkMaterials = ['Oil on canvas', 'Computer-aided coil built ceramic', 'Computer-aided coil built ceramic', 'Earthenware', 'Computer-aided coil built ceramic'];
-        const artworkSizes = ['160 x 120 x 4 cm', '24 x 24 x 24 cm', '60 x 33 x 25 cm', '22 x 38 x 18 cm', '48 x 33 x 25 cm'];
-        const artworkDates = ['2023', '2024', '2024', '2024', '2024'];
-
-        function showSlide(hello) {
-            slides.forEach((slide, idx) => {
-                if (idx === hello) {
-                    slide.style.display = 'flex'; // show the active slide
-                } else {
-                    slide.style.display = 'none'; // hide other slides
-                }
-            });
-            // Update descriptions based on the current slide
-            let descriptionDiv = slides[hello].querySelector('.artwork-description');
-            descriptionDiv.querySelector('#artwork-title').textContent = artworkTitles[hello];
-            descriptionDiv.querySelector('#artwork-material').textContent = artworkMaterials[hello];
-            descriptionDiv.querySelector('#artwork-size').textContent = artworkSizes[hello];
-            descriptionDiv.querySelector('#artwork-date').textContent = artworkDates[hello];
-        }
-
-        document.querySelectorAll('.gallery-slide').forEach(slide => {
-            slide.querySelector('#next').addEventListener('click', () => {
-                currentSlide = (currentSlide + 1) % slides.length;
-                showSlide(currentSlide);
-            });
-            slide.querySelector('#prev').addEventListener('click', () => {
-                currentSlide = (currentSlide + slides.length - 1) % slides.length;
-                showSlide(currentSlide);
-            });
-        });
-
-        // Initialize the first slide
-        document.addEventListener('DOMContentLoaded', function() {
-            showSlide(currentSlide);
-        });
+  // Prevent right-click on images
+  document.addEventListener('contextmenu', function(e) {
+    if (e.target.nodeName === 'IMG') {
+      e.preventDefault();
+    }
+  });
     </script>
+
 </head>
 <body>
     <div class="container">
@@ -228,54 +220,83 @@
                 <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a><br>
                 <a href="https://www.instagram.com/victorguerin.fr/">Instagram</a><br>
             </div>
+        <div class="artwork-description">
+                <p id="artwork-title">Titre de l'œuvre</p>
+                <p id="artwork-material">Matériel</p>
+                <p id="artwork-size">Taille</p>
+                <p id="artwork-date">Date</p>
+                <br>
+                <a href="javascript:void(0);" id="prev">Prev</a>
+                <a href="javascript:void(0);" id="next">Next</a>
+            </div>
         </div>
         <div class="gallery">
             <div class="gallery-slide active">
                 <img src="Natures_chromatic_symphony.jpg" alt="Artwork 1">
-                <div class="artwork-description">
-                    <p id="artwork-title">Nature's Chromatic Symphony</p>
-                    <p id="artwork-material">Oil on canvas</p>
-                    <p id="artwork-size">160 x 120 x 4 cm</p>
-                    <p id="artwork-date">2023</p>
-                    <br>
-                    <a href="javascript:void(0);" id="prev">Prev</a>
-                    <a href="javascript:void(0);" id="next">Next</a>
-                </div>
             </div>
-            <div class="gallery-slide active">
-                <img src="ictor_guerin_artist_0580.jpg" alt="Artwork 2">
-                <div class="artwork-description">
-                    <p id="artwork-title">La Grande Bocca</p>
-                    <p id="artwork-material">Oil on canvas</p>
-                    <p id="artwork-size">160 x 120 x 4 cm</p>
-                    <p id="artwork-date">2023</p>
-                    <br>
-                    <a href="javascript:void(0);" id="prev">Prev</a>
-                    <a href="javascript:void(0);" id="next">Next</a>
-                </div>
+            <div class="gallery-slide">
+                <img src="victor_guerin_artist_0731.jpg" alt="Artwork 2">
             </div>
-            <!-- Repeat similar structure for other slides -->
-        </div>
-        <!-- Mobile-specific Banner -->
-        <div class="mobile-banner">
-            <a href="hello.html" style="font-weight: bold;font-size: 17px">VICTOR GUERIN</a>
-            <div>
-                <a href="statement.html">Statement</a>
-                <a href="about.html">About</a>
-                <a href="cv.html">CV</a>
+            <div class="gallery-slide">
+                <img src="victor_guerin_artist_0664.jpg" alt="Artwork 3">
+            </div>
+            <div class="gallery-slide">
+                <img src="victor_guerin_artist_0580.jpg" alt="Artwork 4">
+            </div>
+            <div class="gallery-slide">
+                <img src="victor_guerin_artist_0630.jpg" alt="Artwork 5">
             </div>
         </div>
-        <!-- Mobile-specific Footer -->
-        <div class="mobile-footer">
-            <a href="hello.html" class="works-link">Works</a>
-            <div>
-                <a href="https://www.instagram.com/victorguerin.fr/">Instagram</a>
-                <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a>
-                <a href="mailto:victorguerin.fr+web@pm.me">Email</a>
-            </div>
+            <!-- Mobile-specific Banner -->
+    <div class="mobile-banner">
+        <a href="hello.html" style="font-weight: bold;font-size: 17px">VICTOR GUERIN</a>
+        <div>
+            <a href="statement.html">Statement</a>
+            <a href="about.html">About</a>
+            <a href="cv.html">CV</a>
         </div>
     </div>
+    
+    <!-- Mobile-specific Footer -->
+    <div class="mobile-footer">
+            <a href="hello.html" class="works-link">Works</a>
+        <div>
+            <a href="https://www.instagram.com/victorguerin.fr/">Instagram</a>
+            <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a>
+            <a href="mailto:victorguerin.fr+web@pm.me">Email</a>
+        </div>
+    </div>
+        
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.gallery-slide');
+        const artworkTitles = ["Nature's Chromatic Symphony",'La Grande Bocca', 'Tours et Détours', 'Valse', 'Scottish Fantasy'];
+        const artworkMaterials = ['Oil on canvas', 'Computer-aided coil built ceramic', 'Computer-aided coil built ceramic', 'Earthenware', 'Computer-aided coil built ceramic'];
+        const artworkSizes = ['160 x 120 x 4 cm', '24 x 24 x 24 cm', '60 x 33 x 25 cm', '22 x 38 x 18 cm', '48 x 33 x 25 cm'];
+        const artworkDates = ['2023', '2024', '2024', '2024', '2024'];
+
+        function showSlide(hello) {
+            slides.forEach((slide, idx) => {
+                slide.style.display = idx === hello ? 'flex' : 'none';
+            });
+            document.getElementById('artwork-title').textContent = artworkTitles[hello];
+            document.getElementById('artwork-material').textContent = artworkMaterials[hello];
+            document.getElementById('artwork-size').textContent = artworkSizes[hello];
+            document.getElementById('artwork-date').textContent = artworkDates[hello];
+        }
+
+        document.getElementById('next').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        document.getElementById('prev').addEventListener('click', () => {
+            currentSlide = (currentSlide + slides.length - 1) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        showSlide(currentSlide);
+        
+    </script>
 </body>
 </html>
-
-       
