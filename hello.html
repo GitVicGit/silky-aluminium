@@ -109,7 +109,7 @@
                 top: 0;
                 background-color: #fff;
                 box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-                z-index: 1001;
+                z-hello: 1001;
             }
             .mobile-banner a {
                 display: inline-block;
@@ -140,7 +140,7 @@
                 bottom: 0;
                 background-color: #fff;
                 box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-                z-index: 1001;
+                z-hello: 1001;
             }
             .mobile-footer a {
                 display: inline-block;
@@ -208,7 +208,7 @@
     <div class="container">
         <div class="navigation">
             <div>
-                <p><strong><a href="index.html">VICTOR GUERIN</a></strong></p>
+                <p><strong><a href="hello.html">VICTOR GUERIN</a></strong></p>
                 <br><br><br>
                 <a href="statement.html">Statement</a><br>
                 <a href="about.html">About</a><br>
@@ -246,7 +246,7 @@
         </div>
             <!-- Mobile-specific Banner -->
     <div class="mobile-banner">
-        <a href="index.html" style="font-weight: bold;font-size: 17px">VICTOR GUERIN</a>
+        <a href="hello.html" style="font-weight: bold;font-size: 17px">VICTOR GUERIN</a>
         <div>
             <a href="statement.html">Statement</a>
             <a href="about.html">About</a>
@@ -256,7 +256,7 @@
     
     <!-- Mobile-specific Footer -->
     <div class="mobile-footer">
-            <a href="index.html" class="works-link">Works</a>
+            <a href="hello.html" class="works-link">Works</a>
         <div>
             <a href="https://www.instagram.com/victorguerin.fr/">Instagram</a>
             <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a>
@@ -272,14 +272,14 @@
         const artworkSizes = ['160 x 120 x 4 cm', '24 x 24 x 24 cm', '60 x 33 x 25 cm', '22 x 38 x 18 cm', '48 x 33 x 25 cm'];
         const artworkDates = ['2023', '2024', '2024', '2024', '2024'];
 
-        function showSlide(index) {
+        function showSlide(hello) {
             slides.forEach((slide, idx) => {
-                slide.style.display = idx === index ? 'flex' : 'none';
+                slide.style.display = idx === hello ? 'flex' : 'none';
             });
-            document.getElementById('artwork-title').textContent = artworkTitles[index];
-            document.getElementById('artwork-material').textContent = artworkMaterials[index];
-            document.getElementById('artwork-size').textContent = artworkSizes[index];
-            document.getElementById('artwork-date').textContent = artworkDates[index];
+            document.getElementById('artwork-title').textContent = artworkTitles[hello];
+            document.getElementById('artwork-material').textContent = artworkMaterials[hello];
+            document.getElementById('artwork-size').textContent = artworkSizes[hello];
+            document.getElementById('artwork-date').textContent = artworkDates[hello];
         }
 
         document.getElementById('next').addEventListener('click', () => {
