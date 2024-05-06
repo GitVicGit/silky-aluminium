@@ -89,102 +89,109 @@
         }
         
 @media (max-width: 768px) {
-            .navigation {
-                display: none;
-            }
-            .content {
-                padding-top: 60px;
-                padding-bottom: 60px;
-                overflow-y: auto;
-                display: block;
-                width: 100%;
-            }
-            .mobile-banner {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%;
-                padding: 10px 0; /* Reduced vertical padding */
-                position: fixed;
-                top: 0;
-                background-color: #fff;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-                z-index: 1001;
-            }
-            .mobile-banner a {
-                display: inline-block;
-                margin: 0;
-                padding: 0 10px; /* Added horizontal padding */
-                text-align: justify; /* Justify text */
-                text-justify: distribute-all-lines; /* Justify all lines */
-                font-size: 16px; /* Set font size */
-                color: black; /* Set color to black */
-                text-decoration: none; /* Remove default underline */
-            }
-            .mobile-banner a.works-link {
-                text-decoration: underline; /* Underline only 'Works' link */
-            }
-            .mobile-banner .content {
-                flex-grow: 1;
-                text-align: justify;
-                margin-left: 20px; /* Adjusted margin */
-                margin-right: 20px; /* Adjusted margin */
-            }
-            .mobile-footer {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%;
-                padding: 10px 0; /* Reduced vertical padding */
-                position: fixed;
-                bottom: 0;
-                background-color: #fff;
-                box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-                z-index: 1001;
-            }
-            .mobile-footer a {
-                display: inline-block;
-                margin: 0;
-                padding: 0 10px; /* Added horizontal padding */
-                text-align: justify; /* Justify text */
-                text-justify: distribute-all-lines; /* Justify all lines */
-                font-size: 16px; /* Set font size */
-                color: black; /* Set color to black */
-                text-decoration: none; /* Remove default underline */
-            }
-            .mobile-footer a.works-link {
-                text-decoration: underline; /* Underline only 'Works' link */
-            }
-            .artwork-description p {
-                text-align: left; /* Aligns text to the left */
-                display: block; /* Ensures each detail is on a new line */
-                margin: 0; /* Removes default margin */
-            }
-            .date-and-nav {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-            .date-and-nav p {
-                flex-grow: 1; /* Allows the date to take the necessary space */
-            } 
-            .nav-links {
-                display: flex;
-                justify-content: flex-end; /* Aligns navigation links to the right */
-                flex-grow: 1; /* Takes up the remaining space to push itself to the edge */
-            }
-            .nav-links a {
-                margin-left: 10px; /* Adds spacing between Prev and Next links */
-            }
-            .gallery-slide {
-                width: 100%; /* Full width of the viewport */
-                display: block; /* Ensures it is properly displayed */
-            }
-            .gallery-slide img {
-                width: 100%; /* Full width to make images responsive */
-                height: auto; /* Maintains aspect ratio */
-            }
-            
+    .navigation {
+        display: none;
+    }
+    .content {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        overflow-y: auto;
+        display: block;
+        width: 100%;
+    }
+    .mobile-banner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 10px 0;
+        position: fixed;
+        top: 0;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        z-index: 1001;
+    }
+    .mobile-banner a {
+        display: inline-block;
+        margin: 0;
+        padding: 0 10px;
+        text-align: justify;
+        text-justify: distribute-all-lines;
+        font-size: 16px;
+        color: black;
+        text-decoration: none;
+    }
+    .mobile-banner a.works-link {
+        text-decoration: underline;
+    }
+    .mobile-banner .content {
+        flex-grow: 1;
+        text-align: justify;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .mobile-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        background-color: #fff;
+        box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+        z-index: 1001;
+    }
+    .mobile-footer a {
+        display: inline-block;
+        margin: 0;
+        padding: 0 10px;
+        text-align: justify;
+        text-justify: distribute-all-lines;
+        font-size: 16px;
+        color: black;
+        text-decoration: none;
+    }
+    .mobile-footer a.works-link {
+        text-decoration: underline;
+    }
+    .gallery-slide {
+        width: 100%;
+        display: block;
+        height: auto;
+    }
+    .gallery-slide img {
+        width: 100%;
+        height: auto;
+    }
+    .artwork-description {
+        text-align: center;
+        padding-top: 20px;
+    }
+    .artwork-description p {
+        text-align: left;
+        display: block;
+        margin: 0;
+    }
+    .date-and-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .date-and-nav p {
+        flex-grow: 1;
+    }
+    .nav-links {
+        display: flex;
+        justify-content: flex-end;
+        flex-grow: 1;
+        position: fixed;
+        bottom: 10px;
+        width: 100%;
+    }
+    .nav-links a {
+        margin-left: 10px;
+    }
   }
 
   
@@ -265,7 +272,7 @@
         </div>
     </div>
         
-    <script>
+ <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.gallery-slide');
         const artworkTitles = ["Nature's Chromatic Symphony",'La Grande Bocca', 'Tours et Détours', 'Valse', 'Scottish Fantasy'];
@@ -273,28 +280,30 @@
         const artworkSizes = ['160 x 120 x 4 cm', '24 x 24 x 24 cm', '60 x 33 x 25 cm', '22 x 38 x 18 cm', '48 x 33 x 25 cm'];
         const artworkDates = ['2023', '2024', '2024', '2024', '2024'];
 
-        function showSlide(hello) {
+        function showSlide(index) {
             slides.forEach((slide, idx) => {
-                slide.style.display = idx === hello ? 'flex' : 'none';
+                slide.style.display = idx === index ? 'block' : 'none'; // Ensure correct display
             });
-            document.getElementById('artwork-title').textContent = artworkTitles[hello];
-            document.getElementById('artwork-material').textContent = artworkMaterials[hello];
-            document.getElementById('artwork-size').textContent = artworkSizes[hello];
-            document.getElementById('artwork-date').textContent = artworkDates[hello];
+            // Update artwork details
+            document.getElementById('artwork-title').textContent = artworkTitles[index];
+            document.getElementById('artwork-material').textContent = artworkMaterials[index];
+            document.getElementById('artwork-size').textContent = artworkSizes[index];
+            document.getElementById('artwork-date').textContent = artworkDates[index];
         }
 
         document.getElementById('next').addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % slides.length;
+            currentSlide = (currentSlide + 1) % slides.length; // Loop around
             showSlide(currentSlide);
         });
 
         document.getElementById('prev').addEventListener('click', () => {
-            currentSlide = (currentSlide + slides.length - 1) % slides.length;
+            currentSlide = (currentSlide + slides.length - 1) % slides.length; // Loop around
             showSlide(currentSlide);
         });
 
-        showSlide(currentSlide);
-        
+        // Initialize the gallery at the first slide
+        showSlide(0);
     </script>
+        
 </body>
 </html>
