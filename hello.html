@@ -90,117 +90,43 @@
         
 @media (max-width: 768px) {
     .navigation {
-        display: none; /* Hide the navigation on mobile */
-    }
-
-    .content {
-        padding-top: 60px;
-        padding-bottom: 60px;
-        overflow-y: auto;
-        display: block;
-        width: 100%;
-    }
-
-    .mobile-banner {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        padding: 10px 0; /* Reduced vertical padding */
-        position: fixed;
-        top: 0;
-        background-color: #fff;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        z-index: 1001;
-    }
-
-    .mobile-banner a {
-        display: inline-block;
-        margin: 0;
-        padding: 0 10px; /* Added horizontal padding */
-        text-align: justify;
-        text-justify: distribute-all-lines;
-        font-size: 16px; /* Set font size */
-        color: black;
-        text-decoration: none; /* Remove default underline */
-    }
-
-    .mobile-banner a.works-link {
-        text-decoration: underline; /* Underline only 'Works' link */
-    }
-
-    .mobile-footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        padding: 10px 0; /* Reduced vertical padding */
-        position: fixed;
-        bottom: 0;
-        background-color: #fff;
-        box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-        z-index: 1001;
-    }
-
-    .mobile-footer a {
-        display: inline-block;
-        margin: 0;
-        padding: 0 10px; /* Added horizontal padding */
-        text-align: justify;
-        text-justify: distribute-all-lines;
-        font-size: 16px; /* Set font size */
-        color: black;
-        text-decoration: none; /* Remove default underline */
-    }
-
-    .mobile-footer a.works-link {
-        text-decoration: underline; /* Underline only 'Works' link */
+        display: none;
     }
 
     .gallery-slide {
-        width: 100%; /* Full width for mobile */
-        display: block; /* Ensures gallery slides are displayed in block format */
-        height: auto; /* Adjusts height automatically */
+        width: 100%;
+        display: block;
+        height: auto; /* Adjusts the height automatically to the content */
+        text-align: center; /* Centers the image */
     }
 
     .gallery-slide img {
-        width: 100%; /* Ensures images stretch to full width */
-        height: auto; /* Maintains aspect ratio */
+        width: 100%; /* Full width of the screen */
+        height: auto; /* Keeps the aspect ratio of the image */
     }
 
     .artwork-description {
-        text-align: center; /* Centers the artwork description text */
-        padding-top: 20px; /* Adds space above the artwork description */
+        text-align: center;
+        padding-top: 20px; /* Provides space between the image and the text */
     }
 
     .artwork-description p {
-        text-align: center; /* Centers each paragraph */
-        display: block; /* Ensures each description starts on a new line */
-        margin: 0; /* Removes margin for neat alignment */
-    }
-
-    .date-and-nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px; /* Adds padding around navigation links */
-    }
-
-    .date-and-nav p {
-        flex-grow: 1; /* Allows the date to take up necessary space */
+        text-align: center; /* Ensures text is centered under the image */
+        display: block;
+        margin: 0 auto; /* Centers the text blocks horizontally */
     }
 
     .nav-links {
         display: flex;
-        justify-content: space-around; /* Evenly spaces the Prev and Next links */
-        width: 100%; /* Full width to align with other elements */
+        justify-content: space-around;
         position: fixed;
-        bottom: 10px; /* Positions navigation at the bottom */
-        padding: 10px 0; /* Adds padding for touch accessibility */
+        bottom: 10px;
+        width: 100%;
+        padding: 10px 0;
     }
 
     .nav-links a {
-        margin: 0 10px; /* Space between Prev and Next buttons */
+        text-decoration: underline;
     }
 }
 
