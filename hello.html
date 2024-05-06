@@ -13,7 +13,7 @@
             overflow: hidden;
             font-family: sans-serif;
             background-color: white;
-            font-size: 17px; 
+            font-size: 17px;
         }
         .container {
             display: flex;
@@ -49,7 +49,7 @@
             background-color: white;
         }
         .gallery-slide {
-            width: calc(100% - 300px);
+            width: calc(100% - 400px);
             height: calc(100vh - 64px);
             display: none;
             justify-content: center;
@@ -57,6 +57,8 @@
         }
         .gallery-slide.active {
             display: flex;
+            flex-direction: column; /* Ensure image and description are in a column layout */
+            align-items: center;
         }
         .gallery-slide img {
             max-width: 100%;
@@ -65,20 +67,19 @@
             -webkit-touch-callout: none;
         }
         .artwork-description {
-            font-size: 17px; 
+            font-size: 17px;
+            text-align: center;
+            display: none; /* Initially hidden, will be shown below image on mobile */
         }
         .artwork-description p {
-            margin: 6px 0;
-            margin-left: 0;
+            margin: 4px 0;
         }
         .artwork-description p:first-child {
             font-weight: bold;
-            font-size: 17px;
         }
         .artwork-description a {
             display: inline-block;
             margin: 16px 8px 0;
-            margin-left: 0;
             text-decoration: underline;
         }
         .mobile-banner {
@@ -124,21 +125,14 @@
                 width: 100%;
                 display: block;
                 height: auto;
-                padding-bottom: 60px; /* Space for description */
-                position: relative;
             }
             .gallery-slide img {
                 width: 90%;
                 height: auto;
-                display: block;
                 margin: 0 auto;
             }
             .artwork-description {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                padding: 10px 5%;
-                text-align: left;
+                display: block; /* Show description below image on mobile */
             }
         }
     </style>
@@ -198,28 +192,16 @@
             <div class="gallery-slide active">
                 <img src="Natures_chromatic_symphony.jpg" alt="Artwork 1">
                 <div class="artwork-description">
-                    <p id="artwork-title">Titre de l'œuvre</p>
-                    <p id="artwork-material">Matériel</p>
-                    <p id="artwork-size">Taille</p>
-                    <p id="artwork-date">Date</p>
+                    <p id="artwork-title">Nature's Chromatic Symphony</p>
+                    <p id="artwork-material">Oil on canvas</p>
+                    <p id="artwork-size">160 x 120 x 4 cm</p>
+                    <p id="artwork-date">2023</p>
                     <br>
                     <a href="javascript:void(0);" id="prev">Prev</a>
                     <a href="javascript:void(0);" id="next">Next</a>
                 </div>
             </div>
-            <div class="gallery-slide active">
-                <img src="victor_guerin_artist_0580.jpg" alt="Artwork 2">
-                <div class="artwork-description">
-                    <p id="artwork-title">Titre dezezezezezere</p>
-                    <p id="artwork-material">Matériel</p>
-                    <p id="artwork-size">Taille</p>
-                    <p id="artwork-date">Date</p>
-                    <br>
-                    <a href="javascript:void(0);" id="prev">Prev</a>
-                    <a href="javascript:void(0);" id="next">Next</a>
-                </div>
-            </div>
-            <!-- Repeat similar structure for other slides -->
+            <!-- Additional slides as needed -->
         </div>
         <!-- Mobile-specific Banner -->
         <div class="mobile-banner">
