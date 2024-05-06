@@ -1,273 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Victor Guerin</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            font-family: sans-serif;
-            background-color: white;
-            font-size: 17px;
-        }
-        .container {
-            display: flex;
-            height: 100vh;
-            overflow: hidden;
-        }
-        .navigation {
-            padding: 20px;
-            background-color: transparent;
-            width: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-sizing: border-box;
-            font-size: 17px;
-            white-space: nowrap;
-        }
-        .navigation a, .navigation p {
-            margin: 0;
-            color: black;
-            text-decoration: none;
-            line-height: 1.5;
-        }
-        .navigation p:first-child {
-            font-weight: bold;
-            font-size: 30px;
-        }
-        .gallery {
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: white;
-        }
-        .gallery-slide {
-            width: calc(100% - 400px);
-            height: 100vh; /* Adjusted to full height */
-            display: none;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column; /* Ensure image and description are in a column layout */
-        }
-        .gallery-slide.active {
-            display: flex;
-        }
-        .gallery-slide img {
-            max-width: 100%;
-            max-height: 80%; /* Reduced to accommodate descriptions */
-            pointer-events: none;
-            -webkit-touch-callout: none;
-        }
-        .artwork-description {
-            font-size: 17px;
-            text-align: center;
-            margin-top: 10px; /* Added margin for spacing */
-        }
-        .artwork-description p {
-            margin: 4px 0;
-        }
-        .artwork-description p:first-child {
-            font-weight: bold;
-        }
-        .artwork-description a {
-            display: inline-block;
-            margin: 16px 8px 0;
-            text-decoration: underline;
-        }
-        .mobile-banner {
-            display: none;
-        }
-        .mobile-footer {
-            display: none;
-        }
-        
-        @media (max-width: 768px) {
+ @media (max-width: 768px) {
             .navigation {
                 display: none;
             }
-            .mobile-banner, .mobile-footer {
+            .content {
+                padding-top: 60px;
+                padding-bottom: 60px;
+                overflow-y: auto;
+                display: block;
+                width: 100%;
+            }
+            
+            .mobile-banner {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 width: 100%;
-                padding: 10px 0;
+                padding: 10px 0; /* Reduced vertical padding */
                 position: fixed;
+                top: 0;
                 background-color: #fff;
                 box-shadow: 0 2px 4px rgba(0,0,0,0.1);
                 z-index: 1001;
             }
-            .mobile-banner {
-                top: 0;
-            }
-            .mobile-footer {
-                bottom: 0;
-            }
-            .mobile-banner a, .mobile-footer a {
+            .mobile-banner a {
                 display: inline-block;
                 margin: 0;
-                padding: 0 10px;
-                font-size: 16px;
-                color: black;
-                text-decoration: none;
+                padding: 0 10px; /* Added horizontal padding */
+                text-align: justify; /* Justify text */
+                text-justify: distribute-all-lines; /* Justify all lines */
+                font-size: 16px; /* Set font size */
+                color: black; /* Set color to black */
+                text-decoration: none; /* Remove default underline */
             }
-            .mobile-footer a.works-link, .mobile-banner a.works-link {
-                text-decoration: underline;
+            .mobile-banner a.works-link {
+                text-decoration: underline; /* Underline only 'Works' link */
             }
-            .gallery-slide {
-                width: 100%;
-                height: auto; /* Adjust for mobile viewing */
+            .mobile-banner .content {
+                flex-grow: 1;
+                text-align: justify;
+                margin-left: 20px; /* Adjusted margin */
+                margin-right: 20px; /* Adjusted margin */
+            }
+            .mobile-footer {
                 display: flex;
-                flex-direction: column;
+                justify-content: space-between;
                 align-items: center;
+                width: 100%;
+                padding: 10px 0; /* Reduced vertical padding */
+                position: fixed;
+                bottom: 0;
+                background-color: #fff;
+                box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+                z-index: 1001;
             }
-            .gallery-slide img {
-                width: 90%; /* Adjust for mobile screens */
+            .mobile-footer a {
+                display: inline-block;
+                margin: 0;
+                padding: 0 10px; /* Added horizontal padding */
+                text-align: justify; /* Justify text */
+                text-justify: distribute-all-lines; /* Justify all lines */
+                font-size: 16px; /* Set font size */
+                color: black; /* Set color to black */
+                text-decoration: none; /* Remove default underline */
             }
-        }
-    </style>
-    
-    <script>
-        document.addEventListener('contextmenu', function(e) {
-            if (e.target.nodeName === 'IMG') {
-                e.preventDefault();
+            .mobile-footer a.works-link {
+                text-decoration: underline; /* Underline only 'Works' link */
             }
-        });
-        
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.gallery-slide');
-        const artworkTitles = ["Nature's Chromatic Symphony", 'La Grande Bocca', 'Tours et Détours', 'Valse', 'Scottish Fantasy'];
-        const artworkMaterials = ['Oil on canvas', 'Computer-aided coil built ceramic', 'Computer-aided coil built ceramic', 'Earthenware', 'Computer-aided coil built ceramic'];
-        const artworkSizes = ['160 x 120 x 4 cm', '24 x 24 x 24 cm', '60 x 33 x 25 cm', '22 x 38 x 18 cm', '48 x 33 x 25 cm'];
-        const artworkDates = ['2023', '2024', '2024', '2024', '2024'];
 
-        function showSlide(hello) {
-            slides.forEach((slide, idx) => {
-                slide.style.display = idx === hello ? 'flex' : 'none';
-            });
-            document.getElementById('artwork-title').textContent = artworkTitles[hello];
-            document.getElementById('artwork-material').textContent = artworkMaterials[hello];
-            document.getElementById('artwork-size').textContent = artworkSizes[hello];
-            document.getElementById('artwork-date').textContent = artworkDates[hello];
-        }
-
-        document.getElementById('next').addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        });
-
-        document.getElementById('prev').addEventListener('click', () => {
-            currentSlide = (currentSlide + slides.length - 1) % slides.length;
-            showSlide(currentSlide);
-        });
-
-        // Show first slide on load
-        window.onload = function() {
-            showSlide(0);
-        };
-    </script>
-</head>
-<body>
-    <div class="container">
-        <div class="navigation">
-            <div>
-                <p><strong><a href="hello.html">VICTOR GUERIN</a></strong></p>
-                <br><br><br>
-                <a href="statement.html">Statement</a><br>
-                <a href="about.html">About</a><br>
-                <a href="cv.html">CV</a><br><br>
-                <a href="mailto:victorguerin.fr+web@pm.me">Email</a><br>
-                <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a><br>
-                <a href="https://www.instagram.com/victorguerin.fr/">Instagram</a><br>
-            </div>
-        </div>
-<div class="gallery">
-    <div class="gallery-slide active">
-        <img src="Natures_chromatic_symphony.jpg" alt="Artwork 1">
-        <div class="artwork-description">
-            <p id="artwork-title">Nature's Chromatic Symphony</p>
-            <p id="artwork-material">Oil on canvas</p>
-            <p id="artwork-size">160 x 120 x 4 cm</p>
-            <p id="artwork-date">2023</p>
-            <br>
-            <a href="javascript:void(0);" id="prev">Prev</a>
-            <a href="javascript:void(0);" id="next">Next</a>
-        </div>
-    </div>
-    <div class="gallery-slide">
-        <img src="victor_guerin_artist_0731.jpg" alt="Artwork 2">
-        <div class="artwork-description">
-            <p id="artwork-title">La Grande Bocca</p>
-            <p id="artwork-material">Computer-aided coil built ceramic</p>
-            <p id="artwork-size">24 x 24 x 24 cm</p>
-            <p id="artwork-date">2024</p>
-            <br>
-            <a href="javascript:void(0);" id="prev">Prev</a>
-            <a href="javascript:void(0);" id="next">Next</a>
-        </div>
-    </div>
-    <div class="gallery-slide">
-        <img src="victor_guerin_artist_0664.jpg" alt="Artwork 3">
-        <div class="artwork-description">
-            <p id="artwork-title">Tours et Détours</p>
-            <p id="artwork-material">Computer-aided coil built ceramic</p>
-            <p id="artwork-size">60 x 33 x 25 cm</p>
-            <p id="artwork-date">2024</p>
-            <br>
-            <a href="javascript:void(0);" id="prev">Prev</a>
-            <a href="javascript:void(0);" id="next">Next</a>
-        </div>
-    </div>
-    <div class="gallery-slide">
-        <img src="victor_guerin_artist_0580.jpg" alt="Artwork 4">
-        <div class="artwork-description">
-            <p id="artwork-title">Valse</p>
-            <p id="artwork-material">Earthenware</p>
-            <p id="artwork-size">22 x 38 x 18 cm</p>
-            <p id="artwork-date">2024</p>
-            <br>
-            <a href="javascript:void(0);" id="prev">Prev</a>
-            <a href="javascript:void(0);" id="next">Next</a>
-        </div>
-    </div>
-    <div class="gallery-slide">
-        <img src="victor_guerin_artist_0630.jpg" alt="Artwork 5">
-        <div class="artwork-description">
-            <p id="artwork-title">Scottish Fantasy</p>
-            <p id="artwork-material">Computer-aided coil built ceramic</p>
-            <p id="artwork-size">48 x 33 x 25 cm</p>
-            <p id="artwork-date">2024</p>
-            <br>
-            <a href="javascript:void(0);" id="prev">Prev</a>
-            <a href="javascript:void(0);" id="next">Next</a>
-        </div>
-    </div>
-</div>
-
-        <!-- Mobile-specific Banner -->
-        <div class="mobile-banner">
-            <a href="hello.html" style="font-weight: bold;font-size: 17px">VICTOR GUERIN</a>
-            <div>
-                <a href="statement.html">Statement</a>
-                <a href="about.html">About</a>
-                <a href="cv.html">CV</a>
-            </div>
-        </div>
-        <!-- Mobile-specific Footer -->
-        <div class="mobile-footer">
-            <a href="hello.html" class="works-link">Works</a>
-            <div>
-                <a href="https://www.instagram.com/victorguerin.fr/">Instagram</a>
-                <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a>
-                <a href="mailto:victorguerin.fr+web@pm.me">Email</a>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+            .exhibition-row, .residency-row,  .entry-row, .collection-row {
+                display: block; /* Changes display to block for mobile */
+                text-align: left; /* Ensures text is aligned to the left */
+                font-size: 16px; /* Adjust font size as needed */
+                margin-bottom: 10px; /* Space between rows */
+                overflow-wrap: break-word; /* Allows text to wrap to avoid overflow */
+            }
+            .exhibition-year, .exhibition-name, .exhibition-title, .exhibition-location,
+            .residency-year, .residency-name, .residency-title, .residency-location,
+            .entry-year, .entry-degree, .entry-school,
+            .collection-type, .collection-location {
+                display: inline; /* Ensures inline display for a continuous text flow */
+                white-space: nowrap; /* Keeps the text from wrapping within elements */
+                text-align: left; /* Ensures text is aligned to the left */
+            }
+            .exhibition-year::after, 
+            .residency-year::after,
+            .entry-year::after {
+                content: "\00A0\00A0"; /* Adds two non-breaking spaces after the year */
+                text-align: left; /* Ensures text is aligned to the left */
+            }        
+            .exhibition-name::after, .exhibition-title::after,
+            .residency-name::after, .residency-title::after,
+            .entry-degree::after {
+                content: ",\00A0"; /* Adds a comma followed by a non-breaking space */
+                text-align: left; /* Ensures text is aligned to the left */
+            }
+            /* No content after the last element in each row to avoid trailing comma */
+            .exhibition-location::after, .residency-location::after, .collection-location::after {
+                content: ""; /* Ensures no trailing punctuation */
+                text-align: left; /* Ensures text is aligned to the left */
+            }
+                    
+            .entry-content {
+                display: block; /* Changes from inline-block to block for clearer control */
+                width: 100%; /* Ensures the content spans the full width of its container */
+                text-align: left; /* Reinforces text alignment to the left */
+            }
