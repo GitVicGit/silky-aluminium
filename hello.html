@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,170 +63,55 @@
         .gallery-slide img {
             max-width: 100%;
             max-height: 100%;
-            pointer-events: none; /* Disable pointer events */
-            -webkit-touch-callout: none; /* Disable touch callout on iOS */
+            pointer-events: none;
         }
         .artwork-description {
-            font-size: 17px; 
+            font-size: 17px;
+            position: absolute; /* Ensure it's visible */
+            bottom: 10%; /* Adjust positioning */
+            left: 5%; /* Adjust positioning */
+            background-color: rgba(255, 255, 255, 0.8); /* Slight background for visibility */
+            padding: 10px;
+            width: 90%; /* Full width */
         }
         .artwork-description p {
             margin: 6px 0;
-            margin-left: 0;
-        }
-        .artwork-description p:first-child {
-            font-weight: bold; /* Only the artwork title in bold */
-            font-size: 17px;
         }
         .artwork-description a {
             display: inline-block;
             margin: 16px 8px 0;
-            margin-left: 0;
             text-decoration: underline; /* Make Prev and Next underlined */
         }
-        .mobile-banner {
-                display: none;
-        }
-        .mobile-footer {
-                display: none;
+        .mobile-banner, .mobile-footer {
+            display: none;
         }
         
-@media (max-width: 768px) {
-            .navigation {
-                display: none;
-            }
-            .content {
-                padding-top: 60px;
-                padding-bottom: 60px;
-                overflow-y: auto;
-                display: block;
-                width: 100%;
-            }
-            .mobile-banner {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%;
-                padding: 10px 0; /* Reduced vertical padding */
-                position: fixed;
-                top: 0;
-                background-color: #fff;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-                z-index: 1001;
-            }
-            .mobile-banner a {
-                display: inline-block;
-                margin: 0;
-                padding: 0 10px; /* Added horizontal padding */
-                text-align: justify; /* Justify text */
-                text-justify: distribute-all-lines; /* Justify all lines */
-                font-size: 16px; /* Set font size */
-                color: black; /* Set color to black */
-                text-decoration: none; /* Remove default underline */
-            }
-            .mobile-banner a.works-link {
-                text-decoration: underline; /* Underline only 'Works' link */
-            }
-            .mobile-banner .content {
-                flex-grow: 1;
-                text-align: justify;
-                margin-left: 20px; /* Adjusted margin */
-                margin-right: 20px; /* Adjusted margin */
-            }
-            .mobile-footer {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%;
-                padding: 10px 0; /* Reduced vertical padding */
-                position: fixed;
-                bottom: 0;
-                background-color: #fff;
-                box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-                z-index: 1001;
-            }
-            .mobile-footer a {
-                display: inline-block;
-                margin: 0;
-                padding: 0 10px; /* Added horizontal padding */
-                text-align: justify; /* Justify text */
-                text-justify: distribute-all-lines; /* Justify all lines */
-                font-size: 16px; /* Set font size */
-                color: black; /* Set color to black */
-                text-decoration: none; /* Remove default underline */
-            }
-            .mobile-footer a.works-link {
-                text-decoration: underline; /* Underline only 'Works' link */
-            }
-            .artwork-description p {
-                text-align: left; /* Aligns text to the left */
-                display: block; /* Ensures each detail is on a new line */
-                margin: 0; /* Removes default margin */
-            }
-            .date-and-nav {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-            .date-and-nav p {
-                flex-grow: 1; /* Allows the date to take the necessary space */
-            } 
-            .nav-links {
-                display: flex;
-                justify-content: flex-end; /* Aligns navigation links to the right */
-                flex-grow: 1; /* Takes up the remaining space to push itself to the edge */
-            }
-            .nav-links a {
-                margin-left: 10px; /* Adds spacing between Prev and Next links */
-            }
+        @media (max-width: 768px) {
             .gallery-slide {
                 width: 100%; /* Full width of the viewport */
-                display: block; /* Ensures it is properly displayed */
             }
             .gallery-slide img {
-                width: 100%; /* Full width to make images responsive */
-                height: auto; /* Maintains aspect ratio */
+                height: auto; /* Maintain aspect ratio */
             }
-            
-  }
-
-  
-
-
-
-
+            .artwork-description {
+                position: static; /* Default static positioning */
+                background-color: transparent;
+                padding: 0;
+            }
+        }
     </style>
-    
-    <script>
-  // Prevent right-click on images
-  document.addEventListener('contextmenu', function(e) {
-    if (e.target.nodeName === 'IMG') {
-      e.preventDefault();
-    }
-  });
-    </script>
-
 </head>
 <body>
     <div class="container">
         <div class="navigation">
             <div>
-                <p><strong><a href="hello.html">VICTOR GUERIN</a></strong></p>
-                <br><br><br>
-                <a href="statement.html">Statement</a><br>
-                <a href="about.html">About</a><br>
-                <a href="cv.html">CV</a><br><br>
-                <a href="mailto:victorguerin.fr+web@pm.me">Email</a><br>
-                <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a><br>
-                <a href="https://www.instagram.com/victorguerin.fr/">Instagram</a><br>
-            </div>
-        <div class="artwork-description">
-                <p id="artwork-title">Titre de l'œuvre</p>
-                <p id="artwork-material">Matériel</p>
-                <p id="artwork-size">Taille</p>
-                <p id="artwork-date">Date</p>
-                <br>
-                <a href="javascript:void(0);" id="prev">Prev</a>
-                <a href="javascript:void(0);" id="next">Next</a>
+                <p><strong><a href="index.html">VICTOR GUERIN</a></strong></p>
+                <a href="statement.html">Statement</a>
+                <a href="about.html">About</a>
+                <a href="cv.html">CV</a>
+                <a href="mailto:victorguerin.fr+web@pm.me">Email</a>
+                <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a>
+                <a href="https://www.instagram.com/victorguerin.fr/">Instagram</a>
             </div>
         </div>
         <div class="gallery">
@@ -243,44 +130,33 @@
             <div class="gallery-slide">
                 <img src="victor_guerin_artist_0630.jpg" alt="Artwork 5">
             </div>
-        </div>
-            <!-- Mobile-specific Banner -->
-    <div class="mobile-banner">
-        <a href="hello.html" style="font-weight: bold;font-size: 17px">VICTOR GUERIN</a>
-        <div>
-            <a href="statement.html">Statement</a>
-            <a href="about.html">About</a>
-            <a href="cv.html">CV</a>
+            <div class="artwork-description">
+                <p id="artwork-title">Title of the Artwork</p>
+                <p id="artwork-material">Material</p>
+                <p id="artwork-size">Size</p>
+                <p id="artwork-date">Date</p>
+                <a href="#" id="prev">Prev</a>
+                <a href="#" id="next">Next</a>
+            </div>
         </div>
     </div>
     
-    <!-- Mobile-specific Footer -->
-    <div class="mobile-footer">
-            <a href="javascript:void(0);" id="prev">Prev</a>
-            <a href="javascript:void(0);" id="next">Next</a>
-        <div>
-            <a href="https://www.instagram.com/victorguerin.fr/">Instagram</a>
-            <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a>
-            <a href="mailto:victorguerin.fr+web@pm.me">Email</a>
-        </div>
-    </div>
-        
     <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.gallery-slide');
-        const artworkTitles = ["Nature's Chromatic Symphony",'La Grande Bocca', 'Tours et Détours', 'Valse', 'Scottish Fantasy'];
+        const artworkTitles = ["Nature's Chromatic Symphony", 'La Grande Bocca', 'Tours et Détours', 'Valse', 'Scottish Fantasy'];
         const artworkMaterials = ['Oil on canvas', 'Computer-aided coil built ceramic', 'Computer-aided coil built ceramic', 'Earthenware', 'Computer-aided coil built ceramic'];
         const artworkSizes = ['160 x 120 x 4 cm', '24 x 24 x 24 cm', '60 x 33 x 25 cm', '22 x 38 x 18 cm', '48 x 33 x 25 cm'];
         const artworkDates = ['2023', '2024', '2024', '2024', '2024'];
 
-        function showSlide(hello) {
+        function showSlide(index) {
             slides.forEach((slide, idx) => {
-                slide.style.display = idx === hello ? 'flex' : 'none';
+                slide.style.display = idx === index ? 'flex' : 'none';
             });
-            document.getElementById('artwork-title').textContent = artworkTitles[hello];
-            document.getElementById('artwork-material').textContent = artworkMaterials[hello];
-            document.getElementById('artwork-size').textContent = artworkSizes[hello];
-            document.getElementById('artwork-date').textContent = artworkDates[hello];
+            document.getElementById('artwork-title').textContent = artworkTitles[index];
+            document.getElementById('artwork-material').textContent = artworkMaterials[index];
+            document.getElementById('artwork-size').textContent = artworkSizes[index];
+            document.getElementById('artwork-date').textContent = artworkDates[index];
         }
 
         document.getElementById('next').addEventListener('click', () => {
@@ -293,8 +169,8 @@
             showSlide(currentSlide);
         });
 
-        showSlide(currentSlide);
-        
+        showSlide(currentSlide); // Ensure initial setup is correct
     </script>
 </body>
 </html>
+
