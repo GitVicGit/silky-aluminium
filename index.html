@@ -99,7 +99,31 @@
                 display: block;
                 width: 100%;
             }
-            
+            .artwork-description p {
+                text-align: left; /* Aligns text to the left */
+                display: block; /* Each on a new line */
+                margin: 0; /* Removes default margin */
+            }
+            .gallery-slide {
+                width: 100%; /* Sets width to full viewport width */
+                display: block; /* Ensures it is properly displayed */
+            }
+            .gallery-slide img {
+                width: 100%; /* Ensures image takes full width of its container */
+                height: auto; /* Maintains aspect ratio */
+            }
+            #prev, #next {
+            position: absolute; /* Positions absolutely within relative container */
+            bottom: 10px; /* Positions 10px above the bottom */
+            }
+            #prev {
+                left: 50%; /* Center relative to the parent, adjust as necessary */
+                transform: translateX(-100%); /* Shifts it back to fully center */
+            }
+            #next {
+                right: 50%; /* Aligns to the right, adjust based on design */
+                transform: translateX(100%); /* Adjust positioning to align perfectly */
+            }
             .mobile-banner {
                 display: flex;
                 justify-content: space-between;
