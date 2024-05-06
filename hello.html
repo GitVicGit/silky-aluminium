@@ -149,25 +149,34 @@
                 text-decoration: underline; /* Underline only 'Works' link */
             }
 
+        /* Gallery Slide */
     .gallery-slide {
         width: 100%; /* Full width of the viewport */
-        display: block; /* Block display to stack elements */
-        height: auto; /* Auto height to adjust based on content */
+        display: block; /* Always display */
+        padding-bottom: 70px; /* Space for description */
+        position: relative; /* For absolute positioning inside */
     }
 
     .gallery-slide img {
         width: 90%; /* Image takes full width of its container */
         height: auto; /* Maintain aspect ratio */
+        display: block; /* Ensure block display */
+        margin: 0 auto; /* Center align */
     }
 
     .artwork-description {
-        text-align: left; 
+        position: absolute; /* Positioning it at the bottom */
+        bottom: 0; /* At the bottom of the gallery slide */
+        left: 0; /* Align to left */
+        width: 100%; /* Full width */
+        background: rgba(255,255,255,0.8); /* Semi-transparent background */
+        padding: 10px 5%; /* Padding */
+        box-sizing: border-box; /* Handling box model */
+        text-align: center; /* Center text alignment */
     }
 
     .artwork-description p {
-        text-align: left; 
-        display: block; /* Ensure each paragraph is on a new line */
-        margin: 0; /* Remove default margin */
+        margin: 4px 0; /* Adjust margin for paragraphs */
     }
 
     .nav-links {
