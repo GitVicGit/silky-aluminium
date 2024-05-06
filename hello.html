@@ -42,28 +42,30 @@
             font-size: 30px;
         }
         .gallery {
-            flex-grow: 1;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            background-color: white;
-        }
-        .gallery-slide {
-            width: calc(100% - 300px);
-            height: calc(100vh - 64px);
-            display: none;
-            justify-content: center;
-            align-items: center;
-        }
-        .gallery-slide.active {
-            display: flex;
-        }
-        .gallery-slide img {
-            max-width: 100%;
-            max-height: 100%;
-            pointer-events: none; /* Disable pointer events */
-            -webkit-touch-callout: none; /* Disable touch callout on iOS */
-        }
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; /* Center the gallery content horizontally */
+    align-items: center; /* Center the gallery content vertically */
+    background-color: white;
+}
+
+.gallery-slide {
+    width: 100%; /* Adjust width to take full container width */
+    height: auto; /* Adjust height to be auto for responsiveness */
+    display: none; /* Start with display none */
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-slide.active {
+    display: flex; /* Show the active slide */
+}
+
+.gallery-slide img {
+    max-width: 100%; /* Limit image width to 100% of its container */
+    height: auto; /* Maintain aspect ratio */
+    pointer-events: none;
+}
         .artwork-description {
             font-size: 17px; 
         }
@@ -156,42 +158,33 @@
         text-decoration: underline;
     }
     .gallery-slide {
-        width: 100%;
-        display: block;
-        height: auto;
+        width: 100%; /* Ensure full width on mobile */
+        display: block; /* Block display for stacking */
+        height: auto; /* Adjust height automatically */
     }
-    .gallery-slide img {
-        width: 100%;
-        height: auto;
-    }
+
     .artwork-description {
-        text-align: center;
-        padding-top: 20px;
+        text-align: center; /* Center the text for artwork description */
+        padding-top: 20px; /* Add space above the description */
     }
+
     .artwork-description p {
-        text-align: left;
-        display: block;
-        margin: 0;
+        text-align: center; /* Center align the text within paragraphs */
+        display: block; /* Ensure each paragraph is on a new line */
+        margin: 10px 0; /* Add top and bottom margins for spacing */
     }
-    .date-and-nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .date-and-nav p {
-        flex-grow: 1;
-    }
+
     .nav-links {
-        display: flex;
-        justify-content: flex-end;
-        flex-grow: 1;
         position: fixed;
-        bottom: 10px;
-        width: 100%;
+        bottom: 50px; /* Adjust the bottom position so it's visible above the footer */
+        width: 100%; /* Full width */
+        text-align: center; /* Center the navigation links */
     }
+
     .nav-links a {
-        margin-left: 10px;
+        padding: 0 10px; /* Padding for tap targets */
     }
+    
   }
 
   
@@ -273,36 +266,37 @@
     </div>
         
  <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.gallery-slide');
-        const artworkTitles = ["Nature's Chromatic Symphony",'La Grande Bocca', 'Tours et Détours', 'Valse', 'Scottish Fantasy'];
-        const artworkMaterials = ['Oil on canvas', 'Computer-aided coil built ceramic', 'Computer-aided coil built ceramic', 'Earthenware', 'Computer-aided coil built ceramic'];
-        const artworkSizes = ['160 x 120 x 4 cm', '24 x 24 x 24 cm', '60 x 33 x 25 cm', '22 x 38 x 18 cm', '48 x 33 x 25 cm'];
-        const artworkDates = ['2023', '2024', '2024', '2024', '2024'];
+ document.addEventListener('DOMContentLoaded', function() {
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.gallery-slide');
+    const artworkTitles = ["Nature's Chromatic Symphony",'La Grande Bocca', 'Tours et Détours', 'Valse', 'Scottish Fantasy'];
+    const artworkMaterials = ['Oil on canvas', 'Computer-aided coil built ceramic', 'Computer-aided coil built ceramic', 'Earthenware', 'Computer-aided coil built ceramic'];
+    const artworkSizes = ['160 x 120 x 4 cm', '24 x 24 x 24 cm', '60 x 33 x 25 cm', '22 x 38 x 18 cm', '48 x 33 x 25 cm'];
+    const artworkDates = ['2023', '2024', '2024', '2024', '2024'];
 
-        function showSlide(index) {
-            slides.forEach((slide, idx) => {
-                slide.style.display = idx === index ? 'block' : 'none'; // Ensure correct display
-            });
-            // Update artwork details
-            document.getElementById('artwork-title').textContent = artworkTitles[index];
-            document.getElementById('artwork-material').textContent = artworkMaterials[index];
-            document.getElementById('artwork-size').textContent = artworkSizes[index];
-            document.getElementById('artwork-date').textContent = artworkDates[index];
-        }
-
-        document.getElementById('next').addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % slides.length; // Loop around
-            showSlide(currentSlide);
+    function showSlide(index) {
+        slides.forEach((slide, idx) => {
+            slide.style.display = idx === index ? 'flex' : 'none';
         });
+        document.getElementById('artwork-title').textContent = artworkTitles[index];
+        document.getElementById('artwork-material').textContent = artworkMaterials[index];
+        document.getElementById('artwork-size').textContent = artworkSizes[index];
+        document.getElementById('artwork-date').textContent = artworkDates[index];
+    }
 
-        document.getElementById('prev').addEventListener('click', () => {
-            currentSlide = (currentSlide + slides.length - 1) % slides.length; // Loop around
-            showSlide(currentSlide);
-        });
+    document.getElementById('next').addEventListener('click', () => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    });
 
-        // Initialize the gallery at the first slide
-        showSlide(0);
+    document.getElementById('prev').addEventListener('click', () => {
+        currentSlide = (currentSlide + slides.length - 1) % slides.length;
+        showSlide(currentSlide);
+    });
+
+    showSlide(currentSlide); // Initialize the gallery at the first slide
+    });
+
     </script>
         
 </body>
