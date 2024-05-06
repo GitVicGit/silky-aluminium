@@ -13,7 +13,7 @@
             overflow: hidden;
             font-family: sans-serif;
             background-color: white;
-            font-size: 17px;
+            font-size: 17px; 
         }
         .container {
             display: flex;
@@ -38,111 +38,222 @@
             line-height: 1.5;
         }
         .navigation p:first-child {
-            font-weight: bold;
+            font-weight: bold; /* Only VICTOR GUERIN in bold */
             font-size: 30px;
         }
         .gallery {
             flex-grow: 1;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             background-color: white;
         }
         .gallery-slide {
-            width: calc(100% - 400px);
-            height: 100vh; /* Adjusted to full height */
+            width: calc(100% - 300px);
+            height: calc(100vh - 64px);
             display: none;
             justify-content: center;
             align-items: center;
-            flex-direction: column; /* Ensure image and description are in a column layout */
         }
         .gallery-slide.active {
             display: flex;
         }
         .gallery-slide img {
             max-width: 100%;
-            max-height: 80%; /* Reduced to accommodate descriptions */
-            pointer-events: none;
-            -webkit-touch-callout: none;
+            max-height: 100%;
+            pointer-events: none; /* Disable pointer events */
+            -webkit-touch-callout: none; /* Disable touch callout on iOS */
         }
         .artwork-description {
-            font-size: 17px;
-            text-align: center;
-            margin-top: 10px; /* Added margin for spacing */
+            font-size: 17px; 
         }
         .artwork-description p {
-            margin: 4px 0;
+            margin: 6px 0;
+            margin-left: 0;
         }
         .artwork-description p:first-child {
-            font-weight: bold;
+            font-weight: bold; /* Only the artwork title in bold */
+            font-size: 17px;
         }
         .artwork-description a {
             display: inline-block;
             margin: 16px 8px 0;
-            text-decoration: underline;
+            margin-left: 0;
+            text-decoration: underline; /* Make Prev and Next underlined */
         }
         .mobile-banner {
-            display: none;
+                display: none;
         }
         .mobile-footer {
-            display: none;
+                display: none;
         }
         
-        @media (max-width: 768px) {
-            .navigation {
-                display: none;
-            }
-            .mobile-banner, .mobile-footer {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%;
-                padding: 10px 0;
-                position: fixed;
-                background-color: #fff;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-                z-index: 1001;
-            }
-            .mobile-banner {
-                top: 0;
-            }
-            .mobile-footer {
-                bottom: 0;
-            }
-            .mobile-banner a, .mobile-footer a {
-                display: inline-block;
-                margin: 0;
-                padding: 0 10px;
-                font-size: 16px;
-                color: black;
-                text-decoration: none;
-            }
-            .mobile-footer a.works-link, .mobile-banner a.works-link {
-                text-decoration: underline;
-            }
-            .gallery-slide {
-                width: 100%;
-                height: auto; /* Adjust for mobile viewing */
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            .gallery-slide img {
-                width: 90%; /* Adjust for mobile screens */
-            }
-        }
+@media (max-width: 768px) {
+    .navigation {
+        display: none;
+    }
+    .mobile-banner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 10px 0; /* Reduced vertical padding */
+        position: fixed;
+        top: 0;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        z-index: 1001;
+    }
+    .mobile-banner a {
+        display: inline-block;
+        margin: 0;
+        padding: 0 10px; /* Added horizontal padding */
+        text-align: justify; /* Justify text */
+        text-justify: distribute-all-lines; /* Justify all lines */
+        font-size: 16px; /* Set font size */
+        color: black; /* Set color to black */
+        text-decoration: none; /* Remove default underline */
+    }
+    .mobile-banner a.works-link {
+        text-decoration: underline; /* Underline only 'Works' link */
+    }
+    .mobile-banner .content {
+        flex-grow: 1;
+        text-align: justify;
+        margin-left: 20px; /* Adjusted margin */
+        margin-right: 20px; /* Adjusted margin */
+    }
+    .mobile-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 10px 0; /* Reduced vertical padding */
+        position: fixed;
+        bottom: 0;
+        background-color: #fff;
+        box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+        z-index: 1001;
+    }
+    .mobile-footer a {
+        display: inline-block;
+        margin: 0;
+        padding: 0 10px; /* Added horizontal padding */
+        text-align: justify; /* Justify text */
+        text-justify: distribute-all-lines; /* Justify all lines */
+        font-size: 16px; /* Set font size */
+        color: black; /* Set color to black */
+        text-decoration: none; /* Remove default underline */
+    }
+    .mobile-footer a.works-link {
+        text-decoration: underline; /* Underline only 'Works' link */
+    }
+
+    /* Gallery Slide */
+    .gallery-slide {
+        width: 100%; /* Full width of the viewport */
+        display: block; /* Always display */
+        position: relative; /* For absolute positioning inside */
+    }
+
+    .gallery-slide img {
+        width: 90%; /* Image takes full width of its container */
+        height: auto; /* Maintain aspect ratio */
+        display: block; /* Ensure block display */
+        margin: 0 auto; /* Center align */
+        order: 2; /* Image comes after description */
+    }
+
+    .artwork-description {
+        width: 100%; /* Full width */
+        order: 1; /* Description comes before the image */
+        padding: 10px 5%; /* Padding */
+        box-sizing: border-box; /* Handling box model */
+        text-align: center; /* Center text alignment */
+        position: absolute; /* Adjust to float over image if needed */
+        top: 0; /* Position at the top of the slide */
+        background: rgba(255,255,255,0.9); /* Semi-transparent background for readability */
+    }
+}
+
+
+
     </style>
     
     <script>
-        document.addEventListener('contextmenu', function(e) {
-            if (e.target.nodeName === 'IMG') {
-                e.preventDefault();
-            }
-        });
+  // Prevent right-click on images
+  document.addEventListener('contextmenu', function(e) {
+    if (e.target.nodeName === 'IMG') {
+      e.preventDefault();
+    }
+  });
+    </script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <div>
+                <p><strong><a href="hello.html">VICTOR GUERIN</a></strong></p>
+                <br><br><br>
+                <a href="statement.html">Statement</a><br>
+                <a href="about.html">About</a><br>
+                <a href="cv.html">CV</a><br><br>
+                <a href="mailto:victorguerin.fr+web@pm.me">Email</a><br>
+                <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a><br>
+                <a href="https://www.instagram.com/victorguerin.fr/">Instagram</a><br>
+            </div>
+        <div class="artwork-description">
+                <p id="artwork-title">Titre de l'œuvre</p>
+                <p id="artwork-material">Matériel</p>
+                <p id="artwork-size">Taille</p>
+                <p id="artwork-date">Date</p>
+                <br>
+                <a href="javascript:void(0);" id="prev">Prev</a>
+                <a href="javascript:void(0);" id="next">Next</a>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="gallery-slide active">
+                <img src="Natures_chromatic_symphony.jpg" alt="Artwork 1">
+            </div>
+            <div class="gallery-slide">
+                <img src="victor_guerin_artist_0731.jpg" alt="Artwork 2">
+            </div>
+            <div class="gallery-slide">
+                <img src="victor_guerin_artist_0664.jpg" alt="Artwork 3">
+            </div>
+            <div class="gallery-slide">
+                <img src="victor_guerin_artist_0580.jpg" alt="Artwork 4">
+            </div>
+            <div class="gallery-slide">
+                <img src="victor_guerin_artist_0630.jpg" alt="Artwork 5">
+            </div>
+        </div>
+            <!-- Mobile-specific Banner -->
+    <div class="mobile-banner">
+        <a href="hello.html" style="font-weight: bold;font-size: 17px">VICTOR GUERIN</a>
+        <div>
+            <a href="statement.html">Statement</a>
+            <a href="about.html">About</a>
+            <a href="cv.html">CV</a>
+        </div>
+    </div>
+    
+    <!-- Mobile-specific Footer -->
+    <div class="mobile-footer">
+            <a href="hello.html" class="works-link">Works</a>
+        <div>
+            <a href="https://www.instagram.com/victorguerin.fr/">Instagram</a>
+            <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a>
+            <a href="mailto:victorguerin.fr+web@pm.me">Email</a>
+        </div>
+    </div>
         
+    <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.gallery-slide');
-        const artworkTitles = ["Nature's Chromatic Symphony", 'La Grande Bocca', 'Tours et Détours', 'Valse', 'Scottish Fantasy'];
+        const artworkTitles = ["Nature's Chromatic Symphony",'La Grande Bocca', 'Tours et Détours', 'Valse', 'Scottish Fantasy'];
         const artworkMaterials = ['Oil on canvas', 'Computer-aided coil built ceramic', 'Computer-aided coil built ceramic', 'Earthenware', 'Computer-aided coil built ceramic'];
         const artworkSizes = ['160 x 120 x 4 cm', '24 x 24 x 24 cm', '60 x 33 x 25 cm', '22 x 38 x 18 cm', '48 x 33 x 25 cm'];
         const artworkDates = ['2023', '2024', '2024', '2024', '2024'];
@@ -167,47 +278,8 @@
             showSlide(currentSlide);
         });
 
-        // Show first slide on load
-        window.onload = function() {
-            showSlide(0);
-        };
+        showSlide(currentSlide);
+        
     </script>
-</head>
-<body>
-    <div class="container">
-        <div class="navigation">
-            <div>
-                <p><strong><a href="hello.html">VICTOR GUERIN</a></strong></p>
-                <br><br><br>
-                <a href="statement.html">Statement</a><br>
-                <a href="about.html">About</a><br>
-                <a href="cv.html">CV</a><br><br>
-                <a href="mailto:victorguerin.fr+web@pm.me">Email</a><br>
-                <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a><br>
-                <a href="https://www.instagram.com/victorguerin.fr/">Instagram</a><br>
-            </div>
-        </div>
-        <div class="gallery">
-            <!-- All gallery slides -->
-        </div>
-        <!-- Mobile-specific Banner -->
-        <div class="mobile-banner">
-            <a href="hello.html" style="font-weight: bold;font-size: 17px">VICTOR GUERIN</a>
-            <div>
-                <a href="statement.html">Statement</a>
-                <a href="about.html">About</a>
-                <a href="cv.html">CV</a>
-            </div>
-        </div>
-        <!-- Mobile-specific Footer -->
-        <div class="mobile-footer">
-            <a href="hello.html" class="works-link">Works</a>
-            <div>
-                <a href="https://www.instagram.com/victorguerin.fr/">Instagram</a>
-                <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a>
-                <a href="mailto:victorguerin.fr+web@pm.me">Email</a>
-            </div>
-        </div>
-    </div>
 </body>
 </html>
