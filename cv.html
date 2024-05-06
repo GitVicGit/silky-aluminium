@@ -245,10 +245,12 @@
                 display: inline; /* Inline display for continuous text flow */
                 margin-right: 0; /* Remove any right margin */
             }
-            .exhibition-year::after,.exhibition-name::after,.exhibition-title::after {
+            .exhibition-year::after {
                 content: "\00A0\00A0"; /* Adds two non-breaking spaces after the year */
             }
-            
+            .exhibition-name::after,.exhibition-title::after {
+                content: ","; 
+            }
     
         .residency-row {
             display: block; /* Ensures the row behaves as a block element */
