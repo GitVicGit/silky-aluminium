@@ -90,45 +90,46 @@
         
 @media (max-width: 768px) {
     .navigation {
-        display: none;
+        display: none; /* Hide the navigation on mobile */
     }
 
     .gallery-slide {
-        width: 100%;
-        display: block;
-        height: auto; /* Adjusts the height automatically to the content */
-        text-align: center; /* Centers the image */
+        width: 100%; /* Full width of the viewport */
+        display: block; /* Block display to stack elements */
+        height: auto; /* Auto height to adjust based on content */
     }
 
     .gallery-slide img {
-        width: 100%; /* Full width of the screen */
-        height: auto; /* Keeps the aspect ratio of the image */
+        width: 100%; /* Image takes full width of its container */
+        height: auto; /* Maintain aspect ratio */
     }
 
     .artwork-description {
-        text-align: center;
-        padding-top: 20px; /* Provides space between the image and the text */
+        text-align: center; /* Center align the text */
+        padding-top: 20px; /* Space above the text */
     }
 
     .artwork-description p {
-        text-align: center; /* Ensures text is centered under the image */
-        display: block;
-        margin: 0 auto; /* Centers the text blocks horizontally */
+        text-align: center; /* Center align paragraphs */
+        display: block; /* Ensure each paragraph is on a new line */
+        margin: 0; /* Remove default margin */
     }
 
     .nav-links {
-        display: flex;
-        justify-content: space-around;
-        position: fixed;
-        bottom: 10px;
-        width: 100%;
-        padding: 10px 0;
+        position: fixed; /* Fixed positioning at the bottom */
+        bottom: 10px; /* Positioned 10px from the bottom */
+        width: 100%; /* Full width */
+        display: flex; /* Use flexbox for alignment */
+        justify-content: space-around; /* Space around items */
+        padding: 10px 0; /* Padding above and below */
     }
 
     .nav-links a {
-        text-decoration: underline;
+        margin: 0 10px; /* Spacing between Prev and Next links */
+        text-decoration: underline; /* Underline the text */
     }
 }
+
 
   
 
