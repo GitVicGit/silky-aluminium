@@ -94,56 +94,41 @@
     }
 
     .gallery-slide {
-        width: 100%; /* Full width for mobile */
-        display: block; /* Ensures gallery slides are displayed in block format */
-        height: auto; /* Adjusts height automatically */
+        width: 90%; /* Full width of the viewport */
+        display: block; /* Block display to stack elements */
+        height: auto; /* Auto height to adjust based on content */
     }
 
     .gallery-slide img {
-        width: 100%; /* Ensures images stretch to full width */
-        height: auto; /* Maintains aspect ratio */
+        width: 90%; /* Image takes full width of its container */
+        height: auto; /* Maintain aspect ratio */
     }
 
     .artwork-description {
-        text-align: center; /* Centers the artwork description text */
-        padding-top: 20px; /* Adds space above the artwork description */
+        text-align: left; /* Center align the text */
+        padding-top: 20px; /* Space above the text */
     }
 
     .artwork-description p {
-        text-align: center; /* Centers each paragraph */
-        display: block; /* Ensures each description starts on a new line */
-        margin: 0; /* Removes margin for neat alignment */
-    }
-
-    .date-and-nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px; /* Adds padding around navigation links */
-    }
-
-    .date-and-nav p {
-        flex-grow: 1; /* Allows the date to take up necessary space */
+        text-align: left; /* Center align paragraphs */
+        display: block; /* Ensure each paragraph is on a new line */
+        margin: 0; /* Remove default margin */
     }
 
     .nav-links {
-        display: flex;
-        justify-content: space-around; /* Evenly spaces the Prev and Next links */
-        width: 100%; /* Full width to align with other elements */
-        position: fixed;
-        bottom: 10px; /* Positions navigation at the bottom */
-        padding: 10px 0; /* Adds padding for touch accessibility */
+        position: fixed; /* Fixed positioning at the bottom */
+        bottom: 10px; /* Positioned 10px from the bottom */
+        width: 100%; /* Full width */
+        display: flex; /* Use flexbox for alignment */
+        justify-content: space-around; /* Space around items */
+        padding: 10px 0; /* Padding above and below */
     }
 
     .nav-links a {
-        margin: 0 10px; /* Space between Prev and Next buttons */
+        margin: 0 10px; /* Spacing between Prev and Next links */
+        text-decoration: underline; /* Underline the text */
     }
 }
-
-
-
-  
-
 
 
 
