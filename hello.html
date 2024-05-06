@@ -89,71 +89,70 @@
         }
         
 @media (max-width: 768px) {
-            .navigation {
-                display: none;
-            }
-            .mobile-banner {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%;
-                padding: 10px 0; /* Reduced vertical padding */
-                position: fixed;
-                top: 0;
-                background-color: #fff;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-                z-index: 1001;
-            }
-            .mobile-banner a {
-                display: inline-block;
-                margin: 0;
-                padding: 0 10px; /* Added horizontal padding */
-                text-align: justify; /* Justify text */
-                text-justify: distribute-all-lines; /* Justify all lines */
-                font-size: 16px; /* Set font size */
-                color: black; /* Set color to black */
-                text-decoration: none; /* Remove default underline */
-            }
-            .mobile-banner a.works-link {
-                text-decoration: underline; /* Underline only 'Works' link */
-            }
-            .mobile-banner .content {
-                flex-grow: 1;
-                text-align: justify;
-                margin-left: 20px; /* Adjusted margin */
-                margin-right: 20px; /* Adjusted margin */
-            }
-            .mobile-footer {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%;
-                padding: 10px 0; /* Reduced vertical padding */
-                position: fixed;
-                bottom: 0;
-                background-color: #fff;
-                box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-                z-index: 1001;
-            }
-            .mobile-footer a {
-                display: inline-block;
-                margin: 0;
-                padding: 0 10px; /* Added horizontal padding */
-                text-align: justify; /* Justify text */
-                text-justify: distribute-all-lines; /* Justify all lines */
-                font-size: 16px; /* Set font size */
-                color: black; /* Set color to black */
-                text-decoration: none; /* Remove default underline */
-            }
-            .mobile-footer a.works-link {
-                text-decoration: underline; /* Underline only 'Works' link */
-            }
+    .navigation {
+        display: none;
+    }
+    .mobile-banner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 10px 0; /* Reduced vertical padding */
+        position: fixed;
+        top: 0;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        z-index: 1001;
+    }
+    .mobile-banner a {
+        display: inline-block;
+        margin: 0;
+        padding: 0 10px; /* Added horizontal padding */
+        text-align: justify; /* Justify text */
+        text-justify: distribute-all-lines; /* Justify all lines */
+        font-size: 16px; /* Set font size */
+        color: black; /* Set color to black */
+        text-decoration: none; /* Remove default underline */
+    }
+    .mobile-banner a.works-link {
+        text-decoration: underline; /* Underline only 'Works' link */
+    }
+    .mobile-banner .content {
+        flex-grow: 1;
+        text-align: justify;
+        margin-left: 20px; /* Adjusted margin */
+        margin-right: 20px; /* Adjusted margin */
+    }
+    .mobile-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 10px 0; /* Reduced vertical padding */
+        position: fixed;
+        bottom: 0;
+        background-color: #fff;
+        box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+        z-index: 1001;
+    }
+    .mobile-footer a {
+        display: inline-block;
+        margin: 0;
+        padding: 0 10px; /* Added horizontal padding */
+        text-align: justify; /* Justify text */
+        text-justify: distribute-all-lines; /* Justify all lines */
+        font-size: 16px; /* Set font size */
+        color: black; /* Set color to black */
+        text-decoration: none; /* Remove default underline */
+    }
+    .mobile-footer a.works-link {
+        text-decoration: underline; /* Underline only 'Works' link */
+    }
 
-        /* Gallery Slide */
+    /* Gallery Slide */
     .gallery-slide {
         width: 100%; /* Full width of the viewport */
         display: block; /* Always display */
-        padding-bottom: 70px; /* Space for description */
         position: relative; /* For absolute positioning inside */
     }
 
@@ -162,34 +161,18 @@
         height: auto; /* Maintain aspect ratio */
         display: block; /* Ensure block display */
         margin: 0 auto; /* Center align */
+        order: 2; /* Image comes after description */
     }
 
     .artwork-description {
-        position: absolute; /* Positioning it at the bottom */
-        bottom: 0; /* At the bottom of the gallery slide */
-        left: 0; /* Align to left */
         width: 100%; /* Full width */
-        background: rgba(255,255,255,0.8); /* Semi-transparent background */
+        order: 1; /* Description comes before the image */
         padding: 10px 5%; /* Padding */
         box-sizing: border-box; /* Handling box model */
         text-align: center; /* Center text alignment */
-    }
-
-    .artwork-description p {
-        margin: 4px 0; /* Adjust margin for paragraphs */
-    }
-
-    .nav-links {
-        position: fixed; /* Fixed positioning at the bottom */
-        bottom: 40px; /* Positioned 10px from the bottom */
-        width: 90%; /* Full width */
-        display: flex; /* Use flexbox for alignment */
-        justify-content: space-around; /* Space around items */
-    }
-
-    .nav-links a {
-        margin: 0 5px; /* Spacing between Prev and Next links */
-        text-decoration: underline; /* Underline the text */
+        position: absolute; /* Adjust to float over image if needed */
+        top: 0; /* Position at the top of the slide */
+        background: rgba(255,255,255,0.9); /* Semi-transparent background for readability */
     }
 }
 
