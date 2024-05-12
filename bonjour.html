@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <script>
-    if (window.innerWidth <= 768) {
-        window.location.href = "bonjour.html"; // Redirect to the mobile-specific page
+    if (window.innerWidth >= 768) {
+        window.location.href = "hello.html"; // Redirect to the computer-specific page
     }
     </script>
     
@@ -21,84 +21,10 @@
             background-color: white;
             font-size: 17px; 
         }
-        .container {
-            display: flex;
-            height: 100vh;
-            overflow: hidden;
-        }
-        .navigation {
-            padding: 20px;
-            background-color: transparent;
-            width: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-sizing: border-box;
-            font-size: 17px;
-            white-space: nowrap;
-        }
-        .navigation a, .navigation p {
-            margin: 0;
-            color: black;
-            text-decoration: none;
-            line-height: 1.5;
-        }
-        .navigation p:first-child {
-            font-weight: bold; /* Only VICTOR GUERIN in bold */
-            font-size: 30px;
-        }
-        .gallery {
-            flex-grow: 1;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            background-color: white;
-        }
-        .gallery-slide {
-            width: calc(100% - 400px);
-            height: calc(100vh - 64px);
-            display: none;
-            justify-content: center;
-            align-items: center;
-        }
-        .gallery-slide.active {
-            display: flex;
-        }
-        .gallery-slide img {
-            max-width: 100%;
-            max-height: 100%;
-            pointer-events: none; /* Disable pointer events */
-            -webkit-touch-callout: none; /* Disable touch callout on iOS */
-        }
-        .artwork-description {
-            font-size: 17px; 
-        }
-        .artwork-description p {
-            margin: 6px 0;
-        }
-        .artwork-description p:first-child {
-            font-weight: bold; /* Only the artwork title in bold */
-            font-size: 17px;
-        }
-        .artwork-description a {
-            display: inline-block;
-            margin: 16px 8px 0;
-            text-decoration: underline; /* Make Prev and Next underlined */
-        }
-        .mobile-banner {
-            display: none;
-        }
-        .mobile-footer {
-            display: none;
-        }
-        
+       
         @media (max-width: 768px) {
              html, body {
                 overflow-x: hidden; /* Prevent horizontal scrolling */
-            }
-        
-            .navigation {
-                display: none;
             }
                     
             .mobile-banner {
@@ -193,16 +119,6 @@
 </head>
 <body>
     <div class="container">
-        <div class="navigation">
-            <p><strong><a href="hello.html">VICTOR GUERIN</a></strong></p>
-            <br><br><br>
-            <a href="statement.html">Statement</a><br>
-            <a href="about.html">About</a><br>
-            <a href="cv.html">CV</a><br><br>
-            <a href="mailto:victorguerin.fr+web@pm.me">Email</a><br>
-            <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a><br>
-            <a href="https://www.instagram.com/victorguerin.fr/">Instagram</a><br>
-        </div>
         <div class="gallery">
             <div class="gallery-slide active">
                 <img src="Natures_chromatic_symphony.jpg" alt="Artwork 1">
