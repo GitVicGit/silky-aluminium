@@ -38,7 +38,7 @@
             line-height: 1.5;
         }
         .navigation p:first-child {
-            font-weight: bold;
+            font-weight: bold; /* Only VICTOR GUERIN in bold */
             font-size: 30px;
         }
         .gallery {
@@ -61,8 +61,8 @@
         .gallery-slide img {
             max-width: 100%;
             max-height: 100%;
-            pointer-events: none;
-            -webkit-touch-callout: none;
+            pointer-events: none; /* Disable pointer events */
+            -webkit-touch-callout: none; /* Disable touch callout on iOS */
         }
         .artwork-description {
             font-size: 17px; 
@@ -71,84 +71,131 @@
             margin: 6px 0;
         }
         .artwork-description p:first-child {
-            font-weight: bold;
+            font-weight: bold; /* Only the artwork title in bold */
             font-size: 17px;
         }
         .artwork-description a {
             display: inline-block;
             margin: 16px 8px 0;
-            text-decoration: underline;
+            text-decoration: underline; /* Make Prev and Next underlined */
         }
-        .mobile-banner, .mobile-footer {
+        .mobile-banner {
+            display: none;
+        }
+        .mobile-footer {
             display: none;
         }
         
         @media (max-width: 768px) {
-            .navigation, .gallery-slide {
+             html, body {
+                overflow-x: hidden; /* Prevent horizontal scrolling */
+            }
+        
+            .navigation {
                 display: none;
             }
-            .mobile-banner, .mobile-footer {
+                    
+            .mobile-banner {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                position: fixed;
                 width: 100%;
-                padding: 10px 0;
+                padding: 10px 0; /* Reduced vertical padding */
+                position: fixed;
+                top: 0;
                 background-color: #fff;
                 box-shadow: 0 2px 4px rgba(0,0,0,0.1);
                 z-index: 1001;
             }
-            .mobile-banner {
-                top: 0;
-            }
-            .mobile-footer {
-                bottom: 0;
-            }
-            .mobile-banner a, .mobile-footer a {
+            .mobile-banner a {
                 display: inline-block;
                 margin: 0;
-                padding: 0 10px;
-                font-size: 16px;
-                color: black;
-                text-decoration: none;
+                padding: 0 10px; /* Added horizontal padding */
+                text-align: justify; /* Justify text */
+                text-justify: distribute-all-lines; /* Justify all lines */
+                font-size: 16px; /* Set font size */
+                color: black; /* Set color to black */
+                text-decoration: none; /* Remove default underline */
+            }
+            .mobile-banner .content {
+                flex-grow: 1;
                 text-align: justify;
+                margin-left: 20px; /* Adjusted margin */
+                margin-right: 20px; /* Adjusted margin */
+            }
+            .mobile-footer {
+                display: flex;
+                justify-content: flex-end; /* Aligns items to the right */
+                align-items: center; /* Vertically aligns items in the middle */
+                width: 100%;
+                padding: 10px 0; /* Reduced vertical padding */
+                position: fixed;
+                bottom: 0;
+                background-color: #fff;
+                box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+                z-index: 1001;
+            }
+            .mobile-footer a {
+                display: inline-block;
+                margin: 0;
+                padding: 0 10px; /* Added horizontal padding */
+                text-align: right; /* Ensures text within the anchor tags is right-aligned */
+                font-size: 16px; /* Set font size */
+                color: black; /* Set color to black */
+                text-decoration: none; /* Remove default underline */
             }
             .gallery {
                 flex-direction: column;
-                align-items: center;
+                align-items: left;
                 overflow-y: auto;
+                width: 100%; /* Ensure the gallery does not exceed the viewport width */
             }
             .gallery-slide {
                 width: 100%;
-                height: 100vh;
+                height: 100vh; /* Full viewport height */
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+                padding: 0 10px; /* Adjust padding to ensure it does not exceed the viewport width */
+                box-sizing: border-box;
             }
             .gallery-slide img {
-                width: 100%;
-                height: auto;
+                width: 100%; /* Full width images */
+                height: auto; /* Maintain aspect ratio */
+                margin-bottom: 1px; /* Reduced space between the image and the description */
             }
             .artwork-description {
-                text-align: center;
-                padding: 10px;
-                background: rgba(255,255,255,0.9);
+                    width: 100%;
+                    text-align: left;
+                    padding: 10px;
+                    background: rgba(255,255,255,0.9);
+                    margin-bottom: 20px; /* Add a bottom margin to create an empty line after the description */
             }
-        }
+    }
+
     </style>
+    
+    <script>
+        // Prevent right-click on images
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.nodeName === 'IMG') {
+                e.preventDefault();
+            }
+        });
+    </script>
 </head>
 <body>
     <div class="container">
         <div class="navigation">
             <p><strong><a href="hello.html">VICTOR GUERIN</a></strong></p>
             <br><br><br>
-            <a href="statement.html">Statement</a>
-            <a href="about.html">About</a>
-            <a href="cv.html">CV</a>
-            <a href="mailto:victorguerin.fr+web@pm.me">Email</a>
-            <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a>
-            <a href="https://www.instagram.com/victorguerin.fr/">Instagram</a>
+            <a href="statement.html">Statement</a><br>
+            <a href="about.html">About</a><br>
+            <a href="cv.html">CV</a><br><br>
+            <a href="mailto:victorguerin.fr+web@pm.me">Email</a><br>
+            <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a><br>
+            <a href="https://www.instagram.com/victorguerin.fr/">Instagram</a><br>
         </div>
         <div class="gallery">
             <div class="gallery-slide active">
@@ -169,7 +216,33 @@
                     <p>2024</p>
                 </div>
             </div>
-            <!-- Additional slides -->
+            <div class="gallery-slide">
+                <img src="victor_guerin_artist_0664.jpg" alt="Artwork 3">
+                <div class="artwork-description">
+                    <p>Tours et Détours</p>
+                    <p>Computer-aided coil built ceramic</p>
+                    <p>60 x 33 x 25 cm</p>
+                    <p>2024</p>
+                </div>
+            </div>
+            <div class="gallery-slide">
+                <img src="victor_guerin_artist_0580.jpg" alt="Artwork 4">
+                <div class="artwork-description">
+                    <p>Valse</p>
+                    <p>Earthenware</p>
+                    <p>22 x 38 x 18 cm</p>
+                    <p>2024</p>
+                </div>
+            </div>
+            <div class="gallery-slide">
+                <img src="victor_guerin_artist_0630.jpg" alt="Artwork 5">
+                <div class="artwork-description">
+                    <p>Scottish Fantasy</p>
+                    <p>Computer-aided coil built ceramic</p>
+                    <p>48 x 33 x 25 cm</p>
+                    <p>2024</p>
+                </div>
+            </div>
         </div>
         <!-- Mobile-specific Banner -->
         <div class="mobile-banner">
@@ -180,9 +253,9 @@
                 <a href="cv.html">CV</a>
             </div>
         </div>
+        
         <!-- Mobile-specific Footer -->
         <div class="mobile-footer">
-            <a href="hello.html" class="works-link">Works</a>
             <div>
                 <a href="https://www.instagram.com/victorguerin.fr/">Instagram</a>
                 <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a>
@@ -192,3 +265,6 @@
     </div>
 </body>
 </html>
+
+
+
