@@ -117,9 +117,6 @@
         color: black; /* Set color to black */
         text-decoration: none; /* Remove default underline */
     }
-    .mobile-banner a.works-link {
-        text-decoration: underline; /* Underline only 'Works' link */
-    }
     .mobile-banner .content {
         flex-grow: 1;
         text-align: justify;
@@ -155,7 +152,7 @@
 
     .gallery {
         flex-direction: column;
-        align-items: center;
+        align-items: left;
         overflow-y: auto;
         width: 100%; /* Ensure the gallery does not exceed the viewport width */
     }
@@ -173,13 +170,13 @@
     .gallery-slide img {
         width: 100%; /* Full width images */
         height: auto; /* Maintain aspect ratio */
-        margin-bottom: 5px; /* Reduced space between the image and the description */
+        margin-bottom: 1px; /* Reduced space between the image and the description */
     }
 
     .artwork-description {
         width: 100%;
-        text-align: center;
-        padding: 10px 5%;
+        text-align: left;
+        padding: 10px;
         background: rgba(255,255,255,0.9);
     }
 }
@@ -266,7 +263,6 @@
         
         <!-- Mobile-specific Footer -->
         <div class="mobile-footer">
-            <a href="hello.html" class="works-link">Works</a>
             <div>
                 <a href="https://www.instagram.com/victorguerin.fr/">Instagram</a>
                 <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a>
