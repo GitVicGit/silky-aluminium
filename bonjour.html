@@ -3,8 +3,7 @@
 <head>
     
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Victor Guerin</title>
     <style>
     
@@ -88,8 +87,8 @@
                 width: 100%; /* Full width images */
                 height: auto; /* Maintain aspect ratio */
                 margin-bottom: 1px; /* Reduced space between the image and the description */
-                pointer-events: none;
-                -webkit-user-drag: none;
+            pointer-events: none; /* This will disable clicking and dragging images */
+    -webkit-user-drag: none; /* Prevent dragging on iOS */
             }
             .artwork-description {
                     width: 100%;
@@ -97,15 +96,6 @@
                     padding: 10px;
                     background: rgba(255,255,255,0.9);
                     margin-bottom: 20px; /* Add a bottom margin to create an empty line after the description */
-            }
-            .overlay {
-                    position: absolute;/* Add a trasnparent overlay */
-                    top: 0;
-                    left: 0;
-                    height: 100%;
-                    width: 100%;
-                    background: transparent; /* Ensure it's fully transparent */
-                    z-index: 2; /* Make sure it's above the image */
             }
     }
 
@@ -125,7 +115,6 @@
         <div class="gallery">
             <div class="gallery-slide active">
                 <img src="Natures_chromatic_symphony.jpg" alt="Artwork 1">
-                <div class="overlay"></div>
                 <div class="artwork-description">
                     <p>Nature's Chromatic Symphony</p>
                     <p>Oil on canvas</p>
@@ -135,7 +124,6 @@
             </div>
             <div class="gallery-slide">
                 <img src="victor_guerin_artist_0731.jpg" alt="Artwork 2">
-                <div class="overlay"></div>
                 <div class="artwork-description">
                     <p>La Grande Bocca</p>
                     <p>Computer-aided coil built ceramic</p>
@@ -145,7 +133,6 @@
             </div>
             <div class="gallery-slide">
                 <img src="victor_guerin_artist_0664.jpg" alt="Artwork 3">
-                <div class="overlay"></div>
                 <div class="artwork-description">
                     <p>Tours et Détours</p>
                     <p>Computer-aided coil built ceramic</p>
@@ -155,7 +142,6 @@
             </div>
             <div class="gallery-slide">
                 <img src="victor_guerin_artist_0580.jpg" alt="Artwork 4">
-                <div class="overlay"></div>
                 <div class="artwork-description">
                     <p>Valse</p>
                     <p>Earthenware</p>
@@ -165,7 +151,6 @@
             </div>
             <div class="gallery-slide">
                 <img src="victor_guerin_artist_0630.jpg" alt="Artwork 5">
-                <div class="overlay"></div>
                 <div class="artwork-description">
                     <p>Scottish Fantasy</p>
                     <p>Computer-aided coil built ceramic</p>
@@ -195,6 +180,5 @@
     </div>
 </body>
 </html>
-
 
 
