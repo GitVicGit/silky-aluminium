@@ -149,31 +149,35 @@
         text-decoration: underline; /* Underline only 'Works' link */
     }
 
-    /* Gallery Slide */
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+        overflow-y: scroll; /* Allows vertical scrolling */
+    }
+
     .gallery-slide {
-        width: 100%; /* Full width of the viewport */
-        display: block; /* Always display */
-        position: relative; /* For absolute positioning inside */
+        width: 100%;
+        height: auto; /* Adjust height dynamically based on content */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box; /* Ensure padding does not add to width */
     }
 
     .gallery-slide img {
-        width: 90%; /* Image takes full width of its container */
-        height: auto; /* Maintain aspect ratio */
-        display: block; /* Ensure block display */
-        margin: 0 auto; /* Center align */
-        order: 2; /* Image comes after description */
+        width: 100%; /* Full width images */
+        height: auto; /* Keep the aspect ratio intact */
+        margin-bottom: 10px; /* Space between the image and the description */
     }
 
     .artwork-description {
-        width: 100%; /* Full width */
-        order: 1; /* Description comes before the image */
-        padding: 10px 5%; /* Padding */
-        box-sizing: border-box; /* Handling box model */
-        text-align: center; /* Center text alignment */
-        position: absolute; /* Adjust to float over image if needed */
-        top: 0; /* Position at the top of the slide */
-        background: rgba(255,255,255,0.9); /* Semi-transparent background for readability */
+        width: 100%; /* Full width for descriptions */
+        padding: 10px 5%; /* Adequate padding for text */
+        text-align: center; /* Center-align the text */
+        background: rgba(255,255,255,0.9); /* Semi-transparent background */
     }
+
 }
 
 
