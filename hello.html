@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script>
-    if (window.innerWidth <= 768) {
-        window.location.href = "bonjour.html"; // Redirect to the mobile-specific page
-    }
-    </script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Victor Guerin</title>
@@ -97,10 +91,12 @@
     <script>
   // Prevent right-click on images
   document.addEventListener('contextmenu', function(e) {
-    if (e.target.nodeName === 'IMG') {
-      e.preventDefault();
-    }
+    if (e.target.nodeName === 'IMG') {e.preventDefault();}
   });
+    
+        if (window.innerWidth <= 768) {
+        window.location.href = "bonjour.html"; // Redirect to the mobile-specific page
+    }
     </script>
 
 </head>
