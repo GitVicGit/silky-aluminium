@@ -87,9 +87,13 @@
         }
         
         @media (max-width: 768px) {
-            .navigation {
-                display: none;
-            }
+     html, body {
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+    .navigation {
+        display: none;
+    }
             
     .mobile-banner {
         display: flex;
@@ -147,34 +151,39 @@
     .mobile-footer a.works-link {
         text-decoration: underline; /* Underline only 'Works' link */
     }
-            .gallery {
-                flex-direction: column;
-                align-items: center;
-                overflow-y: auto;
-            }
+            
 
-            .gallery-slide {
-                width: 100%;
-                height: auto;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+        overflow-y: auto;
+        width: 100%; /* Ensure the gallery does not exceed the viewport width */
+    }
 
-            .gallery-slide img {
-                width: 100%; /* Full width images */
-                height: auto; /* Keep the aspect ratio intact */
-                margin-bottom: 10px; /* Space between the image and the description */
-            }
+    .gallery-slide {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 10px; /* Adjust padding to ensure it does not exceed the viewport width */
+        box-sizing: border-box;
+    }
 
-            .artwork-description {
-                width: 100%;
-                padding: 10px 5%;
-                text-align: center;
-                background: rgba(255,255,255,0.9);
-            }
-        }
+    .gallery-slide img {
+        width: 100%; /* Full width images */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 5px; /* Reduced space between the image and the description */
+    }
+
+    .artwork-description {
+        width: 100%;
+        text-align: center;
+        padding: 10px 5%;
+        background: rgba(255,255,255,0.9);
+    }
+}
+
     </style>
     
     <script>
