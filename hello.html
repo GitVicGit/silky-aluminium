@@ -86,15 +86,16 @@
             display: none;
         }
         
-        @media (max-width: 768px) {
-     html, body {
+
+@media (max-width: 768px) {
+    html, body {
         overflow-x: hidden; /* Prevent horizontal scrolling */
     }
 
     .navigation {
         display: none;
     }
-            
+
     .mobile-banner {
         display: flex;
         justify-content: space-between;
@@ -107,46 +108,19 @@
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         z-index: 1001;
     }
-    .mobile-banner a {
-        display: inline-block;
-        margin: 0;
-        padding: 0 10px; /* Added horizontal padding */
-        text-align: justify; /* Justify text */
-        text-justify: distribute-all-lines; /* Justify all lines */
-        font-size: 16px; /* Set font size */
-        color: black; /* Set color to black */
-        text-decoration: none; /* Remove default underline */
-    }
-    .mobile-banner .content {
-        flex-grow: 1;
-        text-align: justify;
-        margin-left: 20px; /* Adjusted margin */
-        margin-right: 20px; /* Adjusted margin */
-    }
-.mobile-footer {
-    display: flex;
-    justify-content: flex-end; /* Aligns items to the right */
-    align-items: center; /* Vertically aligns items in the middle */
-    width: 100%;
-    padding: 10px 0; /* Reduced vertical padding */
-    position: fixed;
-    bottom: 0;
-    background-color: #fff;
-    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-    z-index: 1001;
-}
-.mobile-footer a {
-    display: inline-block;
-    margin: 0;
-    padding: 0 10px; /* Added horizontal padding */
-    text-align: right; /* Ensures text within the anchor tags is right-aligned */
-    font-size: 16px; /* Set font size */
-    color: black; /* Set color to black */
-    text-decoration: none; /* Remove default underline */
-}
 
-
-            
+    .mobile-footer {
+        display: flex;
+        justify-content: flex-end; /* Aligns items to the right */
+        align-items: center; /* Vertically aligns items in the middle */
+        width: 100%;
+        padding: 10px 0; /* Reduced vertical padding */
+        position: fixed;
+        bottom: 0;
+        background-color: #fff;
+        box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+        z-index: 1001;
+    }
 
     .gallery {
         flex-direction: column;
@@ -176,8 +150,10 @@
         text-align: left;
         padding: 10px;
         background: rgba(255,255,255,0.9);
+        margin-bottom: 20px; /* Add a bottom margin to create an empty line after the description */
     }
 }
+
 
     </style>
     
