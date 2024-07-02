@@ -161,6 +161,19 @@
                             text-align: left;
              flex-grow: 1; /* Ensures it takes the rest of the space */
                         }
+        .engineering-row {
+                            display: flex;
+                            margin-bottom: 5px; /* Spacing between each row */
+                        }
+                        .engineering-type {
+                            width: 300px;
+                            text-align: left;
+                        }
+                        .engineering-location {
+                            width: 300px; 
+                            text-align: left;
+             flex-grow: 1; /* Ensures it takes the rest of the space */
+                        }
         .mobile-banner {
                 display: none;
         }
@@ -314,7 +327,7 @@
                 margin-right: 0; /* Remove any right margin to ensure elements are aligned without space */
             }
             .engineering-type::after {
-                content: ":"; 
+                content: ","; 
             }
 
             
@@ -385,13 +398,13 @@
                     </div>
 
                     <div class="exhibition-row">
-                        <div class="exhibition-year"></div>
+                        <div class="exhibition-year">\00A0\00A0\00A0\00A0</div>
                         <div class="exhibition-name">Chelsea Art Society</div>
                         <div class="exhibition-title">75th Annual Exhibition</div>
                         <div class="exhibition-location">London</div>
                     </div>
                     <div class="exhibition-row">
-                        <div class="exhibition-year"></div>
+                        <div class="exhibition-year">\00A0\00A0\00A0\00A0</div>
                         <div class="exhibition-name">Batsford Gallery</div>
                         <div class="exhibition-title">Batsford Prize Shortlist Exhibition</div>
                         <div class="exhibition-location">London</div>
