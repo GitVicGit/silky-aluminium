@@ -303,6 +303,20 @@
                 content: ":"; 
             }
 
+            .engineering-row {
+                display: block; /* Changes display to block for simplicity */
+                text-align: left; /* Ensure text is aligned to the left */
+                margin-bottom: 10px; /* Adds space between entries */
+                font-size: 16px; /* Adjusts the font size for consistency */
+            }
+            .engineering-type, .engineering-location {
+                display: inline; /* Inline display for continuous text flow */
+                margin-right: 0; /* Remove any right margin to ensure elements are aligned without space */
+            }
+            .engineering-type::after {
+                content: ":"; 
+            }
+
             
 }
     </style>
@@ -528,19 +542,19 @@
                 <div class="section">
                     <div class="section-title">Engineering background</div>
 
-                    <div class="collection-row">
-                        <div class="collection-type">Director of Production</div>
-                        <div class="collection-location">Hervé Van der Straeten</div>
+                    <div class="engineering-row">
+                        <div class="engineering-type">Director of Production</div>
+                        <div class="engineering-location">Hervé Van der Straeten</div>
                     </div>
                     
                     <div class="collection-row">
-                        <div class="collection-type">Fine Jewellery Project Manager</div>
-                        <div class="collection-location">Louis Vuitton</div>    
+                        <div class="engineering-type">Fine Jewellery Project Manager</div>
+                        <div class="engineering-location">Louis Vuitton</div>    
                     </div>
                     
-                    <div class="collection-row">
-                        <div class="collection-type">Business Analyst and Controller</div>
-                        <div class="collection-location">Moët Hennessy</div>    
+                    <div class="engineering-row">
+                        <div class="engineering-type">Business Analyst and Controller</div>
+                        <div class="engineering-location">Moët Hennessy</div>    
                     </div>
                     
                     <br><br><br>
