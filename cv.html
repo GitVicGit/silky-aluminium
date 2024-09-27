@@ -75,100 +75,111 @@
             padding-bottom: 8px; /* Adjust this value to control the space after the title */
         }
         .section-subtitle {
-        font-weight: normal;
-        text-align: left; 
-        margin-bottom: 9px; /* This is the space after your section title */
-        font-size: 17px; 
+            font-weight: normal;
+            text-align: left; 
+            margin-bottom: 9px; /* This is the space after your section title */
+            font-size: 17px; 
         }
         
-
+        /* Exhibition rows */
         .exhibition-row {
             display: block; /* Change display to block for simplicity */
             text-align: left; /* Ensure text is aligned to the left */
             font-size: 16px; /* Adjust font size as needed */
             margin-bottom: 10px; /* Space between rows */
-            }
-            .exhibition-year, .exhibition-name, .exhibition-title, .exhibition-location {
-                display: inline; /* Inline display for continuous text flow */
-                margin-right: 0; /* Remove any right margin */
-            }
-            .exhibition-year::after {
-                content: "\00A0\00A0"; /* Adds two non-breaking spaces after the year */
-            }
-            .exhibition-name::after,.exhibition-title::after {
-                content: ","; 
-            }
-    
+        }
+        .exhibition-year, .exhibition-title, .exhibition-name, .exhibition-location {
+            display: inline;
+            margin-right: 0;
+        }
+        .exhibition-year::after {
+            content: "\00A0\00A0"; /* Adds two non-breaking spaces after the year */
+        }
+        .exhibition-title {
+            font-style: italic;
+        }
+        .exhibition-name::after, .exhibition-title::after {
+            content: ",";
+        }
+
+        .empty-year {
+            width: 70px;
+            visibility: hidden;
+            display: inline-block;
+        }
+
+        /* Residency rows */
         .residency-row {
-            display: block; /* Ensures the row behaves as a block element */
-            text-align: left; /* Forces text to align to the left */
-            margin-bottom: 10px; /* Adds space between entries */
-            font-size: 16px; /* Adjusts the font size */
-            }
-            .residency-year, .residency-name, .residency-title,.residency-location {
-                display: inline; /* Inline display for continuous text flow */
-                margin-right: 0; /* Remove any right margin */
-            }
-            .residency-year::after{
-                content: "\00A0\00A0"; /* Adds two non-breaking spaces after the year */
-            }
-            .residency-name::after,.residency-title::after{
-                content: ",";
-            }
-           
+            display: block;
+            text-align: left;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .residency-year, .residency-title, .residency-name, .residency-location {
+            display: inline;
+        }
+        .residency-year::after {
+            content: "\00A0\00A0";
+        }
+        .residency-title {
+            font-style: italic;
+        }
+        .residency-title::after, .residency-name::after {
+            content: ",";
+        }
+
+        /* Education rows */
         .education-row {
-            display: block; /* Ensures the row behaves as a block element */
-            text-align: left; /* Forces text to align to the left */
-            margin-bottom: 10px; /* Adds space between entries */
-            font-size: 16px; /* Adjusts the font size */
-            }
-            .education-year, .education-degree, .education-school {
-                display: inline; /* Inline display for continuous text flow */
-                margin-right: 0; /* Remove any right margin */
-            }
-            .education-year::after {
-                content: "\00A0\00A0"; /* Adds two non-breaking spaces after the year */
-            }
-            .education-degree::after {
-                content: ","; /* Adds a comma and a space after the degree */
-            }
+            display: block;
+            text-align: left;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .education-year, .education-degree, .education-school {
+            display: inline;
+        }
+        .education-year::after {
+            content: "\00A0\00A0";
+        }
+        .education-degree::after {
+            content: ",";
+        }
 
-            
+        /* Collection rows */
         .collection-row {
-                display: block; /* Changes display to block for simplicity */
-                text-align: left; /* Ensure text is aligned to the left */
-                margin-bottom: 10px; /* Adds space between entries */
-                font-size: 16px; /* Adjusts the font size for consistency */
-            }
-            .collection-type, .collection-location {
-                display: inline; /* Inline display for continuous text flow */
-                margin-right: 0; /* Remove any right margin to ensure elements are aligned without space */
-            }
-            .collection-type::after {
-                content: ":"; 
-            }
+            display: block;
+            text-align: left;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .collection-type, .collection-location {
+            display: inline;
+        }
+        .collection-type::after {
+            content: ":";
+        }
 
-            .engineering-row {
-                display: block; /* Changes display to block for simplicity */
-                text-align: left; /* Ensure text is aligned to the left */
-                margin-bottom: 10px; /* Adds space between entries */
-                font-size: 16px; /* Adjusts the font size for consistency */
-            }
-            .engineering-type, .engineering-location {
-                display: inline; /* Inline display for continuous text flow */
-                margin-right: 0; /* Remove any right margin to ensure elements are aligned without space */
-            }
-            .engineering-type::after {
-                content: ","; 
-            }
+        /* Engineering rows */
+        .engineering-row {
+            display: block;
+            text-align: left;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .engineering-type, .engineering-location {
+            display: inline;
+        }
+        .engineering-type::after {
+            content: ",";
+        }
 
         .mobile-banner {
-                display: none;
+            display: none;
         }
         .mobile-footer {
-                display: none;
+            display: none;
         }
-        
+
         @media (max-width: 768px) {
             .navigation {
                 display: none;
@@ -186,7 +197,7 @@
                 justify-content: space-between;
                 align-items: center;
                 width: 100%;
-                padding: 10px 0; /* Reduced vertical padding */
+                padding: 10px 0;
                 position: fixed;
                 top: 0;
                 background-color: #fff;
@@ -196,28 +207,21 @@
             .mobile-banner a {
                 display: inline-block;
                 margin: 0;
-                padding: 0 10px; /* Added horizontal padding */
-                text-align: justify; /* Justify text */
-                text-justify: distribute-all-lines; /* Justify all lines */
-                font-size: 16px; /* Set font size */
-                color: black; /* Set color to black */
-                text-decoration: none; /* Remove default underline */
+                padding: 0 10px;
+                text-align: justify;
+                font-size: 16px;
+                color: black;
+                text-decoration: none;
             }
             .mobile-banner a.works-link {
-                text-decoration: underline; /* Underline only 'Works' link */
-            }
-            .mobile-banner .content {
-                flex-grow: 1;
-                text-align: justify;
-                margin-left: 20px; /* Adjusted margin */
-                margin-right: 20px; /* Adjusted margin */
+                text-decoration: underline;
             }
             .mobile-footer {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 width: 100%;
-                padding: 10px 0; /* Reduced vertical padding */
+                padding: 10px 0;
                 position: fixed;
                 bottom: 0;
                 background-color: #fff;
@@ -227,31 +231,25 @@
             .mobile-footer a {
                 display: inline-block;
                 margin: 0;
-                padding: 0 10px; /* Added horizontal padding */
-                text-align: justify; /* Justify text */
-                text-justify: distribute-all-lines; /* Justify all lines */
-                font-size: 16px; /* Set font size */
-                color: black; /* Set color to black */
-                text-decoration: none; /* Remove default underline */
+                padding: 0 10px;
+                text-align: justify;
+                font-size: 16px;
+                color: black;
+                text-decoration: none;
             }
             .mobile-footer a.works-link {
-                text-decoration: underline; /* Underline only 'Works' link */
+                text-decoration: underline;
             }
-            
-}
+        }
     </style>
 </head>
 
-
-
-    
 <body>
     <div class="container">
         <div class="navigation">
             <div>
                 <a href="hello.html" style="font-weight: bold; font-size: 30px;">VICTOR GUERIN</a>
                 <br><br><br><br>
-            <!-- <a href="RCA Graduate Show 2024.html">RCA Graduate Show 2024</a> -->
                 <a href="statement.html">Statement</a><br>
                 <a href="about.html">About</a><br>
                 <a href="cv.html">CV</a><br>
@@ -260,282 +258,83 @@
                 <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a><br>
                 <a href="https://www.instagram.com/victorguerin.fr/">Instagram</a>
             </div>
-                <a href="hello.html" class="works-link">Works</a> 
+            <a href="hello.html" class="works-link">Works</a> 
         </div>
-       <div class="content">
+
+        <div class="content">
             <div>
                 <div class="section">
-                    
-                    <br>
                     <div>b. 1993, France. British citizen. </div>
-                    <br>
-                    <br>
-                    
+                    <br><br>
                     <div class="section-title">Exhibitions</div>
-                    
-                    
-                    <br>
-                      
-                    
+
                     <div class="section-subtitle">Upcoming</div>
-                       
                     <div class="exhibition-row">
                         <div class="exhibition-year">2024</div>
-                        <div class="exhibition-name">Swanfall Art Gallery</div>
                         <div class="exhibition-title">Playground</div>
+                        <div class="exhibition-name">Swanfall Art Gallery</div>
                         <div class="exhibition-location">London</div>
                     </div>
-                    
-            
-                    <br>
-                    
+
                     <div class="section-subtitle">Current</div>
-                    
                     <div class="exhibition-row">
                         <div class="exhibition-year">2024</div>
-                        <div class="exhibition-name">New Zealand Academy of Fine Arts</div>
                         <div class="exhibition-title">Silk Road Artists Rendezvous</div>
+                        <div class="exhibition-name">New Zealand Academy of Fine Arts</div>
                         <div class="exhibition-location">Wellington (New Zealand)</div>
                     </div>
-                    
-                                 
-                  
-                    <br>
+
                     <div class="section-subtitle">Past</div>
-                    
                     <div class="exhibition-row">
                         <div class="exhibition-year">2024</div>
-                        <div class="exhibition-name">Dalkeith Palace</div>
                         <div class="exhibition-title">Now and Then</div>
+                        <div class="exhibition-name">Dalkeith Palace</div>
                         <div class="exhibition-location">Dalkeith</div>
                     </div>
-                    
                     <div class="exhibition-row">
-                        <div class="exhibition-year">2024</div>
-                        <div class="exhibition-name">Royal College of Art</div>
+                        <div class="empty-year"></div>
                         <div class="exhibition-title">Echoes of Extraction</div>
-                        <div class="exhibition-location">London</div>
-                    </div>
-                    
-                    <div class="exhibition-row">
-                        <div class="exhibition-year">2024</div>
-                        <div class="exhibition-name">Royal Scottish Academy</div>
-                        <div class="exhibition-title">198th RSA Annual Exhibition</div>
-                        <div class="exhibition-location">Edinburgh</div>
-                    </div>
-
-                    <div class="exhibition-row">
-                        <div class="exhibition-year">2024</div>
-                        <div class="exhibition-name">Chelsea Art Society</div>
-                        <div class="exhibition-title">75th Annual Exhibition</div>
-                        <div class="exhibition-location">London</div>
-                    </div>
-                    <div class="exhibition-row">
-                        <div class="exhibition-year">2024</div>
-                        <div class="exhibition-name">Batsford Gallery</div>
-                        <div class="exhibition-title">Batsford Prize Shortlist Exhibition</div>
-                        <div class="exhibition-location">London</div>
-                    </div>
-                    <div class="exhibition-row">
-                        <div class="exhibition-year">2024</div>
-                        <div class="exhibition-name">Bermondsey Project Space</div>
-                        <div class="exhibition-title">Elsewhere</div>
-                        <div class="exhibition-location">London</div>
-                    </div>  
-                    <div class="exhibition-row">
-                        <div class="exhibition-year">2024</div>
-                        <div class="exhibition-name">Safehouse</div>
-                        <div class="exhibition-title">Interstitial</div>
-                        <div class="exhibition-location">London</div>
-                    </div>
-                    <div class="exhibition-row">
-                        <div class="exhibition-year">2024</div>
-                        <div class="exhibition-name">Art in the Docks Gallery</div>
-                        <div class="exhibition-title">The Enigma of Consciousness</div>
-                        <div class="exhibition-location">London</div>
-                    </div>
-                    <div class="exhibition-row">
-                        <div class="exhibition-year">2024</div>
                         <div class="exhibition-name">Royal College of Art</div>
-                        <div class="exhibition-title">Terrain</div>
                         <div class="exhibition-location">London</div>
                     </div>
-                    <div class="exhibition-row">
-                        <div class="exhibition-year">2023</div>
-                        <div class="exhibition-name">Liangzhu Forum</div>
-                        <div class="exhibition-title">Silk Road residency</div>
-                        <div class="exhibition-location">Hangzhou (China)</div>
-                    </div>
-                    <div class="exhibition-row">
-                        <div class="exhibition-year">2023</div>
-                        <div class="exhibition-name">Society of Scottish Artists</div>
-                        <div class="exhibition-title">SSA 30 x 30</div>
-                        <div class="exhibition-location">Online</div>
-                    </div>
-                    <div class="exhibition-row">
-                        <div class="exhibition-year">2023</div>
-                        <div class="exhibition-name">Botanical Garden of Palermo</div>
-                        <div class="exhibition-title">Rooting our cities</div>
-                        <div class="exhibition-location">Palermo</div>
-                    </div>
-                    <div class="exhibition-row">
-                        <div class="exhibition-year">2023</div>
-                        <div class="exhibition-name">George Crossan Gallery</div>
-                        <div class="exhibition-title">Island Games</div>
-                        <div class="exhibition-location">Guernsey (c.i.)</div>
-                    </div>
-                    <div class="exhibition-row">
-                        <div class="exhibition-year">2022</div>
-                        <div class="exhibition-name">Society of Scottish Artists</div>
-                        <div class="exhibition-title">SSA 130 Years</div>
-                        <div class="exhibition-location">Edinburgh</div>
-                    </div>
-                    <div class="exhibition-row">
-                        <div class="exhibition-year">2022</div>
-                        <div class="exhibition-name">Private & Public Gallery</div>
-                        <div class="exhibition-title">Brushes with greatness</div>
-                        <div class="exhibition-location">Jersey (c.i.)</div>
-                    </div>
-                    <div class="exhibition-row">
-                        <div class="exhibition-year">2022</div>
-                        <div class="exhibition-name">ArtHouse Jersey</div>
-                        <div class="exhibition-title">Chemin</div>
-                        <div class="exhibition-location">Jersey (c.i.)</div>
-                    </div>
-                    <div class="exhibition-row">
-                        <div class="exhibition-year">2021</div>
-                        <div class="exhibition-name">Boomer Gallery</div>
-                        <div class="exhibition-title">Vogue II</div>
-                        <div class="exhibition-location">London</div>
-                    </div>     
                 </div>
-                
-                <br><br>
+
                 <div class="section">
                     <div class="section-title">Residencies</div>
-                    
                     <div class="residency-row">
                         <div class="residency-year">2024</div>
-                        <div class="residency-name">Sir John Soane's Museum</div>
                         <div class="residency-title">Festus</div>
+                        <div class="residency-name">Sir John Soane's Museum</div>
                         <div class="residency-location">London</div>
                     </div>
-                    <div class="residency-row">
-                        <div class="residency-year">2023</div>
-                        <div class="residency-name">Hangzhou Archaeological Site</div>
-                        <div class="residency-title">Silk Road Artist Rendezvous</div>
-                        <div class="residency-location">Hangzhou (China)</div>
-                    </div>
                 </div>
-                <br><br>
-                    
+
                 <div class="section">
                     <div class="section-title">Education</div>
-
                     <div class="education-row">
                         <div class="education-year">2024</div>
                         <div class="education-degree">MA Sculpture</div>
                         <div class="education-school">Royal College of Art (RCA)</div>
                     </div>
-                    <div class="education-row">
-                        <div class="education-year">2016</div>
-                        <div class="education-degree">MEng Mechanical and Industrial Engineering (Distinction)</div>
-                        <div class="education-school">Arts & Métiers ParisTech</div>
-                    </div>
-                    <div class="education-row">
-                        <div class="education-year">2016</div>
-                        <div class="education-degree">MSc Operational Research and Management Science</div>
-                        <div class="education-school">Lancaster University</div>
-                    </div>
-                    <div class="education-row">
-                        <div class="education-year">2014</div>
-                        <div class="education-degree">BEng Mechanical and Industrial Engineering (Distinction)</div>
-                        <div class="education-school">Arts & Métiers ParisTech</div>
-                    </div>
                 </div>
-                <br><br>
-                    
+
                 <div class="section">
                     <div class="section-title">Awards</div>
-                    
-                    <div class="education">Averil Picot Art award</div>
-                    <div class="education">Batsford Prize (shortlist)</div>
-                    <div class="education">Hyundai Awards for Excellence in Sustainability and Creative Practice (shortlist)</div>
-                    <div class="education">VAO UK & International Emerging Artist Awards (shortlist)</div>
-                    <div class="education">Academic Excellence scholarship</div>
-                    <div class="education">Regional scholarships</div>
-                </div>
-                <br><br>
-                    
-                <div class="section">
-                    <div class="section-title">Collections</div>
-
-                    <div class="collection-row">
-                        <div class="collection-type">Public</div>
-                        <div class="collection-location">Hangzhou Liangzhu Archaeological Site (China)</div>
+                    <div class="education-row">
+                        <div class="education-year">2024</div>
+                        <div class="education-degree">Averil Picot Art award</div>
                     </div>
-                    
-                    <div class="collection-row">
-                        <div class="collection-type">Private</div>
-                        <div class="collection-location">UK and Channel Islands, Canada, China, France</div>    
+                    <div class="education-row">
+                        <div class="empty-year"></div>
+                        <div class="education-degree">Batsford Prize (shortlist)</div>
+                    </div>
+                    <div class="education-row">
+                        <div class="empty-year"></div>
+                        <div class="education-degree">Hyundai Awards for Excellence in Sustainability and Creative Practice (shortlist)</div>
                     </div>
                 </div>
-                <br><br>
-                    
-                <div class="section">
-                    <div class="section-title">Engineering background</div>
-
-                    <div class="engineering-row">
-                        <div class="engineering-type">Director of Production</div>
-                        <div class="engineering-location">Hervé Van der Straeten</div>
-                    </div>
-                    
-                    <div class="engineering-row">
-                        <div class="engineering-type">Fine Jewellery Project Manager</div>
-                        <div class="engineering-location">Louis Vuitton</div>    
-                    </div>
-                    
-                    <div class="engineering-row">
-                        <div class="engineering-type">Business Analyst and Controller</div>
-                        <div class="engineering-location">Moët Hennessy</div>    
-                    </div>
-                </div>
-                    
-                    <br><br><br>
-                </div>
-                    
             </div>
         </div>
     </div>
-    <div class="footer">
-    <a href="hello.html">Work</a>
-    <div style="text-align: right;">
-        <a href="https://www.instagram.com/victorguerin.fr/">Instagram</a>
-        <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a>
-        <a href="mailto:victorguerin.fr+web@pm.me">Email</a>
-    </div>
-
-
-            <!-- Mobile-specific Banner -->
-    <div class="mobile-banner">
-        <a href="hello.html" style="font-weight: bold;font-size: 17px">VICTOR GUERIN</a>
-        <div> 
-            <!-- <a href="RCA Graduate Show 2024.html">RCA Graduate Show 2024</a> -->
-            <a href="statement.html">Statement</a>
-            <a href="about.html">About</a>
-            <a href="cv.html">CV</a>
-        </div>
-    </div>
-    
-    <!-- Mobile-specific Footer -->
-    <div class="mobile-footer">
-            <a href="hello.html" class="works-link">Works</a>
-        <div>
-            <a href="https://www.instagram.com/victorguerin.fr/">Instagram</a>
-            <a href="https://www.linkedin.com/in/guerinvictor/">LinkedIn</a>
-            <a href="mailto:victorguerin.fr+web@pm.me">Email</a>
-        </div>
-        
-</div>
 </body>
 </html>
