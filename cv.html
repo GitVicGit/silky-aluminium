@@ -80,175 +80,7 @@
         margin-bottom: 9px; /* This is the space after your section title */
         font-size: 17px; 
         }
-
-        .education {
-            margin-bottom: 5px;
-        }
         
-        .exhibition-row {
-                            display: flex;
-                            margin-bottom: 5px; /* Spacing between each row */
-                        }
-                        .exhibition-year {
-                            width: 70px; /* Space for the year */
-                            text-align: left;
-                        }
-                        .exhibition-name {
-                            width: 300px; /* Space for the exhibition name */
-                            text-align: left;
-                        }
-                        .exhibition-title {
-                            width: 300px; /* Space for the exhibition title */
-                            text-align: left;
-                            font-style: italic;
-                        }
-                        .exhibition-location {
-                            text-align: left;
-                            flex-grow: 1; /* Ensures it takes the rest of the space */
-                        }
-
-        .residency-row {
-                            display: flex;
-                            margin-bottom: 5px; /* Spacing between each row */
-                        }
-                        .residency-year {
-                            width: 70px; /* Space for the year */
-                            text-align: left;
-                        }
-                        .residency-name {
-                            width: 300px; /* Space for the residency name */
-                            text-align: left;
-                        }
-                        .residency-title {
-                            width: 300px; /* Space for the residency title */
-                            text-align: left;
-                            font-style: italic;
-                        }
-                        .residency-location {
-                            text-align: left;
-                            flex-grow: 1; /* Ensures it takes the rest of the space */
-                        }
-        .education-row {
-                            display: flex;
-                            align-items: flex-start; /* Align items to the start of the flex container */
-                            margin-bottom: 5px;
-                        }
-                        .education-year, .education-degree, .education-school {
-                            margin-right: 20px; /* Adds space between columns */
-                        }
-                        .education-year {
-                            width: 70px; /* Ensure this is enough space for the year */
-                            text-align: left;
-                        }
-                        .education-degree {
-                            width: 500px; /* Adjust based on your content */
-                            text-align: left;
-                        }
-                        .education-school {
-                            text-align: left; /* Add more properties if needed */
-                            flex-grow: 1; /* Allows school name to take up remaining space */
-                        }
-        .collection-row {
-                            display: flex;
-                            margin-bottom: 5px; /* Spacing between each row */
-                        }
-                        .collection-type {
-                            width: 70px; /* Space for the year */
-                            text-align: left;
-                        }
-                        .collection-location {
-                            width: 300px; /* Space for the collection name */
-                            text-align: left;
-             flex-grow: 1; /* Ensures it takes the rest of the space */
-                        }
-        .engineering-row {
-                            display: flex;
-                            margin-bottom: 5px; /* Spacing between each row */
-                        }
-                        .engineering-type {
-                            width: 300px;
-                            text-align: left;
-                        }
-                        .engineering-location {
-                            width: 300px; 
-                            text-align: left;
-             flex-grow: 1; /* Ensures it takes the rest of the space */
-                        }
-        .mobile-banner {
-                display: none;
-        }
-        .mobile-footer {
-                display: none;
-        }
-        @media (max-width: 768px) {
-            .navigation {
-                display: none;
-            }
-            .content {
-                padding-top: 60px;
-                padding-bottom: 60px;
-                overflow-y: auto;
-                display: block;
-                width: 100%;
-            }
-            
-            .mobile-banner {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%;
-                padding: 10px 0; /* Reduced vertical padding */
-                position: fixed;
-                top: 0;
-                background-color: #fff;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-                z-index: 1001;
-            }
-            .mobile-banner a {
-                display: inline-block;
-                margin: 0;
-                padding: 0 10px; /* Added horizontal padding */
-                text-align: justify; /* Justify text */
-                text-justify: distribute-all-lines; /* Justify all lines */
-                font-size: 16px; /* Set font size */
-                color: black; /* Set color to black */
-                text-decoration: none; /* Remove default underline */
-            }
-            .mobile-banner a.works-link {
-                text-decoration: underline; /* Underline only 'Works' link */
-            }
-            .mobile-banner .content {
-                flex-grow: 1;
-                text-align: justify;
-                margin-left: 20px; /* Adjusted margin */
-                margin-right: 20px; /* Adjusted margin */
-            }
-            .mobile-footer {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%;
-                padding: 10px 0; /* Reduced vertical padding */
-                position: fixed;
-                bottom: 0;
-                background-color: #fff;
-                box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-                z-index: 1001;
-            }
-            .mobile-footer a {
-                display: inline-block;
-                margin: 0;
-                padding: 0 10px; /* Added horizontal padding */
-                text-align: justify; /* Justify text */
-                text-justify: distribute-all-lines; /* Justify all lines */
-                font-size: 16px; /* Set font size */
-                color: black; /* Set color to black */
-                text-decoration: none; /* Remove default underline */
-            }
-            .mobile-footer a.works-link {
-                text-decoration: underline; /* Underline only 'Works' link */
-            }
-
 
         .exhibition-row {
             display: block; /* Change display to block for simplicity */
@@ -330,6 +162,81 @@
                 content: ","; 
             }
 
+        .mobile-banner {
+                display: none;
+        }
+        .mobile-footer {
+                display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .navigation {
+                display: none;
+            }
+            .content {
+                padding-top: 60px;
+                padding-bottom: 60px;
+                overflow-y: auto;
+                display: block;
+                width: 100%;
+            }
+            
+            .mobile-banner {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                padding: 10px 0; /* Reduced vertical padding */
+                position: fixed;
+                top: 0;
+                background-color: #fff;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                z-index: 1001;
+            }
+            .mobile-banner a {
+                display: inline-block;
+                margin: 0;
+                padding: 0 10px; /* Added horizontal padding */
+                text-align: justify; /* Justify text */
+                text-justify: distribute-all-lines; /* Justify all lines */
+                font-size: 16px; /* Set font size */
+                color: black; /* Set color to black */
+                text-decoration: none; /* Remove default underline */
+            }
+            .mobile-banner a.works-link {
+                text-decoration: underline; /* Underline only 'Works' link */
+            }
+            .mobile-banner .content {
+                flex-grow: 1;
+                text-align: justify;
+                margin-left: 20px; /* Adjusted margin */
+                margin-right: 20px; /* Adjusted margin */
+            }
+            .mobile-footer {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                padding: 10px 0; /* Reduced vertical padding */
+                position: fixed;
+                bottom: 0;
+                background-color: #fff;
+                box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+                z-index: 1001;
+            }
+            .mobile-footer a {
+                display: inline-block;
+                margin: 0;
+                padding: 0 10px; /* Added horizontal padding */
+                text-align: justify; /* Justify text */
+                text-justify: distribute-all-lines; /* Justify all lines */
+                font-size: 16px; /* Set font size */
+                color: black; /* Set color to black */
+                text-decoration: none; /* Remove default underline */
+            }
+            .mobile-footer a.works-link {
+                text-decoration: underline; /* Underline only 'Works' link */
+            }
             
 }
     </style>
