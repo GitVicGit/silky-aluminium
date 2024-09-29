@@ -143,6 +143,7 @@
             content: ",";
         }
 
+        
         .education-row {
             display: block;
             text-align: left;
@@ -162,24 +163,24 @@
         .education-degree::after {
             content: ",";
         }
+        
 
         .award-row {
-    display: block;
-    text-align: left;
-    margin-bottom: 10px;
-    font-size: 16px;
-}
+            display: block;
+            text-align: left;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
 
-.award-year {
-    width: 70px;
-    display: inline-block;
-}
+        .award-year, .award-name {
+            display: inline;
+            margin-right: 0;
+        }
+        .award-year::after {
+            content: "\00A0\00A0";
+        }
 
-.award-name {
-    font-style: italic;
-    display: inline;
-}
-
+        
 
         .collection-row {
             display: block;
@@ -395,6 +396,7 @@
                     </div>
                 </div>
 
+                
                 <br><br>
                 <div class="section">
                     <div class="section-title">Residencies</div>
@@ -413,6 +415,8 @@
                     </div>
                 </div>
 
+
+                
                 <br><br>
                 <div class="section">
                     <div class="section-title">Education</div>
@@ -438,6 +442,7 @@
                     </div>
                 </div>
 
+                
                 <br><br>
                 <div class="section">
     <div class="section-title">Awards</div>
