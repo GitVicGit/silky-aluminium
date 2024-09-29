@@ -84,14 +84,14 @@
         }
         
         /* Hanging Indentation Setup */
-.exhibition-row, .education-row, .residency-row, award-row {
+.exhibition-row, .education-row, .residency-row {
     display: block;
     margin-bottom: 10px;
     padding-left: 70px; /* Indents text after the year */
     text-indent: -70px; /* Moves the year back to the left */
 }
 
-.exhibition-year, .education-year, .residency-year, .award-year  {
+.exhibition-year, .education-year, .residency-year {
     width: 70px;
     display: inline-block;
 }
@@ -102,7 +102,7 @@
             font-size: 16px;
             margin-bottom: 10px;
         }
-        .exhibition-year, .exhibition-title, .exhibition-gallery, .exhibition-location {
+        .exhibition-year, .exhibition-title, .exhibition-name, .exhibition-location {
             display: inline;
             margin-right: 0;
         }
@@ -112,7 +112,7 @@
         .exhibition-year::after {
             content: "\00A0\00A0";
         }
-        .exhibition-title::after, .exhibition-gallery::after {
+        .exhibition-title::after, .exhibition-name::after {
             content: ",";
         }
         
@@ -129,17 +129,17 @@
             margin-bottom: 10px;
             font-size: 16px;
         }
-        .residency-year, .residency-name, .residency-host, .residency-location {
+        .residency-year, .residency-name, .residency-title, .residency-location {
             display: inline;
             margin-right: 0;
         }
-        .residency-host {
+        .residency-title {
             font-style: italic;
         }
         .residency-year::after{
             content: "\00A0\00A0";
         }
-        .residency-name::after, .residency-host::after{
+        .residency-name::after, .residency-title::after{
             content: ",";
         }
 
@@ -169,13 +169,15 @@
     margin-bottom: 10px;
     font-size: 16px;
 }
-        }
-        .award-year, .award-name {
-            display: inline;
-            margin-right: 0;
-        }
+
 .award-year {
-   content: "\00A0\00A0";
+    width: 70px;
+    display: inline-block;
+}
+
+.award-name {
+    font-style: italic;
+    display: inline;
 }
 
 
